@@ -1,0 +1,10 @@
+<div id="search-component">
+    <h4><label for="search-box">Property Search</label></h4>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+    <ul class="search-result">
+        <li *ngFor="let property of properties$ | async" >
+            <a routerLink="/detail/{{property.id}}" >{{property.name}}</a>
+        </li>
+    </ul>
+</div>
