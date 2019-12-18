@@ -12,6 +12,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditPropertyComponent } from './edit-property/edit-property.component';
+import { PropertyCardComponent } from './property-card/property-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PropertyDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    PropertySearchComponent
+    PropertySearchComponent,
+    EditPropertyComponent,
+    PropertyCardComponent
   ],
   imports: [
     BrowserModule,
