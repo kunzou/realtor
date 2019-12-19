@@ -71,3 +71,10 @@
     </div>
   </div>
 </div>
+
+<div>
+    <mat-form-field>
+      <input matInput placeholder="Property Name" #propertyName>
+    </mat-form-field>
+    <button mat-fab color="primary" (click)="add(propertyName.value); propertyName.value=''">Add</button>
+  </div>

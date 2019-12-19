@@ -19,15 +19,4 @@ export class PropertiesComponent implements OnInit {
   getPropertyes(): void {
     this.propertyService.getProperties().subscribe(properties => this.properties = properties);
   }
-
-  add(name: string): void {
-    name = name.trim();
-    if (!name) {
-      return;
-    }
-    this.propertyService.addProperty({ name } as Property)
-      .subscribe(property => {
-        this.properties.push(property);
-      })
-  }
 }
