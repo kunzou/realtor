@@ -15,7 +15,8 @@
   </mat-form-field>
   <button mat-fab color="primary" (click)="add(propertyName.value); propertyName.value=''">Add</button>
 </mat-card> -->
-
+<div>
 <div *ngFor="let property of properties">
   <app-property-card [property]="property"></app-property-card>
+</div>
 </div>

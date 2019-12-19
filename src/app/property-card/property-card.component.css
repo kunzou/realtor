@@ -5,3 +5,7 @@
   .example-header-image {
     background-size: cover;
   }
+
+  .property-title {
+    text-align:center;
+  }

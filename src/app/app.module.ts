@@ -2,7 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
-import { MatCardModule, MatListModule, MatToolbarModule, MatIconModule, MatButtonModule, MatProgressBarModule, MatInputModule } from '@angular/material';
+import { 
+  MatCardModule, 
+  MatListModule, 
+  MatToolbarModule, 
+  MatIconModule, 
+  MatButtonModule, 
+  MatProgressBarModule, 
+  MatInputModule,
+  MatSidenavModule,
+  MatTableModule
+} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +50,10 @@ import { PropertyCardComponent } from './property-card/property-card.component';
     MatCardModule,  
     MatButtonModule,  
     MatProgressBarModule,
-    MatInputModule  
+    MatInputModule,
+    MatSidenavModule,
+    MatTableModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

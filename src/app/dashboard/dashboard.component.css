@@ -1,4 +1,4 @@
-/* DashboardComponent's private CSS styles */
+/* DashboardComponent's private CSS styles
 [class*='col-'] {
     float: left;
     padding-right: 20px;
@@ -60,4 +60,34 @@
     .module {
       min-width: 60px;
     }
+  }
+
+ */
+ table {
+  width: 100%;
+}
+
+  .card {
+    min-width: 80%;
+  }
+  
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+  .table-cell:hover {
+    background-color: #cfd8dc;
+    cursor: pointer
   }

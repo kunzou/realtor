@@ -7,7 +7,7 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
 const routes: Routes = [
   { path: 'properties', component: PropertiesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/properties', pathMatch: 'full' },
   { path: 'detail/:id', component: PropertyDetailComponent },  
 ];
 
