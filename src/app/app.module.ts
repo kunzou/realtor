@@ -16,7 +16,8 @@ import {
   MatDialogModule,
   MatSelectModule,
   MatFormFieldModule,
-  MatRadioModule
+  MatRadioModule,
+  MatGridListModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -68,6 +69,7 @@ import { PostDialogComponent } from './post-dialog/post-dialog.component';
     MatCheckboxModule,
     MatFormFieldModule,
     MatRadioModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent] 
