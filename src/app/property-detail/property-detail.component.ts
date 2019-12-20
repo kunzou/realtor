@@ -15,6 +15,33 @@ import { UploadService } from '../upload.service';
   styleUrls: ['./property-detail.component.css']
 })
 export class PropertyDetailComponent implements OnInit {
+  propertyTypes: string[] = [
+    'House',
+    'Town House',
+    'Condo'
+  ];
+
+  images = [
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg', description: 'Image 1' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg', description: 'Image 2' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg', description: 'Image 3' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg', description: 'Image 4' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg', description: 'Image 5' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg', description: 'Image 6' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg', description: 'Image 7' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg', description: 'Image 8' },
+    { img: 'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg', thumb:
+    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg', description: 'Image 9' }
+  ];  
+
   @Input() property: Property;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
   constructor(
@@ -42,7 +69,7 @@ export class PropertyDetailComponent implements OnInit {
     this.propertyService.updateProperty(this.property).subscribe(() => this.goBack());
   }
 
-  uploadFile(file): void {
+  uploadFile(file, isPrimary): void {
     const formData = new FormData();
     formData.append('file', file.data);
     file.inProgress = true;
@@ -58,29 +85,45 @@ export class PropertyDetailComponent implements OnInit {
       }),
       catchError((error: HttpErrorResponse) => {
         file.inProgress = false;
-        return of(`${file.data.name} upload failed.`);
+        return of(`${file.data.address} upload failed.`);
       })).subscribe((event: any) => {
         if (typeof (event) === 'object') {
           console.log(event.body);
-          this.property.imgUrl = event.body.fileDownloadUri;
+          if(isPrimary) {
+            this.property.primaryImgUrl = event.body.fileDownloadUri;
+          } else {
+            this.property.imgUrls.push(event.body.fileDownloadUri);
+          }
+          
         }
       });
   }
 
-  private uploadFiles(): void {
+  private uploadFiles(isPrimary): void {
     this.fileUpload.nativeElement.value = '';
     this.files.forEach(file => {
-      this.uploadFile(file);
+      this.uploadFile(file, isPrimary);
     });
   }
 
-  onClick(): void {
+  uploadPrimary(): void {
     const fileUpload = this.fileUpload.nativeElement; fileUpload.onchange = () => {
         Array.from(fileUpload.files).forEach(element => {
         this.files.push({ data: element, inProgress: false, progress: 0 });
       });  
         
-      this.uploadFiles();
+      this.uploadFiles(true);
+    };
+    fileUpload.click();
+  }  
+
+  uploadAdditional(): void {
+    const fileUpload = this.fileUpload.nativeElement; fileUpload.onchange = () => {
+        Array.from(fileUpload.files).forEach(element => {
+        this.files.push({ data: element, inProgress: false, progress: 0 });
+      });  
+        
+      this.uploadFiles(false);
     };
     fileUpload.click();
   }  

@@ -1,10 +1,12 @@
-export interface Property {
+export class Property {
     id: string;
-    name: string;
     address: string;
     primaryImgUrl: string;
     imgUrls: string[];
-    houseType: string;
+    houseType: HouseType;
+    houseStatus: HouseStatus;
+    yearBuilt: number;
+    description: string;
     numberOfRooms: number;
     numberOfWashrooms: number;
     area: number;    
@@ -12,6 +14,7 @@ export interface Property {
     finalPrice: number;
     onMarketSince: Date;
     dealDate: Date;
+    hide: boolean;
 }
 
 enum HouseType {
@@ -20,15 +23,7 @@ enum HouseType {
     CONDO = "Condo",
 }
 
-
-
-// private String primaryImgUrl;
-// private List<String> imgUrls;
-// private HouseType houseType;
-// private BigDecimal askingForPrice;
-// private BigDecimal finalPrice;
-// private LocalDate listingDate;
-// private LocalDate dealDate;
-// private Integer numberOfRooms;
-// private Integer numberOfWashRooms;
-// private Double area;
+enum HouseStatus {
+    ON_MARKET = "On market",
+    SOLD = "Sold",
+}

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { 
   MatCardModule, 
   MatListModule, 
@@ -11,7 +12,11 @@ import {
   MatProgressBarModule, 
   MatInputModule,
   MatSidenavModule,
-  MatTableModule
+  MatTableModule,
+  MatDialogModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatRadioModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -25,6 +30,7 @@ import { PropertySearchComponent } from './property-search/property-search.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +41,10 @@ import { PropertyCardComponent } from './property-card/property-card.component';
     DashboardComponent,
     PropertySearchComponent,
     EditPropertyComponent,
-    PropertyCardComponent
+    PropertyCardComponent,
+    PostDialogComponent
   ],
+  entryComponents: [PostDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -53,9 +61,15 @@ import { PropertyCardComponent } from './property-card/property-card.component';
     MatInputModule,
     MatSidenavModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
+    MatSelectModule,  
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatRadioModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

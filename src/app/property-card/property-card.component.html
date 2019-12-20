@@ -3,10 +3,10 @@
         <div mat-card-avatar class="example-header-image"></div>
 
     </mat-card-header> -->
-    <img mat-card-image src="{{property.imgUrl}}">
+    <img mat-card-image src="{{property.primaryImgUrl}}">
     <mat-card-content>
         <div class="property-title">
-            <mat-card-title><a routerLink="/detail/{{property.id}}">{{property.name}}</a></mat-card-title>
+            <mat-card-title><a routerLink="/detail/{{property.id}}">{{property.address}}</a></mat-card-title>
             <mat-card-subtitle>{{property.address}}</mat-card-subtitle>
 
             <img src="assets/square.svg"> 1500 sqft

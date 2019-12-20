@@ -3,6 +3,8 @@ import { Property } from '../property';
 import { PropertyService } from '../property.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material';
+import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,26 +13,41 @@ import { Observable } from 'rxjs';
 })
 export class DashboardComponent {
 
-  constructor(private propertyService: PropertyService) { }
+  constructor(
+    private propertyService: PropertyService,
+    public dialog: MatDialog
+    ) { }
   properties: Property[] = [];
   dataSource = new PostDataSource(this.propertyService);
   // displayedColumns = ['date_posted', 'title', 'category', 'delete'];
-  displayedColumns = ['name'];
+  displayedColumns = ['address', 'yearBuilt', 'edit'];
   
   getProperties(): void {
     this.propertyService.getProperties()
     .subscribe(properties => this.properties = properties);
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) {
+  add(address: string): void {
+    address = address.trim();
+    if (!address) {
       return;
     }
-    this.propertyService.addProperty({ name } as Property)
+    this.propertyService.addProperty({ address: address } as Property)
       .subscribe(property => {
+        // this.dataSource.connect();
         this.properties.push(property);
       })
+  }  
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(PostDialogComponent, {
+      width: '600px',
+      data: 'Add Property'
+    });
+    dialogRef.componentInstance.event.subscribe((result) => {
+      this.propertyService.addProperty({ address: result.data.address } as Property);
+      this.dataSource = new PostDataSource(this.propertyService);
+    });
   }  
 }
 

@@ -19,17 +19,17 @@
 <div>
   <br>
   <div class="container">
-    <div class="container">
+    <!-- <div class="container"> This is not working :()
       <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around center"
         class="content">
         <div class="blocks">
-          <button button="submit" mat-raised-button color="primary">
+          <button button="submit" mat-raised-button color="primary" (click)="openDialog()">
             <mat-icon>add</mat-icon> Add Property
           </button>
         </div>
       </div>
-    </div>
-    <br>
+    </div> -->
+    <!-- <br> -->
     <div class="container">
       <div fxLayout="row" fxLayoutAlign="center center" class="content">
         <mat-card class="card">
@@ -38,43 +38,48 @@
           <!-- </mat-card-title> -->
           <mat-card-content>
             <div class="example-container mat-elevation-z8">
-              <mat-table #table [dataSource]="dataSource">
+              <mat-table #table [dataSource]="dataSource" >
                 <!-- <ng-container matColumnDef="date_posted">
                   <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
                   <mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'd/M/y'}} </mat-cell>
                 </ng-container> -->
 
-                <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                  <mat-cell class="table-cell" *matCellDef="let element" routerLink="/detail/{{element.id}}"> {{element.name}} </mat-cell>
+                <ng-container matColumnDef="address">
+                  <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+                  <mat-cell class="table-cell" *matCellDef="let element" > {{element.address}} </mat-cell>
                 </ng-container>
+
+                <ng-container matColumnDef="yearBuilt">
+                  <mat-header-cell *matHeaderCellDef>Build Year</mat-header-cell>
+                  <mat-cell class="table-cell" *matCellDef="let element" > {{element.yearBuilt}} </mat-cell>
+                </ng-container>                
                 
                 <!-- <ng-container matColumnDef="category">
                   <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
                   <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
                 </ng-container> -->
-                <!-- <ng-container matColumnDef="delete">
+                <ng-container matColumnDef="edit">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
                   <mat-cell *matCellDef="let element">
                     <a type="button">
-                      <mat-icon class="icon">delete</mat-icon>
+                      <mat-icon class="icon" routerLink="/detail/{{element.id}}">edit</mat-icon>
                     </a>
                   </mat-cell>
-                </ng-container> -->
+                </ng-container>
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
               </mat-table>
             </div>
           </mat-card-content>
+          <div fxLayoutAlign="center center">
+            <mat-form-field>
+              <input matInput placeholder="Address" #propertyAddress>
+            </mat-form-field>
+            <button mat-fab color="primary" (click)="add(propertyAddress.value); propertyAddress.value=''">Add</button>
+          </div>
         </mat-card>
       </div>
     </div>
   </div>
 </div>
 
-<div>
-    <mat-form-field>
-      <input matInput placeholder="Property Name" #propertyName>
-    </mat-form-field>
-    <button mat-fab color="primary" (click)="add(propertyName.value); propertyName.value=''">Add</button>
-  </div>

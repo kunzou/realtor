@@ -86,7 +86,7 @@ export class PropertyService {
       return of([]);
     }
 
-    return this.http.get<Property[]>(`${this.propertyUrl}/?name=${term}`).pipe(
+    return this.http.get<Property[]>(`${this.propertyUrl}/?address=${term}`).pipe(
       tap(_ => this.log(`found properties matching "${term}"`)),
       catchError(this.handleError<Property[]>('searchProperties', []))      
     );

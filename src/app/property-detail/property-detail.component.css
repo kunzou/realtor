@@ -1,13 +1,12 @@
 .mat-card {
-    max-width: 600px;
+    max-width: 900px;
   }
-ul,  
-li {  
-      margin: 0;  
-      padding: 0;  
-      list-style: none;  
-}
-
+  ul,  
+  li {  
+        margin: 0;  
+        padding: 0;  
+        list-style: none;  
+  }
   .card {
     min-width: 80%;
   }
@@ -15,11 +14,47 @@ li {
   .example-container {
     display: flex;
     flex-direction: column;
-    max-height: 500px;
+    /* max-height: 500px; */
     min-width: 100%;
   }
   
   .mat-table {
     overflow: auto;
-    max-height: 500px;
+    /* max-height: 500px; */
+  }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 5px 0;
+  }
+  
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }
+
+  .mat-form-field {
+    display: inline-flex;
+    margin-right: 20px;
+  }
+
+  .mat-card-content {
+    margin-top: 20px;
+    flex-direction: row;
+    vertical-align: middle;
+  }
+
+  .image {
+    max-height: 800px;
   }
