@@ -2,10 +2,20 @@
     padding: 10px;
 }
 
-.agm-map {
-    height: 300px;
- }
-
  agm-map {
     height: 500px;
  }
+
+  .lightbox-example, .gallerize-example {
+    margin: 2em;
+  }
+
+  .g-overlay {
+    min-width: 320px;
+  }
+
+  .basic-container {
+    padding: 5px;
+    max-width: 900px;
+  }  
+  

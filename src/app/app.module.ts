@@ -37,6 +37,8 @@ import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { ViewPropertyComponent } from './view-property/view-property.component';
+import { GalleryModule } from  '@ngx-gallery/core';
+import { GallerizeModule } from  '@ngx-gallery/gallerize';
 // import { RichTextAreaComponent } from './rich-text-area/rich-text-area.component';
 
 @NgModule({
@@ -83,7 +85,9 @@ import { ViewPropertyComponent } from './view-property/view-property.component';
     // QuillModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBQtADp6_iewgAvgtmRu3YTx7eLHXxYQvQ'
-    })
+    }),
+    GalleryModule,
+    GallerizeModule
   ],
   providers: [],
   bootstrap: [AppComponent] 

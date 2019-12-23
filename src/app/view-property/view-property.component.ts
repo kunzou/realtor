@@ -3,6 +3,7 @@ import { Property } from '../property';
 import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
 
 @Component({
   selector: 'app-view-property',
@@ -11,29 +12,32 @@ import { Location } from '@angular/common';
 })
 export class ViewPropertyComponent implements OnInit {
   @Input() property: Property;
-  // lat: number;
-  // lng: number;
+  items: GalleryItem[];
+    
   constructor(
     private propertyService: PropertyService,
     private location: Location, 
     private route: ActivatedRoute,   
-  ) { }
-
-  ngOnInit() {
-    this.getProperty();
-    // this.lat = this.property.location.lat;
-    // this.lng = this.property.location.lng;
+    public gallery: Gallery,
+    ) { }
+    
+    ngOnInit() {
+      this.getProperty(); 
+    }
+    
+    getProperty(): void {
+      const id = this.route.snapshot.paramMap.get('id');
+      this.propertyService.getProperty(id)
+      .subscribe(property => {
+        this.property = property;
+        this.items = property.imgUrls.map(
+        item => new ImageItem({ src: item, thumb: item }));          
+      });  
+    }  
+    
+    goBack(): void {
+      this.location.back();
+    }      
   }
 
-  getProperty(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.propertyService.getProperty(id)
-      .subscribe(property => this.property = property);
-  }  
-
-  goBack(): void {
-    this.location.back();
-  }  
-
-
-}
+  
