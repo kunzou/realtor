@@ -1,22 +1,7 @@
-<!-- <mat-card>
-  
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item *ngFor="let property of properties">
-        <img mat-list-avatar src="{{property.imgUrl}}" alt="{{property.name}}">
-        <h3 mat-line>
-          <a mat-button routerLink="/detail/{{property.id}}">{{property.name}}</a>
-        </h3>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-  <mat-form-field>
-    <input matInput placeholder="Property Name" #propertyName>
-  </mat-form-field>
-  <button mat-fab color="primary" (click)="add(propertyName.value); propertyName.value=''">Add</button>
-</mat-card> -->
-<div>
-<div *ngFor="let property of properties">
-  <app-property-card [property]="property"></app-property-card>
-</div>
+<div *ngFor='let property of properties'>
+  <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+    <div class="card-list">
+      <app-property-card [property]="property"></app-property-card>
+    </div>
+  </div>
 </div>

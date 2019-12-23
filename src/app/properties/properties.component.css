@@ -1,9 +1,18 @@
 /* PropertiesComponent's private CSS styles */
-.mat-list {
+/* .mat-list {
   margin: 0 0 2em 0;
+  display: flex;
   list-style-type: none;
   padding: 0;
   width: 15em;
+} */
+
+/* .mat-grid-list {
+  display: flex;
+} */
+
+.card-list {
+  padding: 10px;
 }
 
 /* .mat-list-item {
@@ -16,13 +25,13 @@
   border-radius: 4px;
 } */
 
-.mat-list-item:hover {
+/* .mat-list-item:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
-}
-
+} */
+/* 
 button:hover {
   background-color: #cfd8dc;
-}
+} */
 

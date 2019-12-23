@@ -39,3 +39,7 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     margin: 0;
     width: 85%;
   }
+
+  .card {
+    min-width: 80%;
+  }

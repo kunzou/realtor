@@ -3,18 +3,19 @@ export class Property {
     address: string;
     primaryImgUrl: string;
     imgUrls: string[];
-    houseType: HouseType;
-    houseStatus: HouseStatus;
+    propertyType: string;
+    houseStatus: string;
     yearBuilt: number;
     description: string;
     numberOfRooms: number;
     numberOfWashrooms: number;
-    area: number;    
+    area: number;
     askingPrice: number;
     finalPrice: number;
     onMarketSince: Date;
     dealDate: Date;
     hide: boolean;
+    location: {lat: number; lng: number;};
 }
 
 enum HouseType {

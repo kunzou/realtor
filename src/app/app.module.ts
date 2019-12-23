@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { 
   MatCardModule, 
   MatListModule, 
@@ -17,9 +18,12 @@ import {
   MatSelectModule,
   MatFormFieldModule,
   MatRadioModule,
-  MatGridListModule
+  MatGridListModule,
+  MatNativeDateModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { AgmCoreModule } from '@agm/core';
+// import { QuillModule } from 'ngx-quill'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { ViewPropertyComponent } from './view-property/view-property.component';
+// import { RichTextAreaComponent } from './rich-text-area/rich-text-area.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +49,9 @@ import { PostDialogComponent } from './post-dialog/post-dialog.component';
     PropertySearchComponent,
     EditPropertyComponent,
     PropertyCardComponent,
-    PostDialogComponent
+    PostDialogComponent,
+    ViewPropertyComponent,
+    // RichTextAreaComponent
   ],
   entryComponents: [PostDialogComponent],
   imports: [
@@ -70,6 +78,12 @@ import { PostDialogComponent } from './post-dialog/post-dialog.component';
     MatFormFieldModule,
     MatRadioModule,
     MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    // QuillModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBQtADp6_iewgAvgtmRu3YTx7eLHXxYQvQ'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent] 
