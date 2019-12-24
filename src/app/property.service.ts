@@ -25,6 +25,22 @@ export class PropertyService {
       )
   }
 
+  getSaleProperties(): Observable<Property[]> {
+    const url = `${this.propertyUrl}/sale`;
+    return this.http.get<Property[]>(url)
+      .pipe(
+        catchError(this.handleError<Property[]>('getProperties', []))
+      )
+  }
+
+  getSoldPurchasedProperties(): Observable<Property[]> {
+    const url = `${this.propertyUrl}/soldPurchased`;
+    return this.http.get<Property[]>(url)
+      .pipe(
+        catchError(this.handleError<Property[]>('getProperties', []))
+      )
+  }  
+
   getProperty(id: string): Observable<Property> {
     const url = `${this.propertyUrl}/${id}`;
     return this.http.get<Property>(url).pipe(

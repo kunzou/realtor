@@ -28,6 +28,13 @@ export class PropertyDetailComponent implements OnInit {
     'Condo'
   ];
 
+  propertyStatuses: string[] = [
+    'Sale',
+    'Sold',
+    'Purchased',
+  ];
+
+
   @Input() property: Property;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
   constructor(

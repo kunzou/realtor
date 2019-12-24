@@ -9,7 +9,7 @@ import { PropertyService } from '../property.service';
 })
 export class PropertiesComponent implements OnInit {
   properties: Property[];
-  selectedProperty: Property;
+  
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit() {

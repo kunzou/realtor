@@ -4,7 +4,7 @@ export class Property {
     primaryImgUrl: string;
     imgUrls: string[];
     propertyType: string;
-    houseStatus: string;
+    propertyStatus: string;
     yearBuilt: number;
     description: string;
     numberOfRooms: number;
@@ -16,6 +16,7 @@ export class Property {
     dealDate: Date;
     hide: boolean;
     location: {lat: number; lng: number;};
+    aboutPageComment: string;
 }
 
 enum HouseType {

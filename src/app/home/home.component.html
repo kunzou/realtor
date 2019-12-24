@@ -1,0 +1,18 @@
+<div>
+    <h2>House Listing</h2>
+</div>
+
+<div>
+    <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
+
+        <agm-marker *ngFor="let property of properties" [latitude]="property.location.lat"
+            [longitude]="property.location.lng">
+
+            <agm-info-window>
+                <app-property-card [property]="property"></app-property-card>
+            </agm-info-window>
+
+        </agm-marker>
+
+    </agm-map>
+</div>

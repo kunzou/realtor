@@ -36,7 +36,7 @@
       <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
           <li>
-            <a>
+            <a routerLink="/home">
               <mat-icon class="icon">home</mat-icon>
               <span class="label">Home</span>
             </a>
@@ -53,6 +53,12 @@
               <span class="label">Dashboard</span>
             </a>
           </li>
+          <li>
+            <a routerLink="/about">
+              <mat-icon class="icon">account_box</mat-icon>
+              <span class="label">About</span>
+            </a>
+          </li>          
         </ul>
       </div>
     </mat-toolbar>

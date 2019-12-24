@@ -39,6 +39,8 @@ import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { ViewPropertyComponent } from './view-property/view-property.component';
 import { GalleryModule } from  '@ngx-gallery/core';
 import { GallerizeModule } from  '@ngx-gallery/gallerize';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 // import { RichTextAreaComponent } from './rich-text-area/rich-text-area.component';
 
 @NgModule({
@@ -53,6 +55,8 @@ import { GallerizeModule } from  '@ngx-gallery/gallerize';
     PropertyCardComponent,
     PostDialogComponent,
     ViewPropertyComponent,
+    AboutComponent,
+    HomeComponent,
     // RichTextAreaComponent
   ],
   entryComponents: [PostDialogComponent],

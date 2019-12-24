@@ -27,10 +27,20 @@
           <mat-cell class="table-cell" *matCellDef="let element"> {{element.address}} </mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell class="table-cell" *matCellDef="let element"> {{element.propertyStatus}} </mat-cell>
+        </ng-container>        
+
         <ng-container matColumnDef="yearBuilt">
           <mat-header-cell *matHeaderCellDef>Build Year</mat-header-cell>
           <mat-cell class="table-cell" *matCellDef="let element"> {{element.yearBuilt}} </mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+          <mat-cell class="table-cell" *matCellDef="let element"> {{element.askingPrice | currency}} </mat-cell>
+        </ng-container>        
 
         <!-- <ng-container matColumnDef="category">
                   <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>

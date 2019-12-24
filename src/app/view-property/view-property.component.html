@@ -37,7 +37,7 @@
                 <h2>Location</h2>
             </div>
             <div>
-                <agm-map [latitude]="property.location.lat" [longitude]="property.location.lng" [zoom]="12">
+                <agm-map [latitude]="property.location.lat" [longitude]="property.location.lng" [zoom]="13" [fullscreenControl]='true' [mapTypeControl]='true'>
                     <agm-marker [latitude]="property.location.lat" [longitude]="property.location.lng"></agm-marker>
                 </agm-map>
             </div>
@@ -47,7 +47,6 @@
             <div class="basic-container">
                 <gallery id="property-gallery" [items]="items"></gallery>
             </div>            
-
 
         </div>
     </div>

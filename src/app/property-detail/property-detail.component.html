@@ -27,6 +27,15 @@
                 </mat-form-field>
 
                 <mat-form-field>
+                    <mat-label>Status</mat-label>
+                    <mat-select [(ngModel)]="property.propertyStatus" name="propertyStatus">
+                        <mat-option *ngFor="let propertyStatus of propertyStatuses" [value]="propertyStatus">
+                            {{propertyStatus}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>                
+
+                <mat-form-field>
                     <input matInput placeholder="Property Address" [(ngModel)]="property.address" required
                         name="address">
                 </mat-form-field>
@@ -69,6 +78,10 @@
                             placeholder="Description" [(ngModel)]="property.description"></textarea>
                     </div>
                 </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Comments on Map" [(ngModel)]="property.aboutPageComment" name="aboutPageComment">
+                </mat-form-field>                
                 <br>
 
                 <div style="text-align:center; margin-top: 10px; ">
