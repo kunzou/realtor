@@ -1,22 +1,20 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Property } from '../property';
+import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
 import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
 
 @Component({
-  selector: 'app-view-property',
-  templateUrl: './view-property.component.html',
-  styleUrls: ['./view-property.component.css']
+  selector: 'app-property',
+  templateUrl: './property.component.html',
+  styleUrls: ['./property.component.css']
 })
-export class ViewPropertyComponent implements OnInit {
+export class PropertyComponent implements OnInit {
   @Input() property: Property;
   items: GalleryItem[];
 
   constructor(
     private propertyService: PropertyService,
-    private location: Location,
     private route: ActivatedRoute,
     public gallery: Gallery,
   ) { }
@@ -33,9 +31,5 @@ export class ViewPropertyComponent implements OnInit {
         this.items = property.imgUrls.map(
           item => new ImageItem({ src: item, thumb: item }));
       });
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 }

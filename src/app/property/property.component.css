@@ -1,0 +1,43 @@
+
+ agm-map {
+    height: 500px;
+ }
+
+ .mat-card {
+    max-width: 900px;
+  }
+  
+
+  .g-overlay {
+    min-width: 320px;
+  }
+
+  .image-container {
+    padding: 5px;
+    display: flex;
+    /* max-width: 900px; */
+    min-width: 500px
+  }  
+
+  .dscription {
+      padding: 5px;
+      max-width: 900px;
+      min-width: 400px;      
+  }
+
+  .top-container {
+      display: flex;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .section {
+    width: 100%;
+    /* height: 300px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

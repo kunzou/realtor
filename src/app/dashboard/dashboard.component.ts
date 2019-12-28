@@ -4,7 +4,6 @@ import { PropertyService } from '../property.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material';
-import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -43,18 +42,6 @@ export class DashboardComponent implements OnInit{
         // this.properties.push(property);
         this.dataSource = new PostDataSource(this.propertyService);
       })
-  }  
-
-  openDialog(): void {
-    let dialogRef = this.dialog.open(PostDialogComponent, {
-      width: '600px',
-      data: 'Add Property'
-    });
-    dialogRef.componentInstance.event.subscribe((result) => {
-      this.propertyService.addProperty({ address: result.data.address } as Property);
-      this.dataSource = new PostDataSource(this.propertyService);
-      this.changeDetectorRefs.detectChanges();
-    });
   }  
 }
 

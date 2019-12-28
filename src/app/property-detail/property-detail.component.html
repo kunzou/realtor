@@ -54,6 +54,11 @@
                 </mat-form-field>
 
                 <mat-form-field>
+                    <input matInput placeholder="Number of Washroom" [(ngModel)]="property.numberOfWashrooms"
+                        name="numberOfWashRooms">
+                </mat-form-field>                
+
+                <mat-form-field>
                     <input matInput placeholder="Ask price" [(ngModel)]="property.askingPrice" name="askingPrice">
                     <span matPrefix>$&nbsp;</span>
                 </mat-form-field>
