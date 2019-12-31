@@ -8,8 +8,8 @@
                             </mat-card-title>
                         </mat-card-header> -->
             <mat-card-header>
-                <div style="text-align: center;">
-                    <img mat-card-image src="{{property.primaryImgUrl}}" alt="{{property.address}}">
+                <div style="text-align: center;" *ngIf="property.primaryImage">
+                    <img mat-card-image src="{{property.primaryImage.link}}" alt="{{property.address}}">
                 </div>
             </mat-card-header>
             <mat-card-content>
@@ -117,8 +117,8 @@
                 <br>
 
                 <mat-grid-list cols="4" rowHeight="16:9">
-                    <mat-grid-tile *ngFor='let imgUrl of property.imgUrls'>
-                        <img [src]='imgUrl' class="additional-images">
+                    <mat-grid-tile *ngFor='let image of property.addtionalImages'>
+                        <img [src]='image.link' class="additional-images">
                     </mat-grid-tile>
                 </mat-grid-list>
 
@@ -136,14 +136,3 @@
 <div>
     <app-rich-text-area></app-rich-text-area>
 </div> -->
-
-<!-- <ul class="mdc-image-list my-image-list">
-        <li class="mdc-image-list__item" *ngFor="let image of {{property.imgUrls}}">
-            <div class="mdc-image-list__image-aspect-container">
-                <img class="mdc-image-list__image" src=image>
-            </div>
-            <div class="mdc-image-list__supporting">
-                <span class="mdc-image-list__label">Text label</span>
-            </div>
-        </li>
-    </ul> -->

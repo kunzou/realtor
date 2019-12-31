@@ -28,8 +28,8 @@ export class PropertyComponent implements OnInit {
     this.propertyService.getProperty(id)
       .subscribe(property => {
         this.property = property;
-        this.items = property.imgUrls.map(
-          item => new ImageItem({ src: item, thumb: item }));
+        this.items = property.additionalImages.map(
+          item => new ImageItem({ src: item.link, thumb: item.smallLink }));
       });
   }
 }

@@ -83,9 +83,9 @@ export class PropertyDetailComponent implements OnInit {
         if (typeof (event) === 'object') {
           console.log(event.body);
           if(isPrimary) {
-            this.property.primaryImgUrl = event.body.fileDownloadUri;
+            this.property.primaryImage = event.body;
           } else {
-            this.property.imgUrls.push(event.body.fileDownloadUri);
+            this.property.additionalImages.push(event.body);
           }
           
         }

@@ -6,11 +6,7 @@ import { Property } from '../property';
   templateUrl: './property-card.component.html',
   styleUrls: ['./property-card.component.css']
 })
-export class PropertyCardComponent implements OnInit {
+export class PropertyCardComponent {
   @Input() property: Property;
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

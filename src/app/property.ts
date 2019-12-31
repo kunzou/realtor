@@ -1,8 +1,8 @@
 export class Property {
     id: string;
     address: string;
-    primaryImgUrl: string;
-    imgUrls: string[];
+    primaryImage: Image;
+    additionalImages: Image[];
     propertyType: string;
     propertyStatus: string;
     yearBuilt: number;
@@ -17,6 +17,13 @@ export class Property {
     hide: boolean;
     location: {lat: number; lng: number;};
     aboutPageComment: string;
+}
+
+class Image {
+    link: string;
+    smallLink: string;
+    mediumLink: string;
+    largeLink: string;
 }
 
 enum HouseType {
