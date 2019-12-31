@@ -9,7 +9,8 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: "root"
 })
 export class PropertyService {
-  private propertyUrl = 'http://localhost:8080/properties';  // URL to web api
+  // private propertyUrl = 'http://localhost:8080/properties';  // URL to web api
+  private propertyUrl = 'https://pacific-tundra-00443.herokuapp.com/properties';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

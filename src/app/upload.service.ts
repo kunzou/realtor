@@ -6,8 +6,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  // SERVER_URL: string = "https://file.io/";
-  SERVER_URL: string = "http://localhost:8080/uploadFile";
+  // SERVER_URL: string = "http://localhost:8080/uploadFile";
+  SERVER_URL: string = "https://pacific-tundra-00443.herokuapp.com/uploadFile";
   constructor(private httpClient: HttpClient) { }
 
   public upload(formData) {
