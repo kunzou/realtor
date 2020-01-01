@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Property } from './property';
 import { Observable, of } from 'rxjs';
-import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -15,7 +14,6 @@ export class PropertyService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor(
-    private messageService: MessageService,
     private http: HttpClient
   ) { }
 
@@ -51,7 +49,6 @@ export class PropertyService {
   }
 
   private log(message: string) {
-    this.messageService.add(`PropertyService: ${message}`);
   }
 
   /**
