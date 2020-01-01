@@ -1,8 +1,9 @@
 {
   "name": "realtor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "engines": {
-    "node": "12.14.0"
+    "node": "13.3.0",
+    "npm": "6.13.1"
   },
   "scripts": {
     "ng": "ng",
@@ -40,8 +41,8 @@
   },
   "devDependencies": {
     "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
-    "@angular-devkit/build-angular": "^0.803.21",
-    "@angular/cli": "~8.3.21",
+    "@angular-devkit/build-angular": "^0.803.20",
+    "@angular/cli": "~8.3.20",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
