@@ -3,7 +3,6 @@ import { Property } from '../property';
 import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
 import { Image } from '@ks89/angular-modal-gallery';
 
 @Component({
@@ -19,7 +18,6 @@ export class ViewPropertyComponent implements OnInit {
     private propertyService: PropertyService,
     private location: Location,
     private route: ActivatedRoute,
-    public gallery: Gallery,
     ) { }
     
     ngOnInit() {

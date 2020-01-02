@@ -36,7 +36,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { ViewPropertyComponent } from './view-property/view-property.component';
-import { GallerizeModule } from  '@ngx-gallery/gallerize';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/property.component';
@@ -87,7 +86,6 @@ import { PropertyComponent } from './property/property.component';
       apiKey: 'AIzaSyBQtADp6_iewgAvgtmRu3YTx7eLHXxYQvQ'
     }),
     GalleryModule.forRoot(),    
-    GallerizeModule
   ],
   providers: [],
   bootstrap: [AppComponent] 
