@@ -33,7 +33,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { ViewPropertyComponent } from './view-property/view-property.component';
 import { AboutComponent } from './about/about.component';
@@ -48,7 +47,6 @@ import { PropertyComponent } from './property/property.component';
     MessagesComponent,
     DashboardComponent,
     PropertySearchComponent,
-    EditPropertyComponent,
     PropertyCardComponent,
     ViewPropertyComponent,
     AboutComponent,

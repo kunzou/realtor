@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
-  // SERVER_URL: string = "http://localhost:8080/uploadFile";
-  SERVER_URL: string = "https://pacific-tundra-00443.herokuapp.com/uploadFile";
+  SERVER_URL: string = environment.baseUrl + "/uploadFile";
   constructor(private httpClient: HttpClient) { }
 
   public upload(formData) {
