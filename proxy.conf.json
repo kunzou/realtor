@@ -1,0 +1,7 @@
+{
+    "*": {
+        "target": "https://pacific-tundra-00443.herokuapp.com/properties",
+        "secure": false,
+        "loglevel": "debug"
+    }
+}
