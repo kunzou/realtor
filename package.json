@@ -8,7 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node --max_old_space_size=512 node_modules/@angular/cli/bin/ng serve --aot",
-    "build": "node --max_old_space_size=512 node_modules/@angular/cli/bin/ng build --aot",
+    "build": "node --max_old_space_size=512 node_modules/@angular/cli/bin/ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,8 +22,6 @@
     "@angular/cli": "~8.3.20",
     "@angular/compiler-cli": "~8.2.14",    
     "@angular/compiler": "~8.2.14",    
-    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
-    "@angular-devkit/build-angular": "^0.803.20",    
     "@angular/core": "~8.2.14",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "~8.2.14",
