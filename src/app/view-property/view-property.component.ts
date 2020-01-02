@@ -4,6 +4,7 @@ import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
+import { Image } from '@ks89/angular-modal-gallery';
 
 @Component({
   selector: 'app-view-property',
@@ -12,30 +13,32 @@ import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
 })
 export class ViewPropertyComponent implements OnInit {
   @Input() property: Property;
-  items: GalleryItem[];
-
+  imagesRect: Image[];
+  
   constructor(
     private propertyService: PropertyService,
     private location: Location,
     private route: ActivatedRoute,
     public gallery: Gallery,
-  ) { }
-
-  ngOnInit() {
-    this.getProperty();
-  }
-
-  getProperty(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.propertyService.getProperty(id)
+    ) { }
+    
+    ngOnInit() {
+      this.getProperty();
+    }
+    
+    getProperty(): void {
+      const id = this.route.snapshot.paramMap.get('id');
+      this.propertyService.getProperty(id)
       .subscribe(property => {
         this.property = property;
-        this.items = property.additionalImages.map(
-          item => new ImageItem({ src: item.link, thumb: item.smallLink }));
-      });
-  }
-
-  goBack(): void {
-    this.location.back();
-  }
-}
+        this.imagesRect = property.additionalImages.map(
+          (item,index) => new Image(index, { img: item.link }, { img: item.smallLink })
+          );
+        });
+      }
+      
+      goBack(): void {
+        this.location.back();
+      }
+    }
+    

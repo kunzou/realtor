@@ -4,45 +4,50 @@
         <div>
             
             <div class="basic-container">
-                <gallery id="property-gallery" [items]="items"></gallery>
-            </div>    
-
-            <div class="container" fxLayout="row" fxLayoutAlign="space-between start">
-                
-                <div style="max-width: 900px;">
-                    <p>{{property.description}}</p>
-                </div>
+                <section>
+                    <ks-carousel [id]="111" [images]="imagesRect"
+                    [carouselConfig]="{maxWidth: '766px', maxHeight: '400px', showArrows: true, objectFit: 'cover', keyboardEnable: true, modalGalleryEnable: true, legacyIE11Mode: false}"
+                    [previewConfig]="{visible: true, number: 5, width: 'auto', maxHeight: '100px'}">
+                </ks-carousel>
+            </section>
+        </div>    
+        
+        <div class="container" fxLayout="row" fxLayoutAlign="space-between start">
+            
+            <div style="max-width: 900px;">
+                <p>{{property.description}}</p>
+            </div>
+        </div>
+        
+        <div>
+            <h2>Property Summary</h2>
+        </div>
+        <div class="container" fxLayout="row" fxLayoutAlign="start center">
+            <div style="padding: 20px;">
+                <div>Property Type</div>
+                <div>{{property.propertyType}}</div>
             </div>
             
-            <div>
-                <h2>Property Summary</h2>
+            <div style="padding: 20px; max-width: 200px;">
+                <div>Built in</div>
+                <div>{{property.address}}</div>
             </div>
-            <div class="container" fxLayout="row" fxLayoutAlign="start center">
-                <div style="padding: 20px;">
-                    <div>Property Type</div>
-                    <div>{{property.propertyType}}</div>
-                </div>
-                
-                <div style="padding: 20px; max-width: 200px;">
-                    <div>Built in</div>
-                    <div>{{property.address}}</div>
-                </div>
-                <div style="padding: 20px;">
-                    <div>Built in</div>
-                    <div>{{property.yearBuilt}}</div>
-                </div>
+            <div style="padding: 20px;">
+                <div>Built in</div>
+                <div>{{property.yearBuilt}}</div>
             </div>
-            <div>
-                <h2>Location</h2>
-            </div>
-            <div>
-                <agm-map [latitude]="property.location.lat" [longitude]="property.location.lng" [zoom]="13" [fullscreenControl]='true' [mapTypeControl]='true'>
-                    <agm-marker [latitude]="property.location.lat" [longitude]="property.location.lng"></agm-marker>
-                </agm-map>
-            </div>
-
-        
-
         </div>
+        <div>
+            <h2>Location</h2>
+        </div>
+        <div>
+            <agm-map [latitude]="property.location.lat" [longitude]="property.location.lng" [zoom]="13" [fullscreenControl]='true' [mapTypeControl]='true'>
+                <agm-marker [latitude]="property.location.lat" [longitude]="property.location.lng"></agm-marker>
+            </agm-map>
+        </div>
+        
+        
+        
     </div>
+</div>
 </div>

@@ -3,6 +3,7 @@ import { Property } from '../property';
 import { GalleryItem, Gallery, ImageItem } from '@ngx-gallery/core';
 import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
+import { Image } from '@ks89/angular-modal-gallery';
 
 @Component({
   selector: 'app-property',
@@ -11,8 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PropertyComponent implements OnInit {
   @Input() property: Property;
-  items: GalleryItem[];
-
+  imagesRect: Image[];
   constructor(
     private propertyService: PropertyService,
     private route: ActivatedRoute,
@@ -28,8 +28,9 @@ export class PropertyComponent implements OnInit {
     this.propertyService.getProperty(id)
       .subscribe(property => {
         this.property = property;
-        this.items = property.additionalImages.map(
-          item => new ImageItem({ src: item.link, thumb: item.smallLink }));
-      });
+        this.imagesRect = property.additionalImages.map(
+          (item,index) => new Image(index, { img: item.link }, { img: item.smallLink })
+          );
+        });
   }
 }

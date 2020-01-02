@@ -45,7 +45,12 @@
                 <h2>Property Gallery</h2>
             </div>
             <div class="basic-container">
-                <gallery id="property-gallery" [items]="items"></gallery>
+                <section>
+                    <ks-carousel [id]="111" [images]="imagesRect"
+                    [carouselConfig]="{maxWidth: '766px', maxHeight: '400px', showArrows: true, objectFit: 'cover', keyboardEnable: true, modalGalleryEnable: true, legacyIE11Mode: false}"
+                    [previewConfig]="{visible: true, number: 5, width: 'auto', maxHeight: '100px'}">
+                    </ks-carousel>
+                  </section>
             </div>            
 
         </div>

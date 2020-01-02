@@ -19,11 +19,11 @@ import {
   MatFormFieldModule,
   MatRadioModule,
   MatGridListModule,
-  MatNativeDateModule
+  MatNativeDateModule,
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
-// import { QuillModule } from 'ngx-quill'
+import { GalleryModule } from '@ks89/angular-modal-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +36,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { ViewPropertyComponent } from './view-property/view-property.component';
-import { GalleryModule } from  '@ngx-gallery/core';
 import { GallerizeModule } from  '@ngx-gallery/gallerize';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -84,11 +83,10 @@ import { PropertyComponent } from './property/property.component';
     MatGridListModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    // QuillModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBQtADp6_iewgAvgtmRu3YTx7eLHXxYQvQ'
     }),
-    GalleryModule,
+    GalleryModule.forRoot(),    
     GallerizeModule
   ],
   providers: [],
