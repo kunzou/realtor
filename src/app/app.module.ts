@@ -81,7 +81,7 @@ import { PropertyComponent } from './property/property.component';
     MatDatepickerModule,
     MatNativeDateModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBQtADp6_iewgAvgtmRu3YTx7eLHXxYQvQ'
+      apiKey: 'AIzaSyDR3T__m16460PprVv6V6CisApDq0_IvVA'
     }),
     GalleryModule.forRoot(),    
   ],
