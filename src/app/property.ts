@@ -3,6 +3,7 @@ export class Property {
     address: string;
     primaryImage: Image;
     additionalImages: Image[];
+    source: string;
     propertyType: string;
     propertyStatus: string;
     yearBuilt: number;
@@ -17,6 +18,7 @@ export class Property {
     hide: boolean;
     location: {lat: number; lng: number;};
     aboutPageComment: string;
+    youtubeLink: string;
 }
 
 class Image {

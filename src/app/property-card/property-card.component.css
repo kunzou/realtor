@@ -5,3 +5,7 @@
 .property-title {
     text-align:center;
   }
+
+.property-title a {
+  font-size: 18px;
+}

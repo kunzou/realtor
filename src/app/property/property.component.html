@@ -45,9 +45,9 @@
                 <agm-marker [latitude]="property.location.lat" [longitude]="property.location.lng"></agm-marker>
             </agm-map>
         </div>
-        
-        
-        
+        <div *ngIf="property.youtubeLink">
+            <iframe [src]='safeURL' width="560" height="315" frameborder="0" allowfullscreen ></iframe>
+        </div>
     </div>
 </div>
 </div>

@@ -1,19 +1,17 @@
 <mat-card class="example-card">
-    <!-- <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-
-    </mat-card-header> -->
-    <img mat-card-image src="{{property.primaryImage.link}}">
+    <div *ngIf="property.primaryImage">
+        <img mat-card-image src="{{property.primaryImage.link}}">
+    </div>
     <mat-card-content>
         <div class="property-title">
-            <mat-card-title><a routerLink="/view/{{property.id}}">{{property.address}}</a></mat-card-title>
+            <mat-card-title><a routerLink="/property/{{property.id}}">{{property.address}}</a></mat-card-title>
             <mat-card-subtitle>{{property.askingPrice | currency}}</mat-card-subtitle>
         </div>
 
     </mat-card-content>
 
     <mat-card-footer>
-        <div fxLayoutAlign="space-evenly stretch" >
+        <div fxLayoutAlign="space-evenly stretch">
             <span style="float: left;"><img src="assets/square.svg"> {{property.area}} </span>
             <span style="float: center;"><img src="assets/bed.svg"> {{property.numberOfRooms}} </span>
             <span style="float: right;"><img src="assets/bath.svg"> {{property.numberOfWashrooms}} </span>

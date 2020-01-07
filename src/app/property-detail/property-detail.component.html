@@ -1,22 +1,14 @@
 <div *ngIf="property">
-    <!-- <div class="container"  style="padding-top: 10px;"> -->
     <div fxLayout="row" fxLayoutAlign="center center" class="container">
         <div style="max-width: 900px;">
-            <!-- <mat-card-header>
-                            <mat-card-title>
-                                <h2>{{property.address | uppercase}} Details</h2>
-                            </mat-card-title>
-                        </mat-card-header> -->
             <mat-card-header>
                 <div style="text-align: center;" *ngIf="property.primaryImage">
                     <img mat-card-image src="{{property.primaryImage.link}}" alt="{{property.address}}">
                 </div>
             </mat-card-header>
             <mat-card-content>
-
                 <mat-checkbox color="primary" [(ngModel)]="property.hide">Hide from list</mat-checkbox>
                 <p></p>
-
                 <mat-form-field>
                     <mat-label>House Type</mat-label>
                     <mat-select [(ngModel)]="property.propertyType" name="propertyType">
@@ -86,7 +78,13 @@
 
                 <mat-form-field>
                     <input matInput placeholder="Comments on Map" [(ngModel)]="property.aboutPageComment" name="aboutPageComment">
-                </mat-form-field>                
+                </mat-form-field>   
+                
+                <mat-form-field>
+                    <input matInput placeholder="YouTube link" [(ngModel)]="property.youtubeLink" name="youtubeLink">
+                </mat-form-field>                   
+
+                
                 <br>
 
                 <div style="text-align:center; margin-top: 10px; ">
