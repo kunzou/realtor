@@ -1,0 +1,40 @@
+<div class="single_property">
+    <div class="property_thumb" *ngIf="property.primaryImage">
+        <div class="property_tag" *ngIf="property.tag">
+            {{property.tag}}
+        </div>
+        <img src="{{property.primaryImage.link}}" alt="">
+    </div>
+    <div class="property_content">
+        <div class="main_pro">
+            <h3><a routerLink="/property/{{property.id}}">{{property.address}}</a></h3>
+            <div class="mark_pro" *ngIf="property.neighborhood">
+                <img src="img/svg_icon/location.svg" alt="">
+                <span>{{property.neighborhood}}</span>
+            </div>
+            <span class="amount">{{property.askingPrice | currency}}</span>
+        </div>
+    </div>
+    <div class="footer_pro">
+        <ul>
+            <li>
+                <div class="single_info_doc">
+                    <img src="assets/square.svg" alt="">
+                    <span>{{property.area}}</span>
+                </div>
+            </li>
+            <li>
+                <div class="single_info_doc">
+                    <img src="assets/bed.svg" alt="">
+                    <span>{{property.numberOfRooms}}</span>
+                </div>
+            </li>
+            <li>
+                <div class="single_info_doc">
+                    <img src="assets/bath.svg" alt="">
+                    <span>{{property.numberOfWashrooms}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

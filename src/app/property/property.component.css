@@ -1,13 +1,14 @@
 
  agm-map {
-    height: 500px;
+    /* height: 500px; */
+    height: 200px;
+    /* max-width: 400px; */
  }
 
- .mat-card {
+ /* .mat-card {
     max-width: 900px;
   }
-  
-
+   */
   .g-overlay {
     min-width: 320px;
   }

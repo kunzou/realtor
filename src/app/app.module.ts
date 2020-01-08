@@ -38,6 +38,7 @@ import { ViewPropertyComponent } from './view-property/view-property.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/property.component';
+import { ListingCardComponent } from './listing-card/listing-card.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PropertyComponent } from './property/property.component';
     AboutComponent,
     HomeComponent,
     PropertyComponent,
+    ListingCardComponent,
   ],
   entryComponents: [],
   imports: [
