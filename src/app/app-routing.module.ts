@@ -11,7 +11,7 @@ import { PropertyComponent } from './property/property.component';
 const routes: Routes = [
   { path: 'properties', component: PropertiesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/properties', pathMatch: 'full' },
   { path: 'detail/:id', component: PropertyDetailComponent },  
   { path: 'view/:id', component: ViewPropertyComponent },  
   { path: 'about', component: AboutComponent },  

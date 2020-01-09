@@ -60,6 +60,14 @@
                     <span matPrefix>$&nbsp;</span>
                 </mat-form-field>
 
+                <mat-form-field>
+                    <input matInput placeholder="Tag" [(ngModel)]="property.tag" name="tag">
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <input matInput placeholder="Neighborhood" [(ngModel)]="property.neighborhood" name="neighborhood">
+                </mat-form-field>                
+
                 <p></p>
                 <mat-form-field>
                     <input matInput [matDatepicker]="picker" placeholder="On Market Since"

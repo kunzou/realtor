@@ -1,14 +1,16 @@
 <div class="card single_property">
-    <div class="property_thumb embed-responsive embed-responsive-16by9" *ngIf="property.primaryImage">
+    <div class="property_thumb embed-responsive embed-responsive-4by3" *ngIf="property.primaryImage">
         <div class="property_tag" *ngIf="property.tag">
             {{property.tag}}
         </div>
-            <img class="card-img-top embed-responsive-item" src="{{property.primaryImage.link}}" alt="">
+        <a routerLink="/property/{{property.id}}">
+            <img class="card-img-top embed-responsive-item" src="{{property.primaryImage.mediumLink}}" alt="">
+        </a>
     </div>
     <div class="card-body property_content">
         <div class="main_pro">
             <h3><a routerLink="/property/{{property.id}}">{{property.address}}</a></h3>
-            <div class="mark_pro" *ngIf="property.neighborhood">
+            <div class="mark_pro">
                 <img src="img/svg_icon/location.svg" alt="">
                 <span>{{property.neighborhood}}</span>
             </div>

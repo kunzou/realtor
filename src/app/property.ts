@@ -19,6 +19,8 @@ export class Property {
     location: {lat: number; lng: number;};
     aboutPageComment: string;
     youtubeLink: string;
+    tag: string;
+    neighborhood: string;
 }
 
 class Image {

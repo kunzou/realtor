@@ -1,44 +1,236 @@
 
  agm-map {
-    /* height: 500px; */
-    height: 200px;
-    /* max-width: 400px; */
+   
+    height: 400px;
+    
  }
 
- /* .mat-card {
-    max-width: 900px;
-  }
-   */
-  .g-overlay {
-    min-width: 320px;
-  }
+  /* .spad {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  } */
 
-  .image-container {
-    padding: 5px;
-    display: flex;
-    /* max-width: 900px; */
-    min-width: 500px
-  }  
 
-  .dscription {
-      padding: 5px;
-      max-width: 900px;
-      min-width: 400px;      
-  }
+/* ---------------------
+Single Property Page
+ ------------------------*/
 
-  .top-container {
-      display: flex;
-  }
+.single-property .sp-image {
+	position: relative;
+	margin-bottom: 50px;
+}
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.single-property .sp-badge {
+	position: absolute;
+	left: 0;
+	top: 0;
+	min-width: 87px;
+	padding: 13px 10px 0;
+	height: 50px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+}
 
-  .section {
-    width: 100%;
-    /* height: 300px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.single-property .sp-badge.new {
+	background: #ff000a;
+}
+
+.single-property .sp-badge.offer {
+	background: #ffba00;
+}
+
+.single-property .pi-metas {
+	padding-top: 20px;
+}
+
+.single-property .pi-meta {
+	display: inline-block;
+	position: relative;
+	font-size: 15px;
+	color: #584d51;
+	padding-right: 15px;
+	margin-right: 14px;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.single-property .pi-meta:last-child {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.single-property .pi-meta:last-child:after {
+	display: none;
+}
+
+.single-property .pi-meta:after {
+	position: absolute;
+	content: "|";
+	right: 0;
+	top: 0;
+	font-size: 15px;
+	color: #584d51;
+	font-weight: 700;
+}
+
+.property-header {
+	margin-bottom: 45px;
+	margin-bottom: 35px;
+}
+
+.property-header h3 {
+	margin-bottom: 10px;
+}
+
+.property-header h5 {
+	font-weight: 500;
+	color: #6a6a6a;
+}
+
+.property-header p {
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.property-info-bar {
+	padding: 11px 29px 13px;
+	margin-bottom: 40px;
+	border-top: 2px solid #dfe5e8;
+	background: #f5f8fa;
+}
+
+.offer-btn {
+	display: inline-block;
+	text-align: center;
+	min-width: 260px;
+	padding: 15px 44px;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: none;
+	color: #322429;
+	border: 2px solid #475069;
+	background: #fff;
+}
+
+.offer-btn:hover {
+	color: #322429;
+}
+
+.property-text h4 {
+	margin-bottom: 25px;
+}
+
+.property-text p {
+	margin-bottom: 35px;
+}
+
+.property-feature .pf-box {
+	margin-bottom: 30px;
+}
+
+.property-feature .pf-box h6 {
+	margin-bottom: 5px;
+}
+
+.property-feature .pf-box p {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+.video-item {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 61px;
+}
+
+.video-item .video-play {
+	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 110px;
+	height: 56px;
+	left: calc(50% - 55px);
+	top: calc(50% - 28px);
+	border-radius: 24px;
+	font-size: 17px;
+	color: #ff000a;
+	background: #fff;
+}
+
+.loan-calculator {
+	padding: 53px 37px 44px;
+	background: #f5f8fa;
+}
+
+.loan-calculator h4 {
+	margin-bottom: 35px;
+}
+
+.loan-calculator input {
+	width: 100%;
+	height: 56px;
+	padding: 0 23px;
+	color: #3a3a3a;
+	font-size: 14px;
+	border: none;
+	margin-bottom: 28px;
+}
+
+.loan-calculator .loan-cal-result {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 20px 15px;
+	margin-bottom: 28px;
+	line-height: 1;
+	background: #fff;
+}
+
+.agent-widget {
+	margin-bottom: 37px;
+}
+
+.agent-widget img {
+	min-width: 100%;
+}
+
+.agent-widget h4 {
+	margin-bottom: 10px;
+}
+
+.agent-widget h6 {
+	color: #6a6a6a;
+	margin-bottom: 25px;
+}
+
+.agent-widget p {
+	margin-bottom: 30px;
+}
+
+.agent-widget .aw-text {
+	padding: 35px 26px 45px;
+	text-align: center;
+	background: #f5f8fa;
+}
+
+.map-widget {
+	position: relative;
+	height: 407px;
+}
+
+.map-widget iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
