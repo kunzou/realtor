@@ -1,3 +1,5 @@
+import { Image } from './Image'
+
 export class Property {
     id: string;
     address: string;

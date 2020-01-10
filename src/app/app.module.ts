@@ -40,6 +40,9 @@ import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/property.component';
 import { ListingCardComponent } from './listing-card/listing-card.component';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { BlogCardComponent } from './blog-card/blog-card.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { CKEditorModule } from 'ckeditor4-angular';
     HomeComponent,
     PropertyComponent,
     ListingCardComponent,
+    BlogListComponent,
+    BlogPageComponent,
+    BlogCardComponent,
   ],
   entryComponents: [],
   imports: [

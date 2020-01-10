@@ -7,6 +7,7 @@ import { ViewPropertyComponent } from './view-property/view-property.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/property.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
 
 const routes: Routes = [
   { path: 'properties', component: PropertiesComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },  
   { path: 'home', component: HomeComponent },  
   { path: 'property/:id', component: PropertyComponent },  
+  { path: 'blog', component: BlogListComponent },  
 ];
 
 @NgModule({
