@@ -8,6 +8,7 @@ import { PropertyService } from '../property.service';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UploadService } from '../upload.service';
+import { Image } from '../Image';
 
 @Component({
   selector: 'app-property-detail',
@@ -15,6 +16,9 @@ import { UploadService } from '../upload.service';
   styleUrls: ['./property-detail.component.css']
 })
 export class PropertyDetailComponent implements OnInit {
+
+  primaryImage: Image;
+  additionalImages: Image[];
 
   propertyTypes: string[] = [
     'House',
@@ -27,7 +31,6 @@ export class PropertyDetailComponent implements OnInit {
     'Sold',
     'Purchased',
   ];
-
 
   @Input() property: Property;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
@@ -45,7 +48,11 @@ export class PropertyDetailComponent implements OnInit {
   getProperty(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.propertyService.getProperty(id)
-      .subscribe(property => this.property = property);
+      .subscribe(property => {
+        this.property = property;
+        this.primaryImage = property.primaryImage;
+        this.additionalImages = property.additionalImages;
+      });
   }
 
   goBack(): void {
@@ -53,6 +60,8 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   save(): void {
+    this.property.primaryImage = this.primaryImage;
+    this.property.additionalImages = this.additionalImages;
     this.propertyService.updateProperty(this.property).subscribe(() => this.goBack());
   }
 
@@ -77,9 +86,11 @@ export class PropertyDetailComponent implements OnInit {
         if (typeof (event) === 'object') {
           console.log(event.body);
           if(isPrimary) {
-            this.property.primaryImage = event.body;
+            // this.property.primaryImage = event.body;
+            this.primaryImage = event.body;
           } else {
-            this.property.additionalImages.push(event.body);
+            // this.property.additionalImages.push(event.body);
+            this.additionalImages.push(event.body);
           }
           
         }
@@ -118,5 +129,9 @@ export class PropertyDetailComponent implements OnInit {
   delete(): void {
     this.propertyService.deleteProperty(this.property).subscribe();
     this.goBack();
-  }  
+  }
+  
+  deleteImage(image: Image): void {
+    this.additionalImages = this.additionalImages.filter(item => item !== image)
+  }
 }

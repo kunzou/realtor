@@ -23,13 +23,6 @@ export class Property {
     neighborhood: string;
 }
 
-class Image {
-    link: string;
-    smallLink: string;
-    mediumLink: string;
-    largeLink: string;
-}
-
 enum HouseType {
     DETACHED_HOUSE = "Detached House",
     TOWN_HOUSE = "Town House",

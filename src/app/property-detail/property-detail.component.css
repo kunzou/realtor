@@ -11,4 +11,22 @@
   }
 
 
+  mat-card img{
+    object-fit: cover; /*this makes the image in src fit to the size specified below*/
+    width: auto; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    
+  }
 
+
+.delete {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  /* background: #FDAE5C; */
+  /* padding: 2px; */
+  /* color: #fff; */
+  /* border-radius: 10px; */
+  /* font-size: 13px; */
+  /* font-weight: 500; */
+  z-index: 1;  
+}

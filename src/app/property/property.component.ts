@@ -30,7 +30,9 @@ export class PropertyComponent implements OnInit {
     this.propertyService.getProperty(id)
       .subscribe(property => {
         this.property = property;
-        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(property.youtubeLink.replace("watch?v=", "embed/"));
+        if(property.youtubeLink != null) {
+          this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(property.youtubeLink.replace("watch?v=", "embed/"));
+        }
         this.imagesRect = property.additionalImages.map(
           (item,index) => new Image(index, { img: item.link }, { img: item.smallLink })
           );
