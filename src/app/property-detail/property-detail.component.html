@@ -1,11 +1,9 @@
 <div *ngIf="property">
     <div fxLayout="row" fxLayoutAlign="center center" class="container">
         <div style="max-width: 900px;">
-            <mat-card-header>
-                <div style="text-align: center;" *ngIf="property.primaryImage">
-                    <img mat-card-image src="{{property.primaryImage.link}}" alt="{{property.address}}">
-                </div>
-            </mat-card-header>
+            <!-- <mat-card-header> -->
+
+            <!-- </mat-card-header> -->
             <mat-card-content>
                 <mat-checkbox color="primary" [(ngModel)]="property.hide">Hide from list</mat-checkbox>
                 <p></p>
@@ -77,12 +75,12 @@
                 </mat-form-field>
 
                 <p></p>
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <div class="textarea-container">
                         <textarea matInput cdkTextareaAutosize cdkAutosizeMaxRows="6" #autosize="cdkTextareaAutosize"
                             placeholder="Description" [(ngModel)]="property.description"></textarea>
                     </div>
-                </mat-form-field>
+                </mat-form-field> -->
 
                 <mat-form-field>
                     <input matInput placeholder="Comments on Map" [(ngModel)]="property.aboutPageComment" name="aboutPageComment">
@@ -96,7 +94,7 @@
                 <br>
 
                 <div>
-                    <ckeditor [editor]="Editor" [(ngModel)]="property.description"></ckeditor>
+                    <ckeditor [(ngModel)]="property.description"></ckeditor>
                 </div>
 
                 <div style="text-align:center; margin-top: 10px; ">
@@ -120,19 +118,41 @@
                                 Upload additional photos
                             </button>
                         </mat-card-actions>
-                    </mat-card><input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple"
+                    </mat-card>
+                    
+                    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple"
                         accept="image/*" style="display:none;" />
                 </div>
 
                 <br>
 
-                <mat-grid-list cols="4" rowHeight="16:9">
+                <div style="text-align: center;" *ngIf="property.primaryImage">
+                    <img mat-card-image src="{{property.primaryImage.mediumLink}}" alt="{{property.address}}">
+                </div>
+
+                <div style="text-align: center;">
+                    <div class="col-xl-4 col-md-6 col-lg-4" *ngFor="let image of property.addtionalImages">
+                        <img [src]='image.smallLink' class="img-responsive">
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-lg-4" *ngFor="let image of property.addtionalImages">
+                            <img [src]='image.link' class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <mat-grid-list cols="4" rowHeight="16:9">
                     <mat-grid-tile *ngFor='let image of property.addtionalImages'>
                         <img [src]='image.link' class="additional-images">
                     </mat-grid-tile>
-                </mat-grid-list>
+                </mat-grid-list> -->
 
             </mat-card-content>
+
+
             <mat-card-actions>
                 <button mat-raised-button color="primary" (click)="save()">Save</button>
                 <button mat-raised-button color="secondary" (click)="goBack()">Go back</button>

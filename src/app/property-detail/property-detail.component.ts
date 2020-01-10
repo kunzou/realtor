@@ -8,7 +8,6 @@ import { PropertyService } from '../property.service';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UploadService } from '../upload.service';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-property-detail',
@@ -16,7 +15,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./property-detail.component.css']
 })
 export class PropertyDetailComponent implements OnInit {
-  public Editor = ClassicEditor;
+
   propertyTypes: string[] = [
     'House',
     'Town House',
