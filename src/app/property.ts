@@ -21,6 +21,13 @@ export class Property {
     youtubeLink: string;
     tag: string;
     neighborhood: string;
+    levels: number;
+    propertyTax: number;
+    listingNumber: number;
+    garageType: string;
+    basementCondition: string;
+    upgrades: string;
+    lotArea: number;
 }
 
 class Image {

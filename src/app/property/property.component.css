@@ -144,6 +144,7 @@ Single Property Page
   /* Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625) */
   padding-top: 56.25%;
   position: relative;
+  margin-bottom: 30px;
 }
  
 .iframe-container iframe {
@@ -222,4 +223,80 @@ Single Property Page
 	height: 100%;
 	left: 0;
 	top: 0;
+}
+.pd-details-tab {
+	margin-bottom: 55px;
+}
+
+.pd-details-tab .property-more-table {
+	padding-left: 30px;
+	border: 1px solid #ebebeb;
+	border-top: none;
+	padding-bottom: 6px;
+}
+.pd-details-tab .property-more-table table tbody tr {
+	border-bottom: 1px solid #ebebeb;
+}
+.pd-details-tab .property-more-table table tbody tr:last-child {
+	border-bottom: none;
+}
+.pd-details-tab .property-more-table table tbody tr td {
+	font-size: 16px;
+	color: #707079;
+	padding: 8px 0;
+}
+.pd-details-tab .property-more-table table tbody tr td.pt-name {
+	width: 36%;
+}
+.pd-details-tab .property-more-table table tbody tr td.p-value {
+	color: #19191a;
+}
+.pd-details-tab .property-more-table .left-table {
+	width: 40%;
+	float: left;
+	margin-right: 25px;
+}
+.pd-details-tab .property-more-table .right-table {
+	width: 49%;
+}
+/* Medium Device: 1200px */
+
+@media only screen and (min-width: 992px) and (max-width: 1119px) {
+	.pd-details-tab .property-more-table .left-table {
+		margin-right: 28px;
+	}
+	.pd-details-tab .property-more-table .right-table {
+		width: 48%;
+	}
+	.pd-details-tab .property-more-table table tbody tr td.p-value {
+		padding-left: 20px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.pd-details-tab .property-more-table table tbody tr td.p-value {
+		padding-left: 20px;
+	}
+}
+
+/* Tablet Device: 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.pd-details-tab .property-more-table .right-table {
+		width: 48%;
+	}
+}
+
+/* Wide Mobile: 480px */
+
+@media only screen and (max-width: 767px) {
+	.pd-details-tab .property-more-table .left-table {
+		width: 100%;
+	}
+	.pd-details-tab .property-more-table .right-table {
+		width: 100%;
+	}
+	.pd-details-tab .property-more-table table tbody tr:last-child {
+		border-bottom: 1px solid #ebebeb;
+	}
 }
