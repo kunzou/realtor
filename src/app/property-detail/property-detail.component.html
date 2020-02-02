@@ -68,14 +68,6 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <p></p>
-        <!-- <mat-form-field>
-                    <div class="textarea-container">
-                        <textarea matInput cdkTextareaAutosize cdkAutosizeMaxRows="6" #autosize="cdkTextareaAutosize"
-                            placeholder="Description" [(ngModel)]="property.description"></textarea>
-                    </div>
-                </mat-form-field> -->
-
         <mat-form-field>
             <input matInput placeholder="Comments on Map" [(ngModel)]="property.aboutPageComment"
                 name="aboutPageComment">
@@ -84,7 +76,6 @@
         <mat-form-field>
             <input matInput placeholder="YouTube link" [(ngModel)]="property.youtubeLink" name="youtubeLink">
         </mat-form-field>
-
 
         <br>
 
@@ -119,7 +110,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm m-1" *ngFor="let image of additionalImages">
-                                <div class="delete" >
+                                <div class="delete">
                                     <button mat-button color="warn" (click)="deleteImage(image)">
                                         <mat-icon>delete_forever</mat-icon>
                                     </button>
@@ -144,10 +135,4 @@
             <button mat-raised-button color="secondary" (click)="delete()">Delete</button>
         </mat-card-actions>
     </div>
-    <!-- </div> -->
-
-
-
-
-    <!-- </div> -->
 </div>

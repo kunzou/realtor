@@ -22,7 +22,7 @@
                             <div class="col-lg-4 text-left text-lg-right">
                                 <div class="property-header">
                                     <h3>{{property.askingPrice | currency}}</h3>
-                                    <p>{{property.numberOfRooms}} Bedrooms {{property.propertyType}}</p>
+                                    <p>{{property.propertyType}}</p>
                                 </div>
                             </div>
                         </div>
@@ -30,132 +30,100 @@
                             <div class="row">
                                 <div class="col-lg-7">
                                     <div class="pi-metas">
-                                        <div class="pi-meta">3 Bed </div>
-                                        <div class="pi-meta">2 Baths</div>
-                                        <div class="pi-meta">1 Garage</div>
-                                        <div class="pi-meta">2849 SF</div>
+                                        <div class="pi-meta">{{property.numberOfRooms}} Bedrooms </div>
+                                        <div class="pi-meta">{{property.numberOfWashrooms}} Baths</div>
+                                        <!-- <div class="pi-meta">1 Garage</div> -->
+                                        <div class="pi-meta">{{property.area}} SF</div>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-5 text-left text-lg-right">
-									<a href="#" class="offer-btn">Make an Offer</a>
-								</div> -->
                             </div>
                         </div>
                         <div class="property-text">
                             <h4>Description</h4>
                             <div [innerHTML]="property.description"></div>
-                            <!-- <p>{{property.description}}</p> -->
-                            <!-- <h4>Details</h4> -->
-                            <!-- <p>Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend ipsum. Sed non blandit tellus. </p> -->
                         </div>
-                        <div class="property-feature">
-                            <div class="row">
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>House Type</h6>
-                                        <p>Family</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Stories</h6>
-                                        <p>3</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Year Built</h6>
-                                        <p>2008</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>A/C</h6>
-                                        <p>Central</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Heating</h6>
-                                        <p>Forced Air</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Bathrooms</h6>
-                                        <p>2</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Pool</h6>
-                                        <p>Yes</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Fireplace</h6>
-                                        <p>No</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                                    <div class="pf-box">
-                                        <h6>Parking Spaces</h6>
-                                        <p> 2 spaces</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Parking Type</h6>
-                                        <p>Garage</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="pf-box">
-                                        <h6>Patio</h6>
-                                        <p>128 SQ</p>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-3">
-                                    <div class="pf-box">
-                                        <h6>Playgroung</h6>
-                                        <p>No</p>
-                                    </div>
-                                </div>
+
+                        <div class="pd-details-tab">
+                            <div class="property-more-table">
+                                <table class="left-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pt-name">Type</td>
+                                            <td class="p-value">{{property.propertyType}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Year</td>
+                                            <td class="p-value">{{property.yearBuilt}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Price</td>
+                                            <td class="p-value">{{property.askingPrice}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Rooms</td>
+                                            <td class="p-value">{{property.numberOfRooms}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Bathrooms</td>
+                                            <td class="p-value">{{property.numberOfWashrooms}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Garage Type</td>
+                                            <td class="p-value">{{property.garageType}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Basement Condition</td>
+                                            <td class="p-value">{{property.basementCondition}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="right-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pt-name">List #</td>
+                                            <td class="p-value">{{property.listingNumber}}</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Levels</td>
+                                            <td class="p-value">{{property.levels}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Listing Date</td>
+                                            <td class="p-value">{{property.onMarketSince}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Area</td>
+                                            <td class="p-value">{{property.area}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Garages</td>
+                                            <td class="p-value">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Home area</td>
+                                            <td class="p-value">1200 sqft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">Upgrades</td>
+                                            <td class="p-value">{{property.upgrades}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="container-fluid"> -->
-                        <div *ngIf="property.youtubeLink" class="iframe-container" >
-                            <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    <!-- </div> -->
-                    <!-- <div class="loan-calculator">
-						<h4>Loan Calculator</h4>
-						<div class="row">
-							<div class="col-md-4">
-								<input type="text" placeholder="Purchase Price" id="lc-price">
-							</div>
-							<div class="col-md-4">
-								<input type="text" placeholder="Interest Rate" id="lc-interest">
-							</div>
-							<div class="col-md-4">
-								<input type="text" placeholder="Down Payment" id="lc-dpay">
-							</div>
-							<div class="col-md-12">
-								<div class="loan-cal-result">Weekly Payments: <span id="lc-result">$0.00</span></div>
-								<div class="text-left text-sm-right">
-									<button class="site-btn sb-big" id="lc-submit">Apply for pre-Qualification</button>
-								</div>
-							</div>
-						</div>
-					</div> -->
+                    <div *ngIf="property.youtubeLink" class="iframe-container">
+                        <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-8 sidebar">
+                    <div class="map-widget">
+                        <agm-map [latitude]="property.location.lat" [longitude]="property.location.lng" [zoom]="13"
+                            [fullscreenControl]='true' [mapTypeControl]='true'>
+                            <agm-marker [latitude]="property.location.lat" [longitude]="property.location.lng">
+                            </agm-marker>
+                        </agm-map>
+                    </div>
                     <div class="agent-widget">
                         <img src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1566969629321-TTQ8UBGKSPJGRUHGIM9W/ke17ZwdGBToddI8pDm48kIuKwdzSVqLXMc18aV8VnRFZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7TjHkaYfD5WE2gtMQ4su2Xqyy1UoB2raaG8UBNwZrHEiD-_H3vAfByeds2BCBXVrpw/guant_20171111_D811996-removebg-preview+50%25.png?format=300w"
                             alt="">
@@ -166,14 +134,6 @@
                                 efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. </p>
                             <a href="#" class="readmore-btn">Contact the agent</a>
                         </div>
-                    </div>
-                    <div class="map-widget">
-                        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14376.077865872314!2d-73.879277264103!3d40.757667781624285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1546528920522" style="border:0" allowfullscreen></iframe> -->
-                        <agm-map [latitude]="property.location.lat" [longitude]="property.location.lng" [zoom]="13"
-                            [fullscreenControl]='true' [mapTypeControl]='true'>
-                            <agm-marker [latitude]="property.location.lat" [longitude]="property.location.lng">
-                            </agm-marker>
-                        </agm-map>
                     </div>
                 </div>
             </div>
