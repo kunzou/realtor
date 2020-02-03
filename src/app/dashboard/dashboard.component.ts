@@ -3,7 +3,7 @@ import { Property } from '../property';
 import { PropertyService } from '../property.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
-import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,8 +14,8 @@ export class DashboardComponent implements OnInit{
 
   constructor(
     private propertyService: PropertyService,
-    public dialog: MatDialog,
-    private changeDetectorRefs: ChangeDetectorRef
+    private changeDetectorRefs: ChangeDetectorRef,
+    private router: Router
     ) { }
   properties: Property[] = [];
   dataSource = new PostDataSource(this.propertyService);
@@ -43,6 +43,10 @@ export class DashboardComponent implements OnInit{
         this.dataSource = new PostDataSource(this.propertyService);
       })
   }  
+
+  editOwner(): void {
+    this.router.navigateByUrl('/editOwner');
+  }
 }
 
 export class PostDataSource extends DataSource<any> {

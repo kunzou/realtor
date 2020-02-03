@@ -1,3 +1,38 @@
 agm-map {
     height: 500px;
  }
+
+
+.agent-widget {
+	margin-bottom: 37px;
+}
+
+.agent-widget img {
+	min-width: 100%;
+}
+
+.agent-widget h4 {
+	margin-bottom: 10px;
+}
+
+.agent-widget h6 {
+	color: #6a6a6a;
+	margin-bottom: 25px;
+}
+
+.agent-widget p {
+	margin-bottom: 30px;
+}
+
+.agent-widget .aw-text {
+	padding: 35px 26px 45px;
+	text-align: center;
+	background: #f5f8fa;
+}
+
+.agent-widget .sidebar-image {
+    margin-bottom: 50px;
+    /* max-width: 100% */
+    width: 100%;
+    object-fit: cover;    
+}

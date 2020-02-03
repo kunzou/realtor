@@ -43,6 +43,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
+import { EditOwnerComponent } from './edit-owner/edit-owner.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { BlogCardComponent } from './blog-card/blog-card.component';
     BlogListComponent,
     BlogPageComponent,
     BlogCardComponent,
+    EditOwnerComponent,
   ],
   entryComponents: [],
   imports: [

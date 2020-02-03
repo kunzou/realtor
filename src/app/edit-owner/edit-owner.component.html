@@ -1,0 +1,23 @@
+<div *ngIf="owner">
+    <div class="p-3">
+        <!-- <div>
+            <mat-checkbox color="primary" [(ngModel)]="property.hide">Hide from list</mat-checkbox>
+        </div> -->
+        <!-- <span> {{owner.displayName}}</span> -->
+
+        <mat-form-field>
+            <input matInput placeholder="Display Name" [(ngModel)]="owner.displayName" required name="displayName">
+        </mat-form-field>
+
+
+        <div>
+            <ckeditor [(ngModel)]="owner.description"></ckeditor>
+        </div>
+
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="save()">Save</button>
+            <button mat-raised-button color="secondary" (click)="goBack()">Go back</button>
+        </mat-card-actions>
+    </div> 
+</div>
