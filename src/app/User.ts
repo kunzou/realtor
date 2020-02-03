@@ -13,6 +13,7 @@ export class User {
     phoneNumber: string;
     aboutMe: string;
     aboutCompany: string;
+    aboutPageDescription: string;
     owner: boolean;
     version: number;  
 }

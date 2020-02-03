@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyService } from '../property.service';
 import { Property } from '../property';
 import { MouseEvent } from '@agm/core';
+import { User } from '../User';
+import { UserService } from '../user-service';
 
 @Component({
   selector: 'app-about',
@@ -10,12 +12,24 @@ import { MouseEvent } from '@agm/core';
 })
 export class AboutComponent implements OnInit {
   properties: Property[];
+  owner: User;
   // sold = './assets/sold.png';
-  constructor(private propertyService: PropertyService,) { }
+  constructor(
+    private propertyService: PropertyService,
+    private userService: UserService
+    ) { }
 
   ngOnInit() {
     this.getPropertyes();
+    this.getOwner();
   }
+
+  getOwner(): void {
+    this.userService.getOwner()
+      .subscribe(user => {
+        this.owner = user;
+      });
+  }   
 
   getPropertyes(): void {
     this.propertyService.getSoldPurchasedProperties()
