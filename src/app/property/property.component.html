@@ -123,7 +123,7 @@
                             </agm-marker>
                         </agm-map>
                     </div>
-                    <div class="agent-widget" *ngIf="me">
+                    <div class="agent-widget" *ngIf="me && me.portrait && me.barcode">
                         <img src="{{me.portrait.link}}">
                         <img src="{{me.barcode.link}}">
                         <div class="aw-text">
