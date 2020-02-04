@@ -6,26 +6,43 @@
         <!-- <span> {{owner.displayName}}</span> -->
         
         <mat-form-field>
-            <input matInput placeholder="Display Name" [(ngModel)]="owner.displayName" required name="displayName">
+            <input matInput placeholder="Display Name English" [(ngModel)]="owner.displayName.english" name="displayName">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Email" [(ngModel)]="owner.email" required name="email">
+            <input matInput placeholder="Display Name Chinese" [(ngModel)]="owner.displayName.chinese" name="displayName">
+        </mat-form-field>        
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="owner.email" name="email">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Home Page" [(ngModel)]="owner.homePage" required name="homePage">
+            <input matInput placeholder="Home Page" [(ngModel)]="owner.homePage" name="homePage">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Phone Number" [(ngModel)]="owner.phoneNumber" required name="phoneNumber">
+            <input matInput placeholder="Phone Number" [(ngModel)]="owner.phoneNumber" name="phoneNumber">
         </mat-form-field>                           
         
         <div>
-            <ckeditor [(ngModel)]="owner.aboutPageDescription"></ckeditor>
+            <section class="language-section">
+                <label class="language-section-margin">Language</label>
+                <mat-radio-group [(ngModel)]="language">
+                  <mat-radio-button class="language-section-margin" value="zh">Chinese</mat-radio-button>
+                  <mat-radio-button class="language-section-margin" value="en">English</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            
         </div>
         
-        <div class="col-lg-8">
-            <h4>Preview Description</h4>
-            <div [innerHTML]="owner.aboutPageDescription"></div>
+        <div class="col-lg-8" *ngIf="language === 'zh'">
+            <ckeditor [(ngModel)]="owner.aboutPageDescription.chinese"></ckeditor>
+            <h4>预览</h4>
+            <div [innerHTML]="owner.aboutPageDescription.chinese"></div>
         </div>
+
+        <div class="col-lg-8" *ngIf="language === 'en'">
+            <ckeditor [(ngModel)]="owner.aboutPageDescription.english"></ckeditor>
+            <h4>Preview</h4>
+            <div [innerHTML]="owner.aboutPageDescription.english"></div>
+        </div>        
         
         <div class="image-management-section">
             <div class="container">

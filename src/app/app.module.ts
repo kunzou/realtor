@@ -20,7 +20,8 @@ import {
   MatRadioModule,
   MatGridListModule,
   MatNativeDateModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MAT_RADIO_DEFAULT_OPTIONS
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
@@ -112,7 +113,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }}
     ),
   ],
-  providers: [],
+  providers: [{
+    provide: MAT_RADIO_DEFAULT_OPTIONS,
+    useValue: { color: 'primary' },
+}],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

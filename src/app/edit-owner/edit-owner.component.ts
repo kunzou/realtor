@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
-import { User } from '../User'
+import { User } from '../user'
 import { UserService } from '../user-service';
 import { UploadService } from '../upload.service';
 import { map, catchError } from 'rxjs/operators';
@@ -14,15 +14,17 @@ import { of } from 'rxjs';
 })
 export class EditOwnerComponent implements OnInit {
   owner: User;
+  language: string;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
   constructor(
     private userService: UserService,
     private location: Location,
-    private uploadService: UploadService
+    private uploadService: UploadService,
   ) { }
 
   ngOnInit() {
     this.getOwner();
+    this.language = 'zh';
   }
 
   getOwner(): void {

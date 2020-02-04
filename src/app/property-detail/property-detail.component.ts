@@ -8,7 +8,7 @@ import { PropertyService } from '../property.service';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UploadService } from '../upload.service';
-import { Image } from '../Image';
+import { Image } from '../image';
 
 @Component({
   selector: 'app-property-detail',

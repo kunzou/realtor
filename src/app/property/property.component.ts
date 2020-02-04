@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Image } from '@ks89/angular-modal-gallery';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { UserService } from '../user-service';
-import { User } from '../User';
+import { User } from '../user';
 
 
 @Component({

@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, publishReplay, refCount } from 'rxjs/operators';
 import { environment } from '../environments/environment';
-import { User } from './User';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'

@@ -36,10 +36,12 @@
                 </div>
 
             </div>
-            <div class="col-lg-8">
-                <!-- {{owner.aboutPageDescription}} -->
-                <div [innerHTML]="owner.aboutPageDescription"></div>                
+            <div class="col-lg-8" *ngIf="translate.currentLang === 'zh'">
+                <div [innerHTML]="owner.aboutPageDescription.chinese"></div>
             </div>
+            <div class="col-lg-8" *ngIf="translate.currentLang === 'en'">
+                <div [innerHTML]="owner.aboutPageDescription.english"></div>
+            </div>            
         </div>
     </div>
 </div>

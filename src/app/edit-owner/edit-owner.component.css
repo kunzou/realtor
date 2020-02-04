@@ -13,7 +13,13 @@
   object-fit: cover;    
 }
 
-/* .image-management-section img {
-    width: 100%;
-    object-fit: cover;    
-} */
+.language-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.language-section-margin {
+  margin: 0 10px;
+}

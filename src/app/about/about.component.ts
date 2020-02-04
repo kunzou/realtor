@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyService } from '../property.service';
 import { Property } from '../property';
 import { MouseEvent } from '@agm/core';
-import { User } from '../User';
+import { User } from '../user';
 import { UserService } from '../user-service';
 
 @Component({
