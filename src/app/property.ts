@@ -10,6 +10,7 @@ export class Property {
     propertyStatus: string;
     yearBuilt: number;
     description: string;
+    descriptionEnglish: string;
     numberOfRooms: number;
     numberOfWashrooms: number;
     area: number;
@@ -29,6 +30,7 @@ export class Property {
     garageType: string;
     basementCondition: string;
     upgrades: string;
+    upgradesEnglish: string;
     lotArea: number;
 }
 

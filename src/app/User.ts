@@ -5,6 +5,7 @@ export class User {
     firstName: string;
     lastName: string;
     displayName: string;
+    displayNameEnglish: string;
     email: string;
     homePage: string;
     portrait: Image;
@@ -12,8 +13,11 @@ export class User {
     signature: Image;
     phoneNumber: string;
     aboutMe: string;
+    aboutMeEnglish: string;
     aboutCompany: string;
+    aboutCompanyEnglish: string;
     aboutPageDescription: string;
+    aboutPageDescriptionEnglish: string;
     owner: boolean;
     version: number;  
 }

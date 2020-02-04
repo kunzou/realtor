@@ -1,0 +1,29 @@
+{
+    "home": {
+        "home": "Home",
+        "properties": "Properties",
+        "dashboard": "Dashboard",
+        "about": "About",
+        "blog": "Blog"
+    },
+    "properties": {
+      "property-list": "Properties list"
+    },
+    "property": {
+        "type": "Type",
+        "year": "Year",
+        "price": "Price",
+        "rooms": "Rooms",
+        "bathrooms": "Bathrooms",
+        "garageType": "Garage Type",
+        "basementCondition": "Basement",
+        "listingNumber": "List #",
+        "levels": "Levels",
+        "onMarketSince": "Listing Date",
+        "area": "Area",
+        "lotArea": "Lot Size",
+        "upgrades": "Upgrades",
+        "garages": "Garage"
+    }
+  }
+  

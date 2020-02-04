@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HttpClient }    from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { 
@@ -20,11 +20,13 @@ import {
   MatRadioModule,
   MatGridListModule,
   MatNativeDateModule,
+  MatButtonToggleModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
 import { GalleryModule } from '@ks89/angular-modal-gallery';
-
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertiesComponent } from './properties/properties.component';
@@ -44,6 +46,11 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { EditOwnerComponent } from './edit-owner/edit-owner.component';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 @NgModule({
   declarations: [
@@ -86,6 +93,7 @@ import { EditOwnerComponent } from './edit-owner/edit-owner.component';
     MatSelectModule,  
     ReactiveFormsModule,
     MatCheckboxModule,
+    MatButtonToggleModule,
     MatFormFieldModule,
     MatRadioModule,
     MatGridListModule,
@@ -96,6 +104,13 @@ import { EditOwnerComponent } from './edit-owner/edit-owner.component';
     }),
     GalleryModule.forRoot(),    
     CKEditorModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }}
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent] 

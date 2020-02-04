@@ -1,0 +1,29 @@
+{
+    "home": {
+        "home": "首页",
+        "properties": "房产列表",
+        "dashboard": "后台",
+        "about": "关于",
+        "blog": "博客"
+    },    
+    "properties": {
+      "property-list": "最近房源"
+    },
+    "property": {
+        "type": "房屋类型",
+        "year": "建筑年份",
+        "price": "售价",
+        "rooms": "房间数",
+        "bathrooms": "卫生间数",
+        "garageType": "车库类型",
+        "basementCondition": "地下室完成",
+        "listingNumber": "列表号",
+        "levels": "层数",
+        "onMarketSince": "上市日期",
+        "area": "室内面积",
+        "lotArea": "占地面积",
+        "upgrades": "升级",
+        "garages": "车位"
+    }    
+  }
+  
