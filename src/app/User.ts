@@ -8,7 +8,7 @@ export class User {
     email: string;
     homePage: string;
     portrait: Image;
-    weChatBarcode: Image;
+    barcode: Image;
     signature: Image;
     phoneNumber: string;
     aboutMe: string;

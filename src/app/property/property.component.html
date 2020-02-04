@@ -39,7 +39,6 @@
                             </div>
                         </div>
                         <div class="property-text">
-                            <h4>Description</h4>
                             <div [innerHTML]="property.description"></div>
                         </div>
 
@@ -124,15 +123,14 @@
                             </agm-marker>
                         </agm-map>
                     </div>
-                    <div class="agent-widget">
-                        <img src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1566969629321-TTQ8UBGKSPJGRUHGIM9W/ke17ZwdGBToddI8pDm48kIuKwdzSVqLXMc18aV8VnRFZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7TjHkaYfD5WE2gtMQ4su2Xqyy1UoB2raaG8UBNwZrHEiD-_H3vAfByeds2BCBXVrpw/guant_20171111_D811996-removebg-preview+50%25.png?format=300w"
-                            alt="">
+                    <div class="agent-widget" *ngIf="me">
+                        <img src="{{me.portrait.link}}">
+                        <img src="{{me.barcode.link}}">
                         <div class="aw-text">
-                            <h4>Christinne James</h4>
-                            <h6>Real Estate Agent</h6>
-                            <p>Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora. Donec eget
-                                efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. </p>
-                            <a href="#" class="readmore-btn">Contact the agent</a>
+                            <h4>{{me.displayName}}</h4>
+                            <h6>{{me.phoneNumber}}</h6>
+                            <p>{{me.aboutMe}}</p>
+                            <!-- <a href="#" class="readmore-btn">Contact the agent</a> -->
                         </div>
                     </div>
                 </div>

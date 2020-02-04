@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" *ngIf="owner">
     <div class="row">
         <div class="row">
             <div class="col-lg-4 col-md-8 sidebar">
                 <div class="agent-widget">
                     <!-- <div class="sidebar-image"> -->
-                        <img class="sidebar-image" src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1565318289989-NHKHVZCS70SENY9W42RM/ke17ZwdGBToddI8pDm48kMZDWQmjgHJUcPr17npBZmRZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGgxaxAvrH_Qq7-L1cbOGwu4e5jFLqLKU4CoUjr8FaVAh926scO3xePJoa6uVJa9B4/guant_20171111_D811996-removebg-preview.png"
+                        <img class="sidebar-image" src="{{owner.portrait.link}}"
                             alt="">
                     <!-- </div> -->
                     <!-- <div class="aw-text">
@@ -15,10 +15,10 @@
                         <a href="#" class="readmore-btn">Contact the agent</a>
                     </div>                     -->
                     <!-- <div class="sidebar-image"> -->
-                        <img class="sidebar-image" src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1577427785882-KLNNU68VIVEGNS6CK7ZX/ke17ZwdGBToddI8pDm48kLh1saP75vC4rWxvy1v4RDRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzBZc9cn_KgttuoIZDpUtz9bBDeWYRuJFJdEJJCJYPN2DsVba-UqOHZg-79dIrT3ok/4818e8d2768148feb11621d3812cf047.PNG"
+                        <img class="sidebar-image" src="{{owner.signature.link}}"
                             alt="">
                                                 
-                        <img class="sidebar-image" src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1577427337333-TDOXON0QY83MGV4TCOY2/ke17ZwdGBToddI8pDm48kP06O0_IHyRXSOOiqwgWaApZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEHLRkg2cosQUGLeQ33UzXdgIxPDaVwE3LlEpL74qP4JVW4jCyXLPvvdR287iymYt8/liudan+wechat.jpg"
+                        <img class="sidebar-image" src="{{owner.barcode.link}}"
                             alt="">
                     <!-- </div> -->
 
@@ -36,7 +36,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-8" *ngIf="owner">
+            <div class="col-lg-8">
                 <!-- {{owner.aboutPageDescription}} -->
                 <div [innerHTML]="owner.aboutPageDescription"></div>                
             </div>

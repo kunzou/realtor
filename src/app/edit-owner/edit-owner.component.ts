@@ -19,7 +19,7 @@ export class EditOwnerComponent implements OnInit {
     private userService: UserService,
     private location: Location,
     private uploadService: UploadService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.getOwner();
@@ -30,27 +30,49 @@ export class EditOwnerComponent implements OnInit {
       .subscribe(user => {
         this.owner = user;
       });
-  }  
+  }
 
-  private uploadFiles(field): void {
+  private uploadFiles(imageType): void {
     this.fileUpload.nativeElement.value = '';
     this.files.forEach(file => {
-      this.uploadFile(file, field);
+      this.uploadFile(file, imageType);
     });
   }
 
   uploadBarcode(): void {
     const fileUpload = this.fileUpload.nativeElement; fileUpload.onchange = () => {
-        Array.from(fileUpload.files).forEach(element => {
+      Array.from(fileUpload.files).forEach(element => {
         this.files.push({ data: element, inProgress: false, progress: 0 });
-      });  
-        
-      this.uploadFiles(this.owner.weChatBarcode);
+      });
+
+      this.uploadFiles(ImageType.barcode);
+    };
+    fileUpload.click();
+  }
+
+  uploadPortrait(): void {
+    const fileUpload = this.fileUpload.nativeElement; fileUpload.onchange = () => {
+      Array.from(fileUpload.files).forEach(element => {
+        this.files.push({ data: element, inProgress: false, progress: 0 });
+      });
+
+      this.uploadFiles(ImageType.portrait);
     };
     fileUpload.click();
   }  
 
-  uploadFile(file, field): void {
+  uploadSignature(): void {
+    const fileUpload = this.fileUpload.nativeElement; fileUpload.onchange = () => {
+      Array.from(fileUpload.files).forEach(element => {
+        this.files.push({ data: element, inProgress: false, progress: 0 });
+      });
+
+      this.uploadFiles(ImageType.signature);
+    };
+    fileUpload.click();
+  }    
+
+  uploadFile(file, imageType): void {
     const formData = new FormData();
     formData.append('file', file.data);
     file.inProgress = true;
@@ -70,17 +92,34 @@ export class EditOwnerComponent implements OnInit {
       })).subscribe((event: any) => {
         if (typeof (event) === 'object') {
           console.log(event.body);
-          field = event.body;
+          // field = event.body;
+          switch (imageType) {
+            case ImageType.barcode:
+              this.owner.barcode = event.body;
+              break;
+            case ImageType.signature:
+              this.owner.signature = event.body;
+              break;
+            case ImageType.portrait:
+              this.owner.portrait = event.body;
+              break;
+          }
         }
       });
-  }  
+  }
 
   save(): void {
     this.userService.updateUser(this.owner).subscribe(() => this.goBack());
-  }  
+  }
 
   goBack(): void {
     this.location.back();
-  }  
+  }
 
+}
+
+enum ImageType {
+  barcode,
+  signature,
+  portrait,
 }

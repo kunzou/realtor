@@ -202,6 +202,11 @@ Single Property Page
 	margin-bottom: 30px;
 }
 
+.agent-widget img {
+	width: 100%;
+	object-fit: cover;   
+}
+
 .agent-widget .aw-text {
 	padding: 35px 26px 45px;
 	text-align: center;

@@ -4,6 +4,8 @@ import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
 import { Image } from '@ks89/angular-modal-gallery';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { UserService } from '../user-service';
+import { User } from '../User';
 
 
 @Component({
@@ -13,16 +15,19 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class PropertyComponent implements OnInit {
   @Input() property: Property;
+  me: User;
   imagesRect: Image[];
   safeURL: SafeResourceUrl;
   constructor(
     private propertyService: PropertyService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private _sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
     this.getProperty();
+    this.getOwner();
   }
 
   getProperty(): void {
@@ -38,4 +43,11 @@ export class PropertyComponent implements OnInit {
           );
         });
   }
+
+  getOwner(): void {
+    this.userService.getOwner()
+      .subscribe(user => {
+        this.me = user;
+      });
+  }     
 }

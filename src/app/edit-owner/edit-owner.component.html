@@ -29,27 +29,41 @@
         
         <div class="image-management-section">
             <div class="container">
-                <div class="row">
+                <div class="column">
+                    <ul>
+                        <li *ngFor="let file of files">
+                            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                            <span id="file-label">
+                            </span>
+                        </li>
+                    </ul>                    
                     <div>
                         <button mat-button color="warn" (click)="uploadBarcode()">
                             <mat-icon>file_upload</mat-icon>
                             Upload Barcode
                         </button>
-                        <img src="{{owner.weChatBarcode.link}}" alt="">
+                        <div *ngIf="owner.barcode" class="col-lg-6">
+                            <img src="{{owner.barcode.link}}" alt="">
+                        </div>
                     </div>
                     <div>
-                        <button mat-button color="warn" (click)="uploadPrimary()">
+                        <button mat-button color="warn" (click)="uploadSignature()">
                             <mat-icon>file_upload</mat-icon>
-                            Upload primary photo
+                            Upload Signature
                         </button>
-                        <img src="{{owner.signature.link}}" alt="">
+                        <div class="col-lg-6">
+                            <img src="{{owner.signature.link}}" alt="">
+                        </div>
                     </div>    
                     <div>
-                        <button mat-button color="warn" (click)="uploadPrimary()">
+                        <button mat-button color="warn" (click)="uploadPortrait()">
                             <mat-icon>file_upload</mat-icon>
-                            Upload primary photo
+                            Upload Portrait
                         </button>
-                        <img src="{{owner.portrait.link}}" alt="">
+                        <div class="col-lg-6">
+                            <img src="{{owner.portrait.link}}" alt="">
+                        </div>
+                        
                     </div>                                       
                 </div>
                 <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"

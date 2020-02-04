@@ -7,6 +7,11 @@
     margin-top: 50px;
 }  
 
+.image-management-section img {
+  margin-bottom: 50px;
+  width: 100%;
+  object-fit: cover;    
+}
 
 /* .image-management-section img {
     width: 100%;
