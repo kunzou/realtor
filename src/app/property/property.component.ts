@@ -6,6 +6,7 @@ import { Image } from '@ks89/angular-modal-gallery';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { UserService } from '../user-service';
 import { User } from '../user';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class PropertyComponent implements OnInit {
     private propertyService: PropertyService,
     private userService: UserService,
     private route: ActivatedRoute,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    public translateService: TranslateService
   ) { }
 
   ngOnInit() {

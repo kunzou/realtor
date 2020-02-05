@@ -4,6 +4,7 @@ import { Property } from '../property';
 import { MouseEvent } from '@agm/core';
 import { User } from '../user';
 import { UserService } from '../user-service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
@@ -16,8 +17,9 @@ export class AboutComponent implements OnInit {
   // sold = './assets/sold.png';
   constructor(
     private propertyService: PropertyService,
-    private userService: UserService
-    ) { }
+    private userService: UserService,
+    public translateService: TranslateService
+  ) { }
 
   ngOnInit() {
     this.getPropertyes();
@@ -29,18 +31,18 @@ export class AboutComponent implements OnInit {
       .subscribe(user => {
         this.owner = user;
       });
-  }   
+  }
 
   getPropertyes(): void {
     this.propertyService.getSoldPurchasedProperties()
-    .subscribe(properties => this.properties = properties);
+      .subscribe(properties => this.properties = properties);
   }
 
   getIcon(property): string {
-    if(property.propertyStatus == 'Sold') {
+    if (property.propertyStatus == 'Sold') {
       return './assets/sold.png';
     }
-    if(property.propertyStatus == 'Purchased') {
+    if (property.propertyStatus == 'Purchased') {
       return './assets/purchased.png';
     }
   }

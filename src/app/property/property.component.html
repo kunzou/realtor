@@ -126,12 +126,18 @@
                     <div class="agent-widget" *ngIf="me && me.portrait && me.barcode">
                         <img src="{{me.portrait.link}}">
                         <img src="{{me.barcode.link}}">
-                        <div class="aw-text">
+                        <div class="aw-text" *ngIf="translateService.currentLang === 'zh'">
                             <h4>{{me.displayName.chinese}}</h4>
                             <h6>{{me.phoneNumber}}</h6>
-                            <p>{{me.aboutMe.chinese}}</p>
-                            <!-- <a href="#" class="readmore-btn">Contact the agent</a> -->
+                            <h6>{{me.email}}</h6>
+                            <div [innerHTML]="me.aboutMe.chinese"></div>
                         </div>
+                        <div class="aw-text" *ngIf="translateService.currentLang === 'en'">
+                            <h4>{{me.displayName.english}}</h4>
+                            <h6>{{me.phoneNumber}}</h6>
+                            <h6>{{me.email}}</h6>
+                            <div [innerHTML]="me.aboutMe.english"></div>
+                        </div>                        
                     </div>
                 </div>
             </div>

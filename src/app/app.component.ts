@@ -9,23 +9,21 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = '刘聃，福居温尼伯';
 
-  constructor(public translate: TranslateService) {
-    translate.addLangs(['en', 'zh']);
-    translate.setDefaultLang('en');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|zh/) ? browserLang : 'en');
+  constructor(public translateService: TranslateService) {
+    translateService.addLangs(['en', 'zh']);
+    translateService.setDefaultLang('zh');
+    translateService.use('zh');
   }
 
   switchLanguage(): void {
-    if(this.translate.currentLang === 'en') {
-      this.translate.use('zh');
+    if(this.translateService.currentLang === 'en') {
+      this.translateService.use('zh');
     } else {
-      this.translate.use('en');
+      this.translateService.use('en');
     }
   }
 
   getDisplayLanguageLabel(): any{
-    return this.translate.currentLang === 'en'?"中文":"English";
+    return this.translateService.currentLang === 'en'?"中文":"English";
   }
 }
