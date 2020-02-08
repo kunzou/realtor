@@ -77,10 +77,19 @@
             <input matInput placeholder="YouTube link" [(ngModel)]="property.youtubeLink" name="youtubeLink">
         </mat-form-field>
 
-        <br>
+        <section class="language-section">
+            <label class="language-section-margin">Language</label>
+            <mat-radio-group [(ngModel)]="language">
+                <mat-radio-button class="language-section-margin" value="zh">Chinese</mat-radio-button>
+                <mat-radio-button class="language-section-margin" value="en">English</mat-radio-button>
+            </mat-radio-group>
+        </section>
 
-        <div>
-            <ckeditor [(ngModel)]="property.description"></ckeditor>
+        <div *ngIf="language === 'zh'">
+            <ckeditor [(ngModel)]="property.description.chinese"></ckeditor>
+        </div>
+        <div *ngIf="language === 'en'">
+            <ckeditor [(ngModel)]="property.description.english"></ckeditor>
         </div>
 
         <div style="text-align:center; margin-top: 10px; ">

@@ -19,6 +19,7 @@ export class PropertyDetailComponent implements OnInit {
 
   primaryImage: Image;
   additionalImages: Image[];
+  language: string;
 
   propertyTypes: string[] = [
     'House',
@@ -43,6 +44,7 @@ export class PropertyDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getProperty();
+    this.language = 'zh';
   }
 
   getProperty(): void {

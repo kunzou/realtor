@@ -1,105 +1,105 @@
 <div *ngIf="owner">
-        <mat-form-field>
-            <input matInput placeholder="Display Name English" [(ngModel)]="owner.displayName.english" name="displayName">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Display Name Chinese" [(ngModel)]="owner.displayName.chinese" name="displayName">
-        </mat-form-field>        
-        <mat-form-field>
-            <input matInput placeholder="Email" [(ngModel)]="owner.email" name="email">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Home Page" [(ngModel)]="owner.homePage" name="homePage">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Phone Number" [(ngModel)]="owner.phoneNumber" name="phoneNumber">
-        </mat-form-field>                           
-        
-        <div>
-            <section class="language-section">
-                <label class="language-section-margin">Language</label>
-                <mat-radio-group [(ngModel)]="language">
-                  <mat-radio-button class="language-section-margin" value="zh">Chinese</mat-radio-button>
-                  <mat-radio-button class="language-section-margin" value="en">English</mat-radio-button>
-                </mat-radio-group>
-              </section>
-        </div>
-        <div>
-            <h3>About Me</h3>
-        </div>
-        <div *ngIf="language === 'zh'">
-            <ckeditor [(ngModel)]="owner.aboutMe.chinese"></ckeditor>
-            <h4>预览</h4>
-            <div class="col-lg-4" [innerHTML]="owner.aboutMe.chinese"></div>
-        </div>
-
-        <div *ngIf="language === 'en'">
-            <ckeditor [(ngModel)]="owner.aboutMe.english"></ckeditor>
-            <h4>Preview</h4>
-            <div class="col-lg-4" [innerHTML]="owner.aboutMe.english"></div>
-        </div>  
-
-        <div>
-            <h3>About Page Description</h3>
-        </div>
-        <div *ngIf="language === 'zh'">
-            <ckeditor [(ngModel)]="owner.aboutPageDescription.chinese"></ckeditor>
-            <h4>预览</h4>
-            <div class="col-lg-8" [innerHTML]="owner.aboutPageDescription.chinese"></div>
-        </div>
-
-        <div *ngIf="language === 'en'">
-            <ckeditor [(ngModel)]="owner.aboutPageDescription.english"></ckeditor>
-            <h4>Preview</h4>
-            <div class="col-lg-8" [innerHTML]="owner.aboutPageDescription.english"></div>
-        </div>        
-        
-        <div class="image-management-section">
-            <div class="container">
-                <div class="column">
-                    <ul>
-                        <li *ngFor="let file of files">
-                            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
-                            <span id="file-label">
-                            </span>
-                        </li>
-                    </ul>                    
-                    <div>
-                        <button mat-button color="warn" (click)="uploadBarcode()">
-                            <mat-icon>file_upload</mat-icon>
-                            Upload Barcode
-                        </button>
-                        <div *ngIf="owner.barcode" class="col-lg-6">
-                            <img src="{{owner.barcode.link}}" alt="">
-                        </div>
+    <mat-form-field>
+        <input matInput placeholder="Display Name English" [(ngModel)]="owner.displayName.english" name="displayName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Display Name Chinese" [(ngModel)]="owner.displayName.chinese" name="displayName">
+    </mat-form-field>        
+    <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="owner.email" name="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Home Page" [(ngModel)]="owner.homePage" name="homePage">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Phone Number" [(ngModel)]="owner.phoneNumber" name="phoneNumber">
+    </mat-form-field>                           
+    
+    <div>
+        <section class="language-section">
+            <label class="language-section-margin">Language</label>
+            <mat-radio-group [(ngModel)]="language">
+                <mat-radio-button class="language-section-margin" value="zh">Chinese</mat-radio-button>
+                <mat-radio-button class="language-section-margin" value="en">English</mat-radio-button>
+            </mat-radio-group>
+        </section>
+    </div>
+    <div>
+        <h3>About Me</h3>
+    </div>
+    <div *ngIf="language === 'zh'">
+        <ckeditor [(ngModel)]="owner.aboutMe.chinese"></ckeditor>
+        <h4>预览</h4>
+        <div class="col-lg-4" [innerHTML]="owner.aboutMe.chinese"></div>
+    </div>
+    
+    <div *ngIf="language === 'en'">
+        <ckeditor [(ngModel)]="owner.aboutMe.english"></ckeditor>
+        <h4>Preview</h4>
+        <div class="col-lg-4" [innerHTML]="owner.aboutMe.english"></div>
+    </div>  
+    
+    <div>
+        <h3>About Page Description</h3>
+    </div>
+    <div *ngIf="language === 'zh'">
+        <ckeditor [(ngModel)]="owner.aboutPageDescription.chinese"></ckeditor>
+        <h4>预览</h4>
+        <div class="col-lg-8" [innerHTML]="owner.aboutPageDescription.chinese"></div>
+    </div>
+    
+    <div *ngIf="language === 'en'">
+        <ckeditor [(ngModel)]="owner.aboutPageDescription.english"></ckeditor>
+        <h4>Preview</h4>
+        <div class="col-lg-8" [innerHTML]="owner.aboutPageDescription.english"></div>
+    </div>        
+    
+    <div class="image-management-section">
+        <div class="container">
+            <div class="column">
+                <ul>
+                    <li *ngFor="let file of files">
+                        <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                        <span id="file-label">
+                        </span>
+                    </li>
+                </ul>                    
+                <div>
+                    <button mat-button color="warn" (click)="uploadBarcode()">
+                        <mat-icon>file_upload</mat-icon>
+                        Upload Barcode
+                    </button>
+                    <div *ngIf="owner.barcode" class="col-lg-6">
+                        <img src="{{owner.barcode.link}}" alt="">
                     </div>
-                    <div>
-                        <button mat-button color="warn" (click)="uploadSignature()">
-                            <mat-icon>file_upload</mat-icon>
-                            Upload Signature
-                        </button>
-                        <div class="col-lg-6">
-                            <img src="{{owner.signature.link}}" alt="">
-                        </div>
-                    </div>    
-                    <div>
-                        <button mat-button color="warn" (click)="uploadPortrait()">
-                            <mat-icon>file_upload</mat-icon>
-                            Upload Portrait
-                        </button>
-                        <div class="col-lg-6">
-                            <img src="{{owner.portrait.link}}" alt="">
-                        </div>
-                        
-                    </div>                                       
                 </div>
-                <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
-                style="display:none;" />
+                <div>
+                    <button mat-button color="warn" (click)="uploadSignature()">
+                        <mat-icon>file_upload</mat-icon>
+                        Upload Signature
+                    </button>
+                    <div class="col-lg-6">
+                        <img src="{{owner.signature.link}}" alt="">
+                    </div>
+                </div>    
+                <div>
+                    <button mat-button color="warn" (click)="uploadPortrait()">
+                        <mat-icon>file_upload</mat-icon>
+                        Upload Portrait
+                    </button>
+                    <div class="col-lg-6">
+                        <img src="{{owner.portrait.link}}" alt="">
+                    </div>
+                    
+                </div>                                       
             </div>
+            <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
+            style="display:none;" />
         </div>
-        
-        <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="save()">Save</button>
-            <button mat-raised-button color="secondary" (click)="goBack()">Go back</button>
-        </mat-card-actions>
+    </div>
+    
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="save()">Save</button>
+        <button mat-raised-button color="secondary" (click)="goBack()">Go back</button>
+    </mat-card-actions>
 </div>

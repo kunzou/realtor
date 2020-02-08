@@ -1,4 +1,5 @@
 import { Image } from './image'
+import { Description } from './description';
 
 export class Property {
     id: string;
@@ -9,7 +10,7 @@ export class Property {
     propertyType: string;
     propertyStatus: string;
     yearBuilt: number;
-    description: string;
+    description: Description = new Description();
     descriptionEnglish: string;
     numberOfRooms: number;
     numberOfWashrooms: number;
