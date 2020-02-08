@@ -2,13 +2,13 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { Location } from '@angular/common';
 
-import { Property } from '../property';
+import { Property } from '../domain/property';
 import { ActivatedRoute } from '@angular/router';
-import { PropertyService } from '../property.service';
+import { PropertyService } from '../service/property.service';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { UploadService } from '../upload.service';
-import { Image } from '../image';
+import { UploadService } from '../service/upload.service';
+import { Image } from '../domain/image';
 
 @Component({
   selector: 'app-property-detail',

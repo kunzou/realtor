@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Property } from '../property';
+import { Property } from '../domain/property';
 
 @Component({
   selector: 'app-listing-card',

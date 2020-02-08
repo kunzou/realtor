@@ -4,8 +4,8 @@ import { Observable, Subject } from 'rxjs';
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
-import { Property } from '../property';
-import { PropertyService } from '../property.service';
+import { Property } from '../domain/property';
+import { PropertyService } from '../service/property.service';
 
 @Component({
   selector: 'app-property-search',

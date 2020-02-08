@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Property } from './domain/property';
+import { Property } from '../domain/property';
 import { Observable, of } from 'rxjs';
-import { MessageService } from './service/message.service';
+import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: "root"

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Property } from '../property';
-import { PropertyService } from '../property.service';
+import { Property } from '../domain/property';
+import { PropertyService } from '../service/property.service';
 import { ActivatedRoute } from '@angular/router';
 import { Image } from '@ks89/angular-modal-gallery';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { UserService } from '../user-service';
-import { User } from '../user';
+import { UserService } from '../service/user-service';
+import { User } from '../domain/user';
 import { TranslateService } from '@ngx-translate/core';
 
 

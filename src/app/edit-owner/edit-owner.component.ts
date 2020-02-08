@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
-import { User } from '../user'
-import { UserService } from '../user-service';
-import { UploadService } from '../upload.service';
+import { User } from '../domain/user'
+import { UserService } from '../service/user-service';
+import { UploadService } from '../service/upload.service';
 import { map, catchError } from 'rxjs/operators';
 import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';

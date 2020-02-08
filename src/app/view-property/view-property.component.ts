@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Property } from '../property';
-import { PropertyService } from '../property.service';
+import { Property } from '../domain/property';
+import { PropertyService } from '../service/property.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Image } from '@ks89/angular-modal-gallery';

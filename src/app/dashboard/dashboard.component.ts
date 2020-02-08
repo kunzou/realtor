@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Property } from '../property';
-import { PropertyService } from '../property.service';
+import { Property } from '../domain/property';
+import { PropertyService } from '../service/property.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';

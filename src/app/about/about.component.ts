@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PropertyService } from '../property.service';
-import { Property } from '../property';
+import { PropertyService } from '../service/property.service';
+import { Property } from '../domain/property';
 import { MouseEvent } from '@agm/core';
-import { User } from '../user';
-import { UserService } from '../user-service';
+import { User } from '../domain/user';
+import { UserService } from '../service/user-service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
