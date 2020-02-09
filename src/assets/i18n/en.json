@@ -24,6 +24,24 @@
         "lotArea": "Lot Size",
         "upgrades": "Upgrades",
         "garages": "Garage"
+    },
+    "propertyType": {
+      "house": "House",
+      "townhouse": "Townhouse",
+      "condo": "Condo"
+    },
+    "basement": {
+      "full": "Finished",
+      "half": "Unfinished",
+      "no": "Insulated",
+      "na": "No basement"
+    },
+    "upgrade": {
+      "kichenCounterTop": "Kichen Countertop",
+      "hardwoodFloor": "Hardwood Floor",
+      "laminateFloor": "Laminate Floor",
+      "washroom": "Washroom",
+      "washroomCounterTop": "Washroom Countertop"
     }
   }
   

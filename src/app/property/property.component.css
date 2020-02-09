@@ -230,6 +230,11 @@ Single Property Page
 	left: 0;
 	top: 0;
 }
+
+.upgrade {
+	padding-right: 10px;
+}
+
 .pd-details-tab {
 	margin-bottom: 55px;
 }

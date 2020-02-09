@@ -30,18 +30,7 @@ export class Property {
     listingNumber: number;
     garageType: string;
     basementCondition: string;
-    upgrades: string;
+    upgrades: string[] = [];
     upgradesEnglish: string;
     lotArea: number;
-}
-
-enum HouseType {
-    DETACHED_HOUSE = "Detached House",
-    TOWN_HOUSE = "Town House",
-    CONDO = "Condo",
-}
-
-enum HouseStatus {
-    ON_MARKET = "On market",
-    SOLD = "Sold",
 }

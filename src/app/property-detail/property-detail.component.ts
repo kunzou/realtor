@@ -9,6 +9,10 @@ import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UploadService } from '../service/upload.service';
 import { Image } from '../domain/image';
+import { PropertyType } from '../domain/propertyType';
+import { Basement } from '../domain/basement';
+import { Upgrade } from '../domain/Upgrade';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-property-detail',
@@ -21,11 +25,12 @@ export class PropertyDetailComponent implements OnInit {
   additionalImages: Image[];
   language: string;
 
-  propertyTypes: string[] = [
-    'House',
-    'Town House',
-    'Condo'
-  ];
+  propertyTypes = Object.values(PropertyType).filter(value => typeof value !== 'number');
+  basementConditions = Object.values(Basement).filter(value => typeof value !== 'number');
+  upgrades = Object.values(Upgrade).filter(value => typeof value !== 'number');
+  upgrade = new FormControl();
+  // toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+
 
   propertyStatuses: string[] = [
     'Sale',

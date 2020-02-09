@@ -22,7 +22,7 @@
                             <div class="col-lg-4 text-left text-lg-right">
                                 <div class="property-header">
                                     <h3>{{property.askingPrice | currency}}</h3>
-                                    <p>{{property.propertyType}}</p>
+                                    <p>{{property.propertyType | translate}}</p>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="pt-name">{{ 'property.type' | translate }}</td>
-                                            <td class="p-value">{{property.propertyType}}</td>
+                                            <td class="p-value">{{ property.propertyType | translate}}</td>
                                         </tr>
                                         <tr>
                                             <td class="pt-name">{{ 'property.year' | translate }}</td>
@@ -75,7 +75,7 @@
                                         </tr>
                                         <tr>
                                             <td class="pt-name">{{ 'property.basementCondition' | translate }}</td>
-                                            <td class="p-value">{{property.basementCondition}}</td>
+                                            <td class="p-value">{{property.basementCondition | translate}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -107,7 +107,15 @@
                                         </tr>
                                         <tr>
                                             <td class="pt-name">{{ 'property.upgrades' | translate }}</td>
-                                            <td class="p-value">{{property.upgrades}}</td>
+                                            <td class="p-value">
+                                                <div class="container">
+                                                    <div class='row'>
+                                                        <div *ngFor="let upgrade of property.upgrades" class="upgrade">
+                                                            {{upgrade | translate}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

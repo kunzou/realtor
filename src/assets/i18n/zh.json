@@ -24,6 +24,24 @@
         "lotArea": "占地面积",
         "upgrades": "升级",
         "garages": "车位"
-    }    
+    },
+    "propertyType": {
+      "house": "独立屋",
+      "townhouse": "排屋",
+      "condo": "公寓"
+    },
+    "basement": {
+      "full": "全装修",
+      "half": "半装修",
+      "no": "没装修",
+      "na": "没有"
+    },
+    "upgrade": {
+      "kichenCounterTop": "厨房台面",
+      "hardwoodFloor": "实木地板",
+      "laminateFloor": "复合木地板",
+      "washroom": "洗手间",
+      "washroomCounterTop": "洗手间台面"
+    }
   }
   

@@ -12,7 +12,7 @@
             <mat-label>House Type</mat-label>
             <mat-select [(ngModel)]="property.propertyType" name="propertyType">
                 <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType">
-                    {{propertyType}}
+                    {{propertyType | translate}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
@@ -61,7 +61,23 @@
             <input matInput placeholder="Neighborhood" [(ngModel)]="property.neighborhood" name="neighborhood">
         </mat-form-field>
 
-        <p></p>
+        <mat-form-field>
+            <mat-label>Basement</mat-label>
+            <mat-select [(ngModel)]="property.basementCondition" name="basementCondition">
+                <mat-option *ngFor="let basementCondition of basementConditions" [value]="basementCondition">
+                    {{basementCondition | translate}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>    
+        
+        <mat-form-field>
+            <mat-label>Upgrades</mat-label>
+            <mat-select [formControl]="upgrade" multiple [(ngModel)]="property.upgrades">
+              <mat-option *ngFor="let upgrade of upgrades" [value]="upgrade">{{upgrade | translate}}</mat-option>
+            </mat-select>
+          </mat-form-field>       
+
+        <br>
         <mat-form-field>
             <input matInput [matDatepicker]="picker" placeholder="On Market Since" [(ngModel)]="property.onMarketSince">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
