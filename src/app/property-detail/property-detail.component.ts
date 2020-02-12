@@ -11,8 +11,15 @@ import { UploadService } from '../service/upload.service';
 import { Image } from '../domain/image';
 import { PropertyType } from '../domain/propertyType';
 import { Basement } from '../domain/basement';
-import { Upgrade } from '../domain/Upgrade';
-import { FormControl } from '@angular/forms';
+import { PropertySource } from '../domain/propertySource';
+import { PropertyStatus } from '../domain/propertyStatus';
+import { PropertyStyle } from '../domain/propertyStyle';
+import { PropertyUsage } from '../domain/propertyUsage';
+import { Garage } from '../domain/garage';
+import { HoldType } from '../domain/holdType';
+import { Remaining } from '../domain/remaining';
+import { Feature } from '../domain/feature';
+import { Highlight } from '../domain/highlight';
 
 @Component({
   selector: 'app-property-detail',
@@ -24,20 +31,20 @@ export class PropertyDetailComponent implements OnInit {
   primaryImage: Image;
   additionalImages: Image[];
   language: string;
+  selectedFeature:string;
+  featureYear:string;
 
   propertyTypes = Object.values(PropertyType).filter(value => typeof value !== 'number');
   basementConditions = Object.values(Basement).filter(value => typeof value !== 'number');
-  upgrades = Object.values(Upgrade).filter(value => typeof value !== 'number');
-  upgrade = new FormControl();
-  // toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-
-
-  propertyStatuses: string[] = [
-    'Sale',
-    'Sold',
-    'Purchased',
-  ];
-
+  propertyStatuses = Object.values(PropertyStatus).filter(value => typeof value !== 'number');
+  sources = Object.values(PropertySource).filter(value => typeof value !== 'number');
+  propertyStyles = Object.values(PropertyStyle).filter(value => typeof value !== 'number');
+  usages = Object.values(PropertyUsage).filter(value => typeof value !== 'number');
+  garageTypes = Object.values(Garage).filter(value => typeof value !== 'number');
+  holdTypes = Object.values(HoldType).filter(value => typeof value !== 'number');
+  remainings = Object.values(Remaining).filter(value => typeof value !== 'number');
+  features = Object.values(Feature).filter(value => typeof value !== 'number');
+    
   @Input() property: Property;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
   constructor(
@@ -70,6 +77,10 @@ export class PropertyDetailComponent implements OnInit {
     this.property.primaryImage = this.primaryImage;
     this.property.additionalImages = this.additionalImages;
     this.propertyService.updateProperty(this.property).subscribe(() => this.goBack());
+  }
+
+  addFeature(): void {
+    this.property.features.push(new Highlight(this.featureYear, this.selectedFeature));
   }
 
   uploadFile(file, isPrimary): void {
@@ -140,5 +151,9 @@ export class PropertyDetailComponent implements OnInit {
   
   deleteImage(image: Image): void {
     this.additionalImages = this.additionalImages.filter(item => item !== image)
+  }
+
+  deleteFeature(hightlight: Highlight): void {
+    this.property.features = this.property.features.filter(item => item !== hightlight)
   }
 }

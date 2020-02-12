@@ -12,6 +12,8 @@ export class User {
     barcode: Image = new Image();
     signature: Image = new Image();
     phoneNumber: string;
+    officePhoneNumber: string;
+    faxNumber: string;
     aboutMe: Description = new Description();
     aboutCompany: Description = new Description();
     aboutPageDescription: Description = new Description();

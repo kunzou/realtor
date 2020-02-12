@@ -29,11 +29,36 @@
                         <div class="property-info-bar">
                             <div class="row">
                                 <div class="col-lg-7">
+                                    <!-- <div class="footer_pro card-footer">
+                                        <ul>
+                                            <li>
+                                                <div class="single_info_doc">
+                                                    <img src="assets/square.svg" alt="">
+                                                    <span>{{property.area}}</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="single_info_doc">
+                                                    <img src="assets/bed.svg" alt="">
+                                                    <span>{{property.numberOfRooms}}</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="single_info_doc">
+                                                    <img src="assets/bath.svg" alt="">
+                                                    <span>{{property.numberOfWashrooms}}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>                                     -->
                                     <div class="pi-metas">
-                                        <div class="pi-meta">{{property.numberOfRooms}} Bedrooms </div>
-                                        <div class="pi-meta">{{property.numberOfWashrooms}} Baths</div>
+                                        <div class="pi-meta"><img src="assets/square.svg"
+                                                alt=""><span>{{property.numberOfRooms}}</span></div>
+                                        <div class="pi-meta"><img src="assets/bed.svg"
+                                                alt=""><span>{{property.numberOfWashrooms}}</span></div>
                                         <!-- <div class="pi-meta">1 Garage</div> -->
-                                        <div class="pi-meta">{{property.area}} SF</div>
+                                        <div class="pi-meta"><img src="assets/bath.svg"
+                                                alt=""><span>{{property.area}}</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -47,6 +72,48 @@
 
                         <div class="pd-details-tab">
                             <div class="property-more-table">
+
+                                <table *ngIf="property.upgrades.length > 0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="upgrades-name">
+                                                {{ 'property.upgrades' | translate }}:
+                                            </td>
+                                            <td>
+                                                <div class="container">
+                                                    <div class='row'>
+                                                        <div *ngFor="let feature of property.features"
+                                                            class="list-multiple">
+                                                                {{feature.description | translate}}<span *ngIf="feature.year">({{feature.year}})</span>,
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table *ngIf="property.remaining.length > 0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="upgrades-name">
+                                                {{ 'property.remaining' | translate }}:
+                                            </td>
+                                            <td class="upgrades-value">
+                                                <div class="container">
+                                                    <div class='row'>
+                                                        <div *ngFor="let item of property.remaining"
+                                                            class="list-multiple">
+                                                                {{item | translate}},
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                                
+
+
                                 <table class="left-table">
                                     <tbody>
                                         <tr>
@@ -54,12 +121,16 @@
                                             <td class="p-value">{{ property.propertyType | translate}}</td>
                                         </tr>
                                         <tr>
+                                            <td class="pt-name">{{ 'property.usage' | translate }}</td>
+                                            <td class="p-value">{{ property.usage | translate}}</td>
+                                        </tr>
+                                        <tr>
                                             <td class="pt-name">{{ 'property.year' | translate }}</td>
                                             <td class="p-value">{{property.yearBuilt}}</td>
                                         </tr>
                                         <tr>
                                             <td class="pt-name">{{ 'property.price' | translate }}</td>
-                                            <td class="p-value">{{property.askingPrice}}</td>
+                                            <td class="p-value">{{property.askingPrice | currency}}</td>
                                         </tr>
                                         <tr>
                                             <td class="pt-name">{{ 'property.rooms' | translate }}</td>
@@ -70,24 +141,32 @@
                                             <td class="p-value">{{property.numberOfWashrooms}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="pt-name">{{ 'property.garageType' | translate }}</td>
-                                            <td class="p-value">{{property.garageType}}</td>
-                                        </tr>
-                                        <tr>
                                             <td class="pt-name">{{ 'property.basementCondition' | translate }}</td>
                                             <td class="p-value">{{property.basementCondition | translate}}</td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td class="pt-name">{{ 'property.upgrades' | translate }}</td>
+                                            <td class="p-value">
+                                                <div class="container">
+                                                    <div class='row'>
+                                                        <div *ngFor="let feature of property.features" class="list-multiple">
+                                                            {{feature.year}} {{feature.description | translate}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>                                         -->
                                     </tbody>
                                 </table>
                                 <table class="right-table">
                                     <tbody>
                                         <tr>
                                             <td class="pt-name">{{ 'property.listingNumber' | translate }}</td>
-                                            <td class="p-value">{{property.listingNumber}}</td>                                            
+                                            <td class="p-value">{{property.listingNumber}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="pt-name">{{ 'property.levels' | translate }}</td>
-                                            <td class="p-value">{{property.levels}}</td>
+                                            <td class="pt-name">{{ 'property.propertyStyle' | translate }}</td>
+                                            <td class="p-value">{{property.propertyStyle | translate}}</td>
                                         </tr>
                                         <tr>
                                             <td class="pt-name">{{ 'property.onMarketSince' | translate }}</td>
@@ -98,25 +177,29 @@
                                             <td class="p-value">{{property.area}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="pt-name">{{ 'property.garages' | translate }}</td>
-                                            <td class="p-value">2</td>
-                                        </tr>
-                                        <tr>
                                             <td class="pt-name">{{ 'property.lotArea' | translate }}</td>
                                             <td class="p-value">{{property.lotArea}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="pt-name">{{ 'property.upgrades' | translate }}</td>
+                                            <td class="pt-name">{{ 'property.garage' | translate }}</td>
+                                            <td class="p-value">{{property.garage | translate}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pt-name">{{ 'property.garageSize' | translate }}</td>
+                                            <td class="p-value">{{property.garageSize}}</td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td class="pt-name">{{ 'property.remaining' | translate }}</td>
                                             <td class="p-value">
                                                 <div class="container">
                                                     <div class='row'>
-                                                        <div *ngFor="let upgrade of property.upgrades" class="upgrade">
-                                                            {{upgrade | translate}}
+                                                        <div *ngFor="let remaining of property.remaining" class="list-multiple">
+                                                            {{remaining | translate}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -134,8 +217,34 @@
                             </agm-marker>
                         </agm-map>
                     </div>
-                    <div class="agent-widget" *ngIf="me && me.portrait && me.barcode">
-                        <img src="{{me.portrait.link}}">
+                    <div class="agent-widget" *ngIf="me">
+                        <img src="{{me.barcode.link}}">
+                        <div>
+                            <div class="contact-service">
+                                <img src="img/single-property/small.png" alt="">
+                                <h5>{{me.displayName.chinese}}</h5>
+                                <table>
+                                    <tr>
+                                        <td>Office : <span>{{me.phoneNumber}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile : <span>{{me.officePhoneNumber}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fax : <span>{{me.faxNumber}}</span></td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>WhatsApp : <span>1-812-117-2663</span></td>
+                                    </tr> -->
+                                    <tr>
+                                        <td>Email : <span>{{me.email}}</span></td>
+                                    </tr>
+                                </table>
+                                <!-- <a href="#" class="site-btn list-btn">View More Listings</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="agent-widget" *ngIf="me">
                         <img src="{{me.barcode.link}}">
                         <div class="aw-text" *ngIf="translateService.currentLang === 'zh'">
                             <h4>{{me.displayName.chinese}}</h4>
@@ -149,7 +258,7 @@
                             <h6>{{me.email}}</h6>
                             <div [innerHTML]="me.aboutMe.english"></div>
                         </div>                        
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

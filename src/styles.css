@@ -3035,10 +3035,10 @@ h3 {
 }
 
 /* line 1, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */
-.popular_property {
+/* .popular_property {
   padding-top: 120px;
   padding-bottom: 90px;
-}
+} */
 
 /* line 4, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */
 .popular_property.plus_padding {
@@ -3061,9 +3061,9 @@ h3 {
 }
 
 /* line 14, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */
-.popular_property .more_property_btn {
+/* .popular_property .more_property_btn {
   margin-top: 30px;
-}
+} */
 
 /* line 17, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */
 .popular_property .single_property {

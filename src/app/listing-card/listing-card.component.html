@@ -1,8 +1,11 @@
 <div class="card single_property">
     <div class="property_thumb embed-responsive embed-responsive-4by3" *ngIf="property.primaryImage">
-        <div class="property_tag" *ngIf="property.tag">
-            {{property.tag}}
+        <div class="property_tag" *ngIf="translateService.currentLang === 'zh' && property.tag.chinese != null && property.tag.chinese != ''">
+            {{property.tag.chinese}}
         </div>
+        <div class="property_tag" *ngIf="translateService.currentLang === 'en' && property.tag.english != null && property.tag.english != ''">
+            {{property.tag.english}}
+        </div>        
         <a routerLink="/property/{{property.id}}">
             <img class="card-img-top embed-responsive-item" src="{{property.primaryImage.mediumLink}}" alt="">
         </a>
@@ -10,10 +13,18 @@
     <div class="card-body property_content">
         <div class="main_pro">
             <h3><a routerLink="/property/{{property.id}}">{{property.address}}</a></h3>
-            <div class="mark_pro">
-                <img src="assets/location.svg" alt=""> 
-                <span> {{property.neighborhood}}</span>
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="mark_pro">
+                        <img src="assets/location.svg" alt=""> 
+                        <span> {{property.neighborhood}}</span>
+                    </div>
+                    <div class="mark_pro">
+                        <span>{{property.propertyType | translate}}</span>
+                    </div>
+                </div>
             </div>
+
             <span class="amount">{{property.askingPrice | currency}}</span>
         </div>
     </div>

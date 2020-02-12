@@ -4,7 +4,11 @@
         "properties": "Properties",
         "dashboard": "Dashboard",
         "about": "About",
-        "blog": "Blog"
+        "blog": "Blog",
+        "propertySource": "Source",
+        "fuju": "Fuju Winnipeg",
+        "squareMeters": "Square Meters",
+        "showAll": "Show All"
     },
     "properties": {
       "property-list": "Properties list"
@@ -15,7 +19,8 @@
         "price": "Price",
         "rooms": "Rooms",
         "bathrooms": "Bathrooms",
-        "garageType": "Garage Type",
+        "garage": "Garage",
+        "garageSize": "Garage Size",
         "basementCondition": "Basement",
         "listingNumber": "List #",
         "levels": "Levels",
@@ -23,12 +28,18 @@
         "area": "Area",
         "lotArea": "Lot Size",
         "upgrades": "Upgrades",
-        "garages": "Garage"
+        "garages": "Garage",
+        "propertyStyle": "Style",
+        "propertyType": "Type",
+        "remaining": "Remaining",
+        "usage": "Usage",
+        "holdType": "Hold Type"
     },
     "propertyType": {
       "house": "House",
       "townhouse": "Townhouse",
-      "condo": "Condo"
+      "condo": "Condo",
+      "sideBySide": "Side by Side"      
     },
     "basement": {
       "full": "Finished",
@@ -42,6 +53,87 @@
       "laminateFloor": "Laminate Floor",
       "washroom": "Washroom",
       "washroomCounterTop": "Washroom Countertop"
+    },
+    "propertyStyle": {
+      "bunglow": "Bunglow",
+      "oneAndHalf": "1+1/2",
+      "raisedBungalow": "Raised Bungalow",
+      "splitTwoLevel": "Split Two-level",
+      "splitThreeLevel": "Split Three-level",
+      "splitFourLevel": "Split Four-level",
+      "twoStory": "Two Story",
+      "twoAndHalf": "2+1/2"
+    },
+    "holdType": {
+      "freehold": "Freehold",
+      "condo": "Condo",
+      "leasehold": "Leasehold"
+    },
+    "usage": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "mixedUse": "Mixed Use"
+    },
+    "garage": {
+      "singleAttached": "Single Attached",
+      "doubleAttached": "Double Attached",
+      "tripleAttached": "Triple Attached",
+      "multipleAttached": "Multiple Attached",
+      "singleDetached": "Single Detached",
+      "doubleDetached": "Double Detached",
+      "tripleDetached": "Triple Detached",
+      "multipleDetached": "Multiple Detached",
+      "noGarage": "No Garage",
+      "outdoor": "Outdoor",
+      "undergroundParking": "Underground Parking"   
+    },
+    "remaining": {
+      "stove": "Stove",
+      "refrigerator": "Refrigerator",
+      "washer": "Washer",
+      "dryer": "Dryer",
+      "dishwasher": "Dishwasher",
+      "garageDoorOpener": "Garage Door Opener",
+      "windowCovering": " Window Covering",
+      "blinds": "Blinds",
+      "microwave": "Micro Wave",
+      "other": "Other"      
+    },
+    "feature": {
+      "laminate": "Laminate",
+      "hardwood": "Hardwood",
+      "counterTops": "Counter tops",
+      "hrv": "HRV",
+      "centralAC": "Central AC",
+      "highEfficiencyFurnace": "High Efficiency Furnace",
+      "electricFireplace": "Electric Fireplace",
+      "gasFireplace": "Gas Fireplace",
+      "fullyFinishedBasement": "Fully Finished Basement",
+      "partialFinishedBasement": "Partial Finished Basement",
+      "reModelledKitchen": "Re-Modelled Kitchen",
+      "reModelledBathroom": "Re-Modelled Bathroom",
+      "geoThermalFurnace": "Geo-Thermal Furnace",
+      "dualClimateControl": "Dual-Climate Control",
+      "structuralFloorinBasement": "Structural Floor in Basement",
+      "sunRoom": "Sun Room",
+      "sumpPump": "Sump Pump",
+      "centralVac": "Central Vac",
+      "alarmSystem": "Alarm System",
+      "undergroundSprinkler": "Underground Sprinkler",
+      "remodeledInterior": "Remodeled Interior",
+      "newerPaint": "Newer Paint",
+      "buildInSpeakers": "Build-in Speakers",
+      "deck": "Deck",
+      "hotTub": "Hot Tub",
+      "twoKitchen": "Two Kitchen",
+      "doubleMasterBedrooms": "Double Master Bedrooms",
+      "separateEntrancetoBasement": "Separate Entrance to Basement",
+      "newWindowsDoors": "New Windows / Doors",
+      "newerWindowsDoors": "Newer Windows / Doors",
+      "newShingle": "New Shingle",
+      "newsShingle": "News Shingle",
+      "newerDriveway": "Newer Driveway",
+      "insulatedGarage": "Insulated Garage"    
     }
   }
   

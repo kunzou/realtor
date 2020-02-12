@@ -41,8 +41,8 @@ Single Property Page
 	background: #ffba00;
 }
 
-.single-property .pi-metas {
-	padding-top: 20px;
+.pi-metas img {
+	padding-right: 10px;
 }
 
 .single-property .pi-meta {
@@ -52,7 +52,7 @@ Single Property Page
 	color: #584d51;
 	padding-right: 15px;
 	margin-right: 14px;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	font-weight: 700;
 }
 
@@ -191,7 +191,7 @@ Single Property Page
 }
 
 .agent-widget {
-	margin-bottom: 37px;
+	margin-top: 37px;
 }
 
 .agent-widget h4 {
@@ -218,6 +218,54 @@ Single Property Page
 	background: #f5f8fa;
 }
 
+.contact-service {
+	border-radius: 4px;
+	-webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+	padding-top: 30px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.contact-service img {
+	margin-bottom: 12px;
+}
+
+.contact-service p {
+	color: #6F6F8A;
+	font-size: 18px;
+	font-weight: 300;
+	margin-bottom: 6px;
+}
+
+.contact-service h5 {
+	color: #30304e;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.contact-service table {
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+.contact-service table tr:nth-child(odd) {
+	background: #F8F8F9;
+}
+
+.contact-service table tr td {
+	color: #6f6f8a;
+	font-size: 16px;
+	font-weight: 300;
+	padding: 10px 0;
+}
+
+.contact-service table tr td span {
+	color: #30304e;
+	display: inline-block;
+}
+
 .map-widget {
 	position: relative;
 	height: 407px;
@@ -231,8 +279,14 @@ Single Property Page
 	top: 0;
 }
 
-.upgrade {
+.upgrades-name {
+	/* width: 15%; */
+	width: 95px;
+}
+
+.list-multiple {
 	padding-right: 10px;
+	color: #19191a;
 }
 
 .pd-details-tab {

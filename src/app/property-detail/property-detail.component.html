@@ -5,10 +5,6 @@
         </div>
 
         <mat-form-field>
-            <input matInput placeholder="Tag" [(ngModel)]="property.tag" name="tag">
-        </mat-form-field>
-
-        <mat-form-field>
             <mat-label>House Type</mat-label>
             <mat-select [(ngModel)]="property.propertyType" name="propertyType">
                 <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType">
@@ -21,13 +17,62 @@
             <mat-label>Status</mat-label>
             <mat-select [(ngModel)]="property.propertyStatus" name="propertyStatus">
                 <mat-option *ngFor="let propertyStatus of propertyStatuses" [value]="propertyStatus">
-                    {{propertyStatus}}
+                    {{propertyStatus | translate}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Property Address" [(ngModel)]="property.address" required name="address">
+            <mat-label>Source</mat-label>
+            <mat-select [(ngModel)]="property.source" name="source">
+                <mat-option *ngFor="let source of sources" [value]="source">
+                    {{source}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>   
+        
+        <mat-form-field>
+            <mat-label>Style</mat-label>
+            <mat-select [(ngModel)]="property.propertyStyle" name="propertyStyle">
+                <mat-option *ngFor="let propertyStyle of propertyStyles" [value]="propertyStyle">
+                    {{propertyStyle | translate}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>        
+        
+        <mat-form-field>
+            <mat-label>Usage</mat-label>
+            <mat-select [(ngModel)]="property.usage" name="usage">
+                <mat-option *ngFor="let usage of usages" [value]="usage">
+                    {{usage | translate}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Garage</mat-label>
+            <mat-select [(ngModel)]="property.garage" name="garage">
+                <mat-option *ngFor="let garage of garageTypes" [value]="garage">
+                    {{garage | translate}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>          
+
+        <mat-form-field>
+            <mat-label>性质</mat-label>
+            <mat-select [(ngModel)]="property.holdType" name="holdType">
+                <mat-option *ngFor="let holdType of holdTypes" [value]="holdType">
+                    {{holdType | translate}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>        
+        
+        <mat-form-field>
+            <input matInput placeholder="Garage Size" [(ngModel)]="property.garageSize" name="garageSize">
+        </mat-form-field>        
+
+        <mat-form-field>
+            <input matInput placeholder="Property Address" [(ngModel)]="property.address" name="address">
         </mat-form-field>
 
         <mat-form-field>
@@ -72,10 +117,17 @@
         
         <mat-form-field>
             <mat-label>Upgrades</mat-label>
-            <mat-select [formControl]="upgrade" multiple [(ngModel)]="property.upgrades">
+            <mat-select multiple [(ngModel)]="property.upgrades">
               <mat-option *ngFor="let upgrade of upgrades" [value]="upgrade">{{upgrade | translate}}</mat-option>
             </mat-select>
-          </mat-form-field>       
+        </mat-form-field>       
+
+        <mat-form-field>
+            <mat-label>留下的东西</mat-label>
+            <mat-select multiple [(ngModel)]="property.remaining">
+              <mat-option *ngFor="let remaining of remainings" [value]="remaining">{{remaining | translate}}</mat-option>
+            </mat-select>
+        </mat-form-field>               
 
         <br>
         <mat-form-field>
@@ -92,6 +144,31 @@
         <mat-form-field>
             <input matInput placeholder="YouTube link" [(ngModel)]="property.youtubeLink" name="youtubeLink">
         </mat-form-field>
+        <br>
+        <p>Feature:</p>
+        <mat-form-field>
+            <mat-label>Feature</mat-label>
+            <mat-select [(ngModel)]="selectedFeature" name="selectedFeature">
+                <mat-option *ngFor="let feature of features" [value]="feature">
+                    {{feature | translate}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Year</mat-label>
+            <input matInput placeholder="Feature Year" [(ngModel)]="featureYear" name="featureYear">
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" (click)="addFeature()">Add</button>
+
+        <br>
+        <tr *ngFor="let feature of property.features">
+            {{feature.year}} {{feature.description | translate}}
+            <button mat-button color="warn" (click)="deleteFeature(feature)">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        </tr>
 
         <section class="language-section">
             <label class="language-section-margin">Language</label>
@@ -102,9 +179,16 @@
         </section>
 
         <div *ngIf="language === 'zh'">
+            <mat-form-field>
+                <input matInput placeholder="Tag" [(ngModel)]="property.tag.chinese" name="tag">
+            </mat-form-field>
+    
             <ckeditor [(ngModel)]="property.description.chinese"></ckeditor>
         </div>
         <div *ngIf="language === 'en'">
+            <mat-form-field>
+                <input matInput placeholder="Tag" [(ngModel)]="property.tag.english" name="tag">
+            </mat-form-field>            
             <ckeditor [(ngModel)]="property.description.english"></ckeditor>
         </div>
 

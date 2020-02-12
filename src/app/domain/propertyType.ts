@@ -1,5 +1,6 @@
 export enum PropertyType {
     'propertyType.house',
     'propertyType.townhouse',
-    'propertyType.condo'
+    'propertyType.condo',
+    'propertyType.sideBySide'
 }

@@ -1,5 +1,7 @@
 import { Image } from './image'
 import { Description } from './description';
+import { Highlight } from './highlight';
+import { Feature } from '@agm/core/services/google-maps-types';
 
 export class Property {
     id: string;
@@ -9,6 +11,7 @@ export class Property {
     source: string;
     propertyType: string;
     propertyStatus: string;
+    propertyStyle: string;
     yearBuilt: number;
     description: Description = new Description();
     descriptionEnglish: string;
@@ -23,14 +26,19 @@ export class Property {
     location: {lat: number; lng: number;};
     aboutPageComment: string;
     youtubeLink: string;
-    tag: string;
+    tag: Description = new Description();
     neighborhood: string;
     levels: number;
     propertyTax: number;
     listingNumber: number;
-    garageType: string;
+    garage: string;
+    garageSize: string;
     basementCondition: string;
     upgrades: string[] = [];
     upgradesEnglish: string;
     lotArea: number;
+    usage: string;
+    holdType: string;
+    remaining: string[] = [];
+    features: Highlight[] = [];
 }

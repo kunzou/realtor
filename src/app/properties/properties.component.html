@@ -1,39 +1,32 @@
 <div class="popular_property">
     <div class="container">
-        <div class="single_property">
-        <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
-            <agm-marker *ngFor="let property of properties" [latitude]="property.location.lat"
-                [longitude]="property.location.lng">
-                <agm-info-window>
-                    <app-property-card [property]="property"></app-property-card>
-                </agm-info-window>
-            </agm-marker>
-        </agm-map>
+        <p>
+            {{ 'home.propertySource' | translate }}:
+            <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" [(ngModel)]="currentSource">
+              <mat-button-toggle value="fuju" (change)="setSource()">{{ 'home.fuju' | translate }}</mat-button-toggle>
+              <mat-button-toggle value="squareMeters" (change)="setSource()">{{ 'home.squareMeters' | translate }}</mat-button-toggle>
+              <mat-button-toggle value="all" (change)="setSource()">{{ 'home.showAll' | translate }}</mat-button-toggle>
+            </mat-button-toggle-group>
+          </p>        
     </div>
+    <div class="container">
+        <div class="single_property">
+            <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
+                <agm-marker *ngFor="let property of selectedProperties" [latitude]="property.location.lat"
+                    [longitude]="property.location.lng">
+                    <agm-info-window>
+                        <app-property-card [property]="property"></app-property-card>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title mb-40 text-center">
-                    <h4>{{ 'properties.property-list' | translate }}</h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-4 col-md-6 col-lg-4" *ngFor="let property of properties">
+            <div class="col-xl-4 col-md-6 col-lg-4" *ngFor="let property of selectedProperties">
                 <app-listing-card [property]="property"></app-listing-card>
             </div>
         </div>
-
-
-        <!-- <div class="row">
-            <div class="col-xl-12">
-                <div class="more_property_btn text-center">
-                    <a href="#" class="boxed-btn3-line">More Properties</a>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>

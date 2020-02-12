@@ -8,15 +8,29 @@ import { PropertyService } from '../service/property.service';
   styleUrls: ['./properties.component.css']
 })
 export class PropertiesComponent implements OnInit {
-  properties: Property[];
+  properties: Property[] = [];
+  currentSource: string;
+  selectedProperties: Property[] = [];
   
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit() {
-    this.getPropertyes();
+    this.getProperties();
+    this.currentSource = 'fuju';
   }
 
-  getPropertyes(): void {
-    this.propertyService.getProperties().subscribe(properties => this.properties = properties);
+  getProperties(): void {
+    this.propertyService.getProperties().subscribe(properties => {
+      this.properties = properties;
+      this.setSource();
+    });
+  }
+
+  setSource(): void {
+    if(this.currentSource === 'all') {
+      this.selectedProperties = this.properties;
+    } else {
+      this.selectedProperties = this.properties.filter(property => property.source === this.currentSource)
+    }
   }
 }

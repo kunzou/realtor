@@ -5,3 +5,15 @@
 agm-map {
   height: 500px;
 }
+
+.mat-button-toggle {
+  background-color: gainsboro;
+}
+
+.mat-button-toggle-checked {
+  background-color: white;
+}
+
+mat-button-toggle-group {
+  margin-left: 12px;
+}

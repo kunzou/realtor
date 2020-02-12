@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Property } from '../domain/property';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-listing-card',
@@ -8,5 +9,7 @@ import { Property } from '../domain/property';
 })
 export class ListingCardComponent {
   @Input() property: Property;
-  constructor() { }
+  constructor(
+    public translateService: TranslateService
+  ) { }
 }
