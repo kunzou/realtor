@@ -73,7 +73,7 @@
                         <div class="pd-details-tab">
                             <div class="property-more-table">
 
-                                <table *ngIf="property.upgrades.length > 0">
+                                <table *ngIf="property.features.length > 0">
                                     <tbody>
                                         <tr>
                                             <td class="upgrades-name">
@@ -202,27 +202,27 @@
                                     <td><h5>{{me.displayName.chinese}}</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>Phone : <span>{{me.phoneNumber}}</span></td>
+                                    <td>{{'property.phoneNumber' | translate}} : <span>{{me.phoneNumber}}</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Email : <span>{{me.email}}</span></td>
+                                    <td>{{'property.emailAddress' | translate}} : <span>{{me.email}}</span></td>
                                 </tr>
                             </table>
                             <div class="col-lg-12">
-                                <h5>Ask me about this property</h5>
+                                <h5>{{'property.sendEmailTitle' | translate}}</h5>
                                 <form action="#" class="contact-form">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <input type="text" placeholder="Your Name" [(ngModel)]="emailDetail.from" name="from">
+                                            <input type="text" placeholder="{{'property.email.from' | translate}}" [(ngModel)]="emailDetail.from" name="from">
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" placeholder="Your Number" [(ngModel)]="emailDetail.phoneNumber" name="phoneNumber">
+                                            <input type="text" placeholder="{{'property.email.number' | translate}}" [(ngModel)]="emailDetail.phoneNumber" name="phoneNumber">
                                         </div>
                                         <div class="col-lg-12">
-                                            <input type="text" placeholder="Your Email" [(ngModel)]="emailDetail.email" name="email">
+                                            <input type="text" placeholder="{{'property.email.email' | translate}}" [(ngModel)]="emailDetail.email" name="email">
                                         </div>                                        
                                         <div class="col-lg-12">
-                                            <textarea placeholder="Your Message" [(ngModel)]="emailDetail.message" name="message"></textarea>
+                                            <textarea placeholder="{{'property.email.message' | translate}}" [(ngModel)]="emailDetail.message" name="message"></textarea>
                                             <button mat-raised-button color="primary" (click)="sendEmail()">Send Message</button>
                                         </div>
                                     </div>

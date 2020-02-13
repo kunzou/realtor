@@ -33,7 +33,16 @@
         "propertyType": "Type",
         "remaining": "Remaining",
         "usage": "Usage",
-        "holdType": "Hold Type"
+        "holdType": "Hold Type",
+        "sendEmailTitle": "Ask me about this property",
+        "emailAddress": "Email Address",
+        "phoneNumber": "Phone Number",
+        "email": {
+          "from": "Your Name",
+          "number": "Your Number",
+          "email": "Email Address",
+          "message": "Your Message"
+        }        
     },
     "propertyType": {
       "house": "House",
