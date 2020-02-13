@@ -84,7 +84,8 @@
                                                     <div class='row'>
                                                         <div *ngFor="let feature of property.features"
                                                             class="list-multiple">
-                                                                {{feature.description | translate}}<span *ngIf="feature.year">({{feature.year}})</span>,
+                                                            {{feature.description | translate}}<span
+                                                                *ngIf="feature.year">({{feature.year}})</span>,
                                                         </div>
                                                     </div>
                                                 </div>
@@ -104,14 +105,14 @@
                                                     <div class='row'>
                                                         <div *ngFor="let item of property.remaining"
                                                             class="list-multiple">
-                                                                {{item | translate}},
+                                                            {{item | translate}},
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>                                
+                                </table>
 
 
                                 <table class="left-table">
@@ -144,18 +145,6 @@
                                             <td class="pt-name">{{ 'property.basementCondition' | translate }}</td>
                                             <td class="p-value">{{property.basementCondition | translate}}</td>
                                         </tr>
-                                        <!-- <tr>
-                                            <td class="pt-name">{{ 'property.upgrades' | translate }}</td>
-                                            <td class="p-value">
-                                                <div class="container">
-                                                    <div class='row'>
-                                                        <div *ngFor="let feature of property.features" class="list-multiple">
-                                                            {{feature.year}} {{feature.description | translate}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>                                         -->
                                     </tbody>
                                 </table>
                                 <table class="right-table">
@@ -188,18 +177,6 @@
                                             <td class="pt-name">{{ 'property.garageSize' | translate }}</td>
                                             <td class="p-value">{{property.garageSize}}</td>
                                         </tr>
-                                        <!-- <tr>
-                                            <td class="pt-name">{{ 'property.remaining' | translate }}</td>
-                                            <td class="p-value">
-                                                <div class="container">
-                                                    <div class='row'>
-                                                        <div *ngFor="let remaining of property.remaining" class="list-multiple">
-                                                            {{remaining | translate}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -218,31 +195,42 @@
                         </agm-map>
                     </div>
                     <div class="agent-widget" *ngIf="me">
-                        <img src="{{me.barcode.link}}">
-                        <div>
-                            <div class="contact-service">
-                                <img src="img/single-property/small.png" alt="">
-                                <h5>{{me.displayName.chinese}}</h5>
-                                <table>
-                                    <tr>
-                                        <td>Office : <span>{{me.phoneNumber}}</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mobile : <span>{{me.officePhoneNumber}}</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fax : <span>{{me.faxNumber}}</span></td>
-                                    </tr>
-                                    <!-- <tr>
-                                        <td>WhatsApp : <span>1-812-117-2663</span></td>
-                                    </tr> -->
-                                    <tr>
-                                        <td>Email : <span>{{me.email}}</span></td>
-                                    </tr>
-                                </table>
-                                <!-- <a href="#" class="site-btn list-btn">View More Listings</a> -->
-                            </div>
+                        <div class="contact-service">
+                            <img src="img/single-property/small.png" alt="">
+                            <table>
+                                <tr>
+                                    <td><h5>{{me.displayName.chinese}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone : <span>{{me.phoneNumber}}</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Email : <span>{{me.email}}</span></td>
+                                </tr>
+                            </table>
+                            <div class="col-lg-12">
+                                <h5>Ask me about this property</h5>
+                                <form action="#" class="contact-form">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input type="text" placeholder="Your Name" [(ngModel)]="emailDetail.from" name="from">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" placeholder="Your Number" [(ngModel)]="emailDetail.phoneNumber" name="phoneNumber">
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <input type="text" placeholder="Your Email" [(ngModel)]="emailDetail.email" name="email">
+                                        </div>                                        
+                                        <div class="col-lg-12">
+                                            <textarea placeholder="Your Message" [(ngModel)]="emailDetail.message" name="message"></textarea>
+                                            <button mat-raised-button color="primary" (click)="sendEmail()">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>  
+                            <!-- <a href="#" class="site-btn list-btn">View More Listings</a> -->
                         </div>
+                        <img src="{{me.barcode.link}}">
                     </div>
                     <!-- <div class="agent-widget" *ngIf="me">
                         <img src="{{me.barcode.link}}">

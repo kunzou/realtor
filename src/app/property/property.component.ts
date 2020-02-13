@@ -7,6 +7,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { UserService } from '../service/user-service';
 import { User } from '../domain/user';
 import { TranslateService } from '@ngx-translate/core';
+import { EmailDetail } from '../domain/emailDetail';
+import { EmailService } from '../service/email.service';
 
 
 @Component({
@@ -19,11 +21,14 @@ export class PropertyComponent implements OnInit {
   me: User;
   imagesRect: Image[];
   safeURL: SafeResourceUrl;
+  emailDetail: EmailDetail = new EmailDetail();
+
   constructor(
     private propertyService: PropertyService,
     private userService: UserService,
     private route: ActivatedRoute,
     private _sanitizer: DomSanitizer,
+    private emailService: EmailService,
     public translateService: TranslateService
   ) { }
 
@@ -51,5 +56,10 @@ export class PropertyComponent implements OnInit {
       .subscribe(user => {
         this.me = user;
       });
-  }     
+  }
+
+  sendEmail(): void {
+    this.emailDetail.address = this.property.address;
+    this.emailService.sendEmail(this.emailDetail);
+  }
 }
