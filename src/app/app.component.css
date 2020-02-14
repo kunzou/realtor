@@ -8,7 +8,8 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   
   a {
     text-decoration: none;
-    color: white;
+	color: white;
+	font-weight: bold;
   }
   
   a:hover,
@@ -38,6 +39,7 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     line-height: 30px;
     margin: 0;
     width: 85%;
+    color: #dfa974;
   }
 
   .card {
@@ -58,24 +60,26 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     border-radius: 4px;
     padding:0px !important;
   }
-  /*
-  mat-button-toggle {
-    padding:0 !important;
-    background-color: white;
-  } */
-  
-  
 
+  mat-sidenav-content {
+    background: #222736;
+  }
 
-  /* 
-    border-radius: 50px;
-  margin-left: 8px;
-  margin-right:8px;
-  width: 200px;
-  height: 64px;
-  line-height: 64px;
-  background-color:  #616161;
-  color: #e0e0e0;
-  font-size: 32px;
-  padding:0 !important;
-  */
+  mat-toolbar {
+    background: rgba(16, 20, 31, 0.2);
+  }
+
+  mat-toolbar .logo img {
+	height: 70%; 
+	width: 70%;
+  }
+
+  mat-toolbar .logo h1 {
+	color: #dfa974;
+	font-size: 30px;
+	font-weight: bold;
+  }  
+
+  mat-card {
+	background:rgb(224, 224, 224);
+  }

@@ -47,6 +47,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { EditOwnerComponent } from './edit-owner/edit-owner.component';
+import { FooterComponent } from './footer/footer.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -71,6 +72,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BlogPageComponent,
     BlogCardComponent,
     EditOwnerComponent,
+    FooterComponent,
   ],
   entryComponents: [],
   imports: [

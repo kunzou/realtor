@@ -375,18 +375,6 @@ Single Property Page
 .contact-form textarea::placeholder {
 	color: #aaaab3;
 }
-.contact-form button {
-	font-size: 13px;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #ffffff;
-	letter-spacing: 2px;
-	/* background: #dfa974; */
-	border: none;
-	padding: 14px 34px 13px;
-	display: inline-block;
-}
-
 
 /* Medium Device: 1200px */
 

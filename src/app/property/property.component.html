@@ -29,28 +29,6 @@
                         <div class="property-info-bar">
                             <div class="row">
                                 <div class="col-lg-7">
-                                    <!-- <div class="footer_pro card-footer">
-                                        <ul>
-                                            <li>
-                                                <div class="single_info_doc">
-                                                    <img src="assets/square.svg" alt="">
-                                                    <span>{{property.area}}</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="single_info_doc">
-                                                    <img src="assets/bed.svg" alt="">
-                                                    <span>{{property.numberOfRooms}}</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="single_info_doc">
-                                                    <img src="assets/bath.svg" alt="">
-                                                    <span>{{property.numberOfWashrooms}}</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>                                     -->
                                     <div class="pi-metas">
                                         <div class="pi-meta"><img src="assets/square.svg"
                                                 alt=""><span>{{property.numberOfRooms}}</span></div>
@@ -202,11 +180,15 @@
                                     <td><h5>{{me.displayName.chinese}}</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>{{'property.phoneNumber' | translate}} : <span>{{me.phoneNumber}}</span></td>
+
+                                    <td><i class="fa fa-phone-square"></i><span>  {{me.phoneNumber}}</span></td>
                                 </tr>
                                 <tr>
-                                    <td>{{'property.emailAddress' | translate}} : <span>{{me.email}}</span></td>
+                                    <td><i class="fa fa-envelope"></i><span>  {{me.email}}</span></td>
                                 </tr>
+                                <tr>
+                                    <td><img src="{{me.barcode.link}}" style="width: 40%;"></td>
+                                </tr>                                
                             </table>
                             <div class="col-lg-12">
                                 <h5>{{'property.sendEmailTitle' | translate}}</h5>
@@ -222,31 +204,14 @@
                                             <input type="text" placeholder="{{'property.email.email' | translate}}" [(ngModel)]="emailDetail.email" name="email">
                                         </div>                                        
                                         <div class="col-lg-12">
-                                            <textarea placeholder="{{'property.email.message' | translate}}" [(ngModel)]="emailDetail.message" name="message"></textarea>
-                                            <button mat-raised-button color="primary" (click)="sendEmail()">Send Message</button>
+                                            <textarea placeholder="{{'property.yourMessage' | translate}}" [(ngModel)]="emailDetail.message" name="message"></textarea>
+                                            <button mat-raised-button class="btn btn-dark" (click)="sendEmail()">{{'property.sendMessage' | translate}}</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>  
-                            <!-- <a href="#" class="site-btn list-btn">View More Listings</a> -->
                         </div>
-                        <img src="{{me.barcode.link}}">
                     </div>
-                    <!-- <div class="agent-widget" *ngIf="me">
-                        <img src="{{me.barcode.link}}">
-                        <div class="aw-text" *ngIf="translateService.currentLang === 'zh'">
-                            <h4>{{me.displayName.chinese}}</h4>
-                            <h6>{{me.phoneNumber}}</h6>
-                            <h6>{{me.email}}</h6>
-                            <div [innerHTML]="me.aboutMe.chinese"></div>
-                        </div>
-                        <div class="aw-text" *ngIf="translateService.currentLang === 'en'">
-                            <h4>{{me.displayName.english}}</h4>
-                            <h6>{{me.phoneNumber}}</h6>
-                            <h6>{{me.email}}</h6>
-                            <div [innerHTML]="me.aboutMe.english"></div>
-                        </div>                        
-                    </div> -->
                 </div>
             </div>
         </div>

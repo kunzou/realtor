@@ -18,5 +18,8 @@ export class User {
     aboutCompany: Description = new Description();
     aboutPageDescription: Description = new Description();
     owner: boolean;
+    facebook: string;
+    instagram: string;
+    youtube: string;    
     version: number;  
 }

@@ -16,16 +16,21 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar>
       <div fxHide.gt-xs>
         <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
       <div>
-        <a routerLink="/">
-          福居温尼伯
-        </a>
+        <div fxLayout="row" fxLayoutAlign=" center" class="logo">
+          <div>
+            <img class="icon" src="assets/favicon.png">
+          </div>
+          <div>
+            <h1>{{'home.fuju' | translate}}</h1>
+          </div>
+        </div>
       </div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
@@ -46,13 +51,11 @@
           </li>
           <li>
             <a routerLink="/about">
-              <!-- <mat-icon class="icon">account_box</mat-icon> -->
               <span class="label">{{ 'home.about' | translate }}</span>
             </a>
           </li>
           <li>
             <a routerLink="/blog">
-              <!-- <mat-icon class="icon">collections_bookmark</mat-icon> -->
               <span class="label">{{ 'home.blog' | translate }}</span>
             </a>
           </li>
@@ -71,5 +74,6 @@
         </mat-card>
       </div>
     </main>
+    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

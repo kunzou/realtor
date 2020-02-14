@@ -1,0 +1,64 @@
+<footer class="footer-section" *ngIf="me">
+    <div class="container">
+      <div class="footer-text">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="ft-about">
+              <div fxLayout="row" fxLayoutAlign=" center" class="logo">
+                  <div>
+                    <img src="assets/favicon.png">
+                  </div>
+                  <div>
+                    <h1>{{'home.fuju' | translate}}</h1>
+                  </div>
+              </div>
+              <p>简介需要吗？</p>
+              <div class="fa-social">
+                <a href="{{me.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                <!-- <a href="#"><i class="fa fa-tripadvisor"></i></a> -->
+                <a href="{{me.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="{{me.youtube}}" target="_blank"><i class="fa fa-youtube-play"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 ">
+            <div class="ft-contact">
+              <h6>{{'footer.contactUs' | translate}}</h6>
+              <ul>
+                <li><i class="fa fa-phone-square"></i> {{me.phoneNumber}}</li>
+                <li><i class="fa fa-envelope"></i> {{me.email}}</li>
+                <li>地址需要吗？</li>
+                <li><img src="{{me.barcode.link}}" style="width: 40%;"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <div class="ft-newslatter">
+              <h6>{{'footer.askMe' | translate}}</h6>
+              <form action="#" class="contact-form">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="{{'footer.yourName' | translate}}" [(ngModel)]="emailDetail.from" name="from">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="{{'footer.contactMethod' | translate}}" [(ngModel)]="emailDetail.email" name="email">
+                    </div>                                        
+                    <div class="col-lg-12">
+                        <textarea placeholder="{{'footer.yourQuestion' | translate}}" [(ngModel)]="emailDetail.message" name="message"></textarea>
+                        <button mat-raised-button class="btn btn-dark" (click)="sendEmail()">{{'property.sendMessage' | translate}}</button>
+                    </div>
+                </div>
+            </form>              
+            </div>
+          </div>
+        </div>
+        <div class="co-text">
+            <p>
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved.
+            </p>
+          </div>        
+      </div>
+    </div>
+  </footer>

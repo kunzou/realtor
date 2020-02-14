@@ -42,8 +42,17 @@
           "number": "Your Number",
           "email": "Email Address",
           "message": "Your Message"
-        }        
+        },
+        "sendMessage": "Send Message",
+        "yourMessage": "Your Message"
     },
+    "footer": {
+      "contactUs": "Contact Us",
+      "askMe": "Ask Me",
+      "yourName": "Your Name",
+      "contactMethod": "Contact Method",
+      "yourQuestion": "Your Question"
+    },    
     "propertyType": {
       "house": "House",
       "townhouse": "Townhouse",

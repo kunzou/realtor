@@ -42,7 +42,16 @@
           "number": "联系电话",
           "email": "邮箱地址",
           "message": "您的信息"
-        }
+        },
+        "sendMessage": "发送邮件",
+        "yourMessage": "您的问题"
+    },
+    "footer": {
+      "contactUs": "联系我们",
+      "askMe": "问我问题",
+      "yourName": "您的名字",
+      "contactMethod": "联系方式",
+      "yourQuestion": "您的问题"
     },
     "propertyType": {
       "house": "独立屋",
