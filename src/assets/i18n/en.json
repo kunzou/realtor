@@ -1,10 +1,11 @@
 {
     "home": {
-        "home": "Home",
-        "properties": "Properties",
-        "dashboard": "Dashboard",
-        "about": "About",
-        "blog": "Blog",
+        "home": "HOME",
+        "properties": "PROPERTIES",
+        "dashboard": "DASHBOARD",
+        "about": "ABOUT ME",
+        "blog": "BLOG",
+        "openHouse": "OPEN HOUSE",
         "propertySource": "Source",
         "fuju": "Fuju Winnipeg",
         "squareMeters": "Square Meters",
@@ -53,6 +54,9 @@
       "contactMethod": "Contact Method",
       "yourQuestion": "Your Question"
     },    
+    "openHouse": {
+      "title": "OPEN HOUSE"
+    },
     "propertyType": {
       "house": "House",
       "townhouse": "Townhouse",

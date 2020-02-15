@@ -131,10 +131,13 @@
 
         <br>
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="On Market Since" [(ngModel)]="property.onMarketSince">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="picker1" placeholder="On Market Since" [(ngModel)]="property.onMarketSince">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
+
+        <input type="datetime-local" [ngModel]="property.openHouseDate | date:'yyyy-MM-ddTHH:mm'" 
+        (ngModelChange)="property.openHouseDate = $event" />    
 
         <mat-form-field>
             <input matInput placeholder="Comments on Map" [(ngModel)]="property.aboutPageComment"

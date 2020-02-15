@@ -10,6 +10,9 @@
       <a mat-list-item routerLink="/about">
         <span class="label">{{ 'home.about' | translate }}</span>
       </a>
+      <a mat-list-item routerLink="/openHouse">
+        <span class="label">{{'home.openHouse' | translate}}</span>
+      </a>
       <a (click)="switchLanguage()">
         <span class="label">{{getDisplayLanguageLabel()}}</span>
       </a>
@@ -54,6 +57,11 @@
               <span class="label">{{ 'home.about' | translate }}</span>
             </a>
           </li>
+          <li>
+            <a routerLink="/openHouse">
+              <span class="label">{{'home.openHouse' | translate}}</span>
+            </a>
+          </li>          
           <li>
             <a routerLink="/blog">
               <span class="label">{{ 'home.blog' | translate }}</span>

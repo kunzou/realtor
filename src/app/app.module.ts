@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient }    from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FullCalendarModule } from '@fullcalendar/angular';
 import { 
   MatCardModule, 
   MatListModule, 
@@ -48,6 +49,8 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { EditOwnerComponent } from './edit-owner/edit-owner.component';
 import { FooterComponent } from './footer/footer.component';
+import { OpenHouseComponent } from './open-house/open-house.component';
+
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -73,6 +76,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BlogCardComponent,
     EditOwnerComponent,
     FooterComponent,
+    OpenHouseComponent,
   ],
   entryComponents: [],
   imports: [
@@ -114,6 +118,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }}
     ),
+    FullCalendarModule
   ],
   providers: [{
     provide: MAT_RADIO_DEFAULT_OPTIONS,

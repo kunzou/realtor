@@ -27,6 +27,6 @@ export class AppComponent {
   }
 
   getDisplayLanguageLabel(): any{
-    return this.translateService.currentLang === 'en'?"中文":"English";
+    return this.translateService.currentLang === 'en'?"中文":"ENGLISH";
   }
 }

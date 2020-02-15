@@ -3,8 +3,9 @@
         "home": "首页",
         "properties": "房产列表",
         "dashboard": "后台",
-        "about": "关于",
-        "blog": "博客",
+        "about": "关于我",
+        "blog": "聃哥说放",
+        "openHouse": "周末开放",
         "propertySource": "房源",
         "fuju": "福居温尼伯",
         "squareMeters": "平方米地产",
@@ -52,6 +53,9 @@
       "yourName": "您的名字",
       "contactMethod": "联系方式",
       "yourQuestion": "您的问题"
+    },
+    "openHouse": {
+      "title": "周末开放"
     },
     "propertyType": {
       "house": "独立屋",

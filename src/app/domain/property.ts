@@ -40,4 +40,5 @@ export class Property {
     holdType: string;
     remaining: string[] = [];
     features: Highlight[] = [];
+    openHouseDate: Date;
 }

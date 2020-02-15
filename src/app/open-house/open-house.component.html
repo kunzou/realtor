@@ -1,0 +1,32 @@
+<!-- <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="events.length > 0"> -->
+<div class="container">
+    <div>
+      <h1><strong>{{'openHouse.title' | translate}}</strong></h1>
+    </div>
+    <div class="col-lg-12">
+      <div class="map">
+        <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
+          <agm-marker *ngFor="let event of events" [latitude]="event.location.lat" [longitude]="event.location.lng" [iconUrl]="icon">
+            <agm-info-window [isOpen]="true">
+              <a routerLink="event.url">
+                <div fxLayout="column" fxLayoutAlign="space-around center">
+                  <strong>{{event.title}}</strong>
+                  <strong>{{event.date | date:'medium'}}</strong>
+                </div>
+              </a>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <full-calendar #calendar id="caldenar" defaultView="dayGridMonth" 
+      [header]="{left: 'prev,next today',center: 'title',right: ''}" 
+      [plugins]="calendarPlugins" 
+      [weekends]=true 
+      [events]="events" 
+        >
+      </full-calendar>
+    </div>
+</div>

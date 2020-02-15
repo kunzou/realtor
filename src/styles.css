@@ -1,4 +1,6 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 
 /* line 5, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 body {
