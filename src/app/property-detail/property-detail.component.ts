@@ -28,8 +28,6 @@ import { Highlight } from '../domain/highlight';
 })
 export class PropertyDetailComponent implements OnInit {
 
-  primaryImage: Image;
-  additionalImages: Image[];
   language: string;
   selectedFeature:string;
   featureYear:string;
@@ -64,8 +62,6 @@ export class PropertyDetailComponent implements OnInit {
     this.propertyService.getProperty(id)
       .subscribe(property => {
         this.property = property;
-        this.primaryImage = property.primaryImage;
-        this.additionalImages = property.additionalImages;
       });
   }
 
@@ -74,8 +70,6 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.property.primaryImage = this.primaryImage;
-    this.property.additionalImages = this.additionalImages;
     this.propertyService.clearSaleCache();
     this.propertyService.updateProperty(this.property).subscribe(() => this.goBack());
   }
@@ -105,9 +99,9 @@ export class PropertyDetailComponent implements OnInit {
         if (typeof (event) === 'object') {
           console.log(event.body);
           if(isPrimary) {
-            this.primaryImage = event.body;
+            this.property.primaryImage = event.body;
           } else {
-            this.additionalImages.push(event.body);
+            this.property.additionalImages.push(event.body);
           }
           
         }
@@ -150,7 +144,7 @@ export class PropertyDetailComponent implements OnInit {
   }
   
   deleteImage(image: Image): void {
-    this.additionalImages = this.additionalImages.filter(item => item !== image)
+    this.property.additionalImages = this.property.additionalImages.filter(item => item !== image)
   }
 
   deleteFeature(hightlight: Highlight): void {
