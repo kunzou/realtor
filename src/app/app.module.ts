@@ -29,6 +29,9 @@ import { AgmCoreModule } from '@agm/core';
 import { GalleryModule } from '@ks89/angular-modal-gallery';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertiesComponent } from './properties/properties.component';
@@ -36,7 +39,6 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { ViewPropertyComponent } from './view-property/view-property.component';
 import { AboutComponent } from './about/about.component';
@@ -118,7 +120,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }}
     ),
-    FullCalendarModule
+    FullCalendarModule,
+    NgbModule
   ],
   providers: [{
     provide: MAT_RADIO_DEFAULT_OPTIONS,

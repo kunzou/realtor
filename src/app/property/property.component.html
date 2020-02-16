@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="single-property">
-                        <div class="sp-image">
+                        <div class="sp-image" *ngIf="imagesRect.length > 0">
                             <section>
                                 <ks-carousel [id]="111" [images]="imagesRect"
                                     [carouselConfig]="{maxWidth: '766px', maxHeight: '400px', showArrows: true, objectFit: 'cover', keyboardEnable: true, modalGalleryEnable: true, legacyIE11Mode: false}"

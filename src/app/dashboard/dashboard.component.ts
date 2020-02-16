@@ -38,10 +38,9 @@ export class DashboardComponent implements OnInit{
     }
     this.propertyService.addProperty({ address: address } as Property)
       .subscribe(property => {
-        // this.dataSource.connect();
-        // this.properties.push(property);
         this.dataSource = new PostDataSource(this.propertyService);
       })
+      this.propertyService.clearSaleCache();
   }  
 
   editOwner(): void {

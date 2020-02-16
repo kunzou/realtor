@@ -14,6 +14,7 @@ export class PropertyService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  cachedSaleProperties: Observable<Property[]>;
   constructor(
     private messageService: MessageService,
     private http: HttpClient
@@ -27,12 +28,20 @@ export class PropertyService {
   }
 
   getSaleProperties(): Observable<Property[]> {
-    const url = `${this.propertyUrl}/sale`;
-    return this.http.get<Property[]>(url)
-      .pipe(
-        catchError(this.handleError<Property[]>('getProperties', []))
-      )
+    if(!this.cachedSaleProperties) {
+      const url = `${this.propertyUrl}/sale`;
+      this.cachedSaleProperties = this.http.get<Property[]>(url)
+        .pipe(
+          catchError(this.handleError<Property[]>('getProperties', []))
+        )
+    }
+
+    return this.cachedSaleProperties;
   }
+
+  clearSaleCache() {
+    this.cachedSaleProperties = null;
+  }   
 
   getSoldPurchasedProperties(): Observable<Property[]> {
     const url = `${this.propertyUrl}/soldPurchased`;

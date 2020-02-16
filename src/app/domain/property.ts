@@ -12,7 +12,8 @@ export class Property {
     propertyStatus: string;
     propertyStyle: string;
     yearBuilt: number;
-    description: Description = new Description();
+    // description: Description = new Description();
+    description: {english: string; chinese: string;};
     descriptionEnglish: string;
     numberOfRooms: number;
     numberOfWashrooms: number;
@@ -25,7 +26,8 @@ export class Property {
     location: {lat: number; lng: number;};
     aboutPageComment: string;
     youtubeLink: string;
-    tag: Description = new Description();
+    // tag: Description = new Description();
+    tag: {english: string; chinese: string;};
     neighborhood: string;
     levels: number;
     propertyTax: number;

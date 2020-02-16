@@ -14,7 +14,7 @@ import { OpenHouseComponent } from './open-house/open-house.component';
 const routes: Routes = [
   { path: 'properties', component: PropertiesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/properties', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'detail/:id', component: PropertyDetailComponent },  
   { path: 'view/:id', component: ViewPropertyComponent },  
   { path: 'about', component: AboutComponent },  
