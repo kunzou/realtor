@@ -203,7 +203,7 @@ h3 {
   color: #fff;
   border-radius: 30px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: bold;
   z-index: 1;
 }
 
@@ -216,7 +216,7 @@ h3 {
   color: #fff;
   border-radius: 30px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: bold;
   z-index: 1;
 }
 
@@ -227,7 +227,7 @@ h3 {
 
 /* line 47, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */
 .popular_property .single_property .property_content {
-  padding: 25px;
+  /* padding: 25px; */
   border-bottom: 1px solid #E8E8E8;
 }
 
@@ -235,9 +235,8 @@ h3 {
 .popular_property .single_property .property_content .main_pro h3 {
   font-size: 16px;
   color: #001D38;
-  font-weight: 500;
-  margin-bottom: 0;
-  margin-bottom: 8px;
+  font-weight: bold;
+  /* margin-bottom: 8px; */
 }
 
 /* line 57, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */

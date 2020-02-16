@@ -7,10 +7,10 @@
                         <img src="{{slide.url}}" alt="Random second slide" width="100%">
                     </a>
                 </div>
-                <div class="carousel-caption">
-                    <h1>{{slide.text}}</h1>
-                    <h2>{{slide.price | currency}}</h2>
-                    <h2 *ngIf="slide.openHouse">Open House on {{slide.openHouse | date:'medium'}}</h2>
+                <div class="carousel-caption" fxLayout="column" fxLayoutAlign="start center" >
+                    <h2>{{slide.text}}</h2>
+                    <h3>{{slide.price | currency}}</h3>
+                    <h3 *ngIf="slide.openHouse">Open House on {{slide.openHouse | date:'medium'}}</h3>
                 </div>
             </ng-template>
         </div>
