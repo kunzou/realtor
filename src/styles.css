@@ -209,6 +209,19 @@ h3 {
   z-index: 1;
 }
 
+.popular_property .single_property .property_thumb .property_price {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: rgba(36, 65, 66, 0.329);
+  padding: 8px 14px;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 1;
+}
+
 /* line 42, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/_popular_property.scss */
 .popular_property .single_property .property_thumb .property_tag.red {
   background: #FF5748 !important;

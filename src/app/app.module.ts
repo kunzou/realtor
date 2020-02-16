@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient }    from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { FullCalendarModule } from '@fullcalendar/angular';
 import { 
   MatCardModule, 
   MatListModule, 
@@ -120,7 +119,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }}
     ),
-    FullCalendarModule,
     NgbModule
   ],
   providers: [{

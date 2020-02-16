@@ -1,10 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import { EventInput } from '@fullcalendar/core';
-import { FullCalendarComponent } from '@fullcalendar/angular';
-import timeGrigPlugin from '@fullcalendar/timegrid';
-import { CalendarEventService } from '../calendar-event.service';
+import { Component, OnInit } from '@angular/core';
+import { NgbDate} from '@ng-bootstrap/ng-bootstrap';
+import { PropertyService } from '../service/property.service';
+import { PropertyCard } from '../domain/property-card';
 
 @Component({
   selector: 'app-open-house',
@@ -12,40 +9,70 @@ import { CalendarEventService } from '../calendar-event.service';
   styleUrls: ['./open-house.component.css']
 })
 export class OpenHouseComponent implements OnInit{
-  // @ViewChild('calendar', { static: false }) calendarComponent: FullCalendarComponent; // the #calendar in the template
 
-  calendarVisible = true;
-  calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
-  calendarWeekends = true;
   icon = './assets/open-house.png';
-  events: EventInput[] = [];
 
-  constructor(private calendarEventService: CalendarEventService) { }
+  hoveredDate: NgbDate;
+  selectedProperties: PropertyCard[];
+  properties: PropertyCard[]; 
+
+  
+  constructor(
+    private propertyService: PropertyService
+  ) { }
 
   ngOnInit(): void {
     this.getEvents();
   }  
 
   getEvents(): void {
-    this.calendarEventService.getCalendarEvents().subscribe(events => {
-      this.events = events;
+    this.propertyService.getOpenHouses().subscribe(properties => {
+      this.properties = properties;
     });
+  }
+
+  onDateSelection(date: NgbDate) {
+    this.selectedProperties = this.properties.filter(property => this.equalDates(date, property.openHouseDate))
+  }
+
+  showTooltip(date: NgbDate) {
+    if(!this.isEventDay(date)) {
+      return '';
+    } else {
+      return this.properties
+        .filter(property => this.equalDates(date, property.openHouseDate))
+        .map(property=>this.getTooltip(property)).join(';')
+    }        
+  }
+
+  getTooltip(property: PropertyCard) {
+    return new Date(property.openHouseDate).toLocaleTimeString().slice(0,-3) + ' ' + property.address
+  }
+
+  isEventDayClicked(date: NgbDate) {
+    return true;
+  }
+
+  isHovered(date: NgbDate) {
+    return false;
+  }
+
+  isInside(date: NgbDate) {
+    return false;
+  }
+
+  isEventDay(date: NgbDate) {
+    return this.properties.map(property=>property.openHouseDate).some(eventDate => this.equalDates(date, eventDate));
   }  
 
-  MouseOver(arg) {
-    if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-      console.log(arg)
-    }
+  equalDates(ngbDate: NgbDate, cDate: Date) {
+    var date = new Date(cDate);
+    return date.getUTCDate() == ngbDate.day && date.getUTCMonth()+1 == ngbDate.month && date.getFullYear() == ngbDate.year;
   }
 
-
-  handleEventClick(arg) {
-    console.log(arg);
-  }
-
-  handleDateClick(arg) {
-    if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-      console.log(arg)
-    }
+  getOpenHouses(): void {
+    this.propertyService.getOpenHouses().subscribe(properties => {
+      this.properties = properties;
+    });
   }
 }

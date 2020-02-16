@@ -105,10 +105,8 @@ export class PropertyDetailComponent implements OnInit {
         if (typeof (event) === 'object') {
           console.log(event.body);
           if(isPrimary) {
-            // this.property.primaryImage = event.body;
             this.primaryImage = event.body;
           } else {
-            // this.property.additionalImages.push(event.body);
             this.additionalImages.push(event.body);
           }
           

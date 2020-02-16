@@ -5,6 +5,7 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment'
+import { PropertyCard } from '../domain/property-card';
 
 @Injectable({
   providedIn: "root"
@@ -32,7 +33,7 @@ export class PropertyService {
       const url = `${this.propertyUrl}/sale`;
       this.cachedSaleProperties = this.http.get<Property[]>(url)
         .pipe(
-          catchError(this.handleError<Property[]>('getProperties', []))
+          catchError(this.handleError<Property[]>('getSaleProperties', []))
         )
     }
 
@@ -47,9 +48,17 @@ export class PropertyService {
     const url = `${this.propertyUrl}/soldPurchased`;
     return this.http.get<Property[]>(url)
       .pipe(
-        catchError(this.handleError<Property[]>('getProperties', []))
+        catchError(this.handleError<Property[]>('getSoldPurchasedProperties', []))
       )
   }  
+
+  getOpenHouses(): Observable<PropertyCard[]> {
+    const url = `${this.propertyUrl}/openHouse`;
+    return this.http.get<PropertyCard[]>(url)
+      .pipe(
+        catchError(this.handleError<PropertyCard[]>('getOpenHouses', []))
+      )
+  }    
 
   getProperty(id: string): Observable<Property> {
     const url = `${this.propertyUrl}/${id}`;

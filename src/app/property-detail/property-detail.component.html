@@ -209,15 +209,15 @@
                 <mat-card-actions>
                     <button mat-button color="warn" (click)="uploadPrimary()">
                         <mat-icon>file_upload</mat-icon>
-                        Upload primary photo
+                        封面图片
                     </button>
                     <button mat-button (click)="uploadAdditional()">
                         <mat-icon>file_upload</mat-icon>
-                        Upload additional photos
+                        相册图片
                     </button></mat-card-actions>
                 <mat-card-content>
-                    <div style="text-align: center;" *ngIf="property.primaryImage">
-                        <img mat-card-image src="{{primaryImage.mediumLink}}" alt="">
+                    <div style="text-align: center;" *ngIf="property.primaryImage != null">
+                        <img  src="{{primaryImage.mediumLink}}" alt="">
                     </div>
                     <div class="container">
                         <div class="row">
