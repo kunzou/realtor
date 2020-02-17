@@ -1,7 +1,7 @@
 <div class="popular_property">
     <div class="container">
         <p>
-            {{ 'home.propertySource' | translate }}:
+            <span>{{ 'home.propertySource' | translate }}:</span>
             <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" [(ngModel)]="currentSource">
               <mat-button-toggle value="fuju" (change)="setSource()">{{ 'home.fuju' | translate }}</mat-button-toggle>
               <mat-button-toggle value="squareMeters" (change)="setSource()">{{ 'home.squareMeters' | translate }}</mat-button-toggle>

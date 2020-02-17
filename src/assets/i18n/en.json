@@ -6,6 +6,7 @@
         "about": "ABOUT ME",
         "blog": "BLOG",
         "openHouse": "OPEN HOUSE",
+        "service": "SERVICE",
         "propertySource": "Source",
         "fuju": "Fuju Winnipeg",
         "squareMeters": "Square Meters",
@@ -57,6 +58,10 @@
     "openHouse": {
       "title": "OPEN HOUSE"
     },
+    "service": {
+      "sale": "I am Selling a Property",
+      "purchase": "I am Buying a Property"
+    },    
     "propertyType": {
       "house": "House",
       "townhouse": "Townhouse",

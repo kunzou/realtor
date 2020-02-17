@@ -10,6 +10,7 @@ import { PropertyComponent } from './property/property.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { EditOwnerComponent } from './edit-owner/edit-owner.component';
 import { OpenHouseComponent } from './open-house/open-house.component';
+import { MyServiceComponent } from './my-service/my-service.component';
 
 const routes: Routes = [
   { path: 'properties', component: PropertiesComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'property/:id', component: PropertyComponent },  
   { path: 'blog', component: BlogListComponent },  
   { path: 'openHouse', component: OpenHouseComponent },  
+  { path: 'service', component: MyServiceComponent },  
 ];
 
 @NgModule({

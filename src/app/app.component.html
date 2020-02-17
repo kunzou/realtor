@@ -7,15 +7,18 @@
       <a mat-list-item routerLink="/properties">
         <span class="label">{{ 'home.properties' | translate }}</span>
       </a>
-      <a mat-list-item routerLink="/dashboard">
-        <span class="label">{{ 'home.dashboard' | translate }}</span>
-      </a>
       <a mat-list-item routerLink="/openHouse">
         <span class="label">{{'home.openHouse' | translate}}</span>
       </a>      
+      <a mat-list-item routerLink="/service">
+        <span class="label">{{'home.service' | translate}}</span>
+      </a>            
       <a mat-list-item routerLink="/about">
         <span class="label">{{ 'home.about' | translate }}</span>
       </a>
+      <a mat-list-item routerLink="/dashboard">
+        <span class="label">{{ 'home.dashboard' | translate }}</span>
+      </a>      
       <a mat-list-item (click)="switchLanguage()">
         <span class="label">{{getDisplayLanguageLabel()}}</span>
       </a>
@@ -51,15 +54,15 @@
             </a>
           </li>
           <li>
-            <a routerLink="/dashboard">
-              <span class="label">{{ 'home.dashboard' | translate }}</span>
-            </a>
-          </li>
-          <li>
             <a routerLink="/openHouse">
               <span class="label">{{'home.openHouse' | translate}}</span>
             </a>
-          </li>          
+          </li>    
+          <li>
+            <a routerLink="/service">
+              <span class="label">{{'home.service' | translate}}</span>
+            </a>
+          </li>                  
           <li>
             <a routerLink="/blog">
               <span class="label">{{ 'home.blog' | translate }}</span>
@@ -69,7 +72,12 @@
             <a routerLink="/about">
               <span class="label">{{ 'home.about' | translate }}</span>
             </a>
-          </li>          
+          </li>      
+          <li>
+            <a routerLink="/dashboard">
+              <span class="label">{{ 'home.dashboard' | translate }}</span>
+            </a>
+          </li>              
           <li>
             <a (click)="switchLanguage()">
               <span class="label">{{getDisplayLanguageLabel()}}</span>

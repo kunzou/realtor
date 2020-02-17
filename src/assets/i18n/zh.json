@@ -6,6 +6,7 @@
         "about": "关于我",
         "blog": "聃哥说房",
         "openHouse": "周末开放",
+        "service": "聃哥服务",
         "propertySource": "房源",
         "fuju": "福居温尼伯",
         "squareMeters": "平方米地产",
@@ -56,6 +57,10 @@
     },
     "openHouse": {
       "title": "周末开放"
+    },
+    "service": {
+      "sale": "卖方服务",
+      "purchase": "买方服务"
     },
     "propertyType": {
       "house": "独立屋",
