@@ -214,7 +214,8 @@
                     <button mat-button (click)="uploadAdditional()">
                         <mat-icon>file_upload</mat-icon>
                         相册图片
-                    </button></mat-card-actions>
+                    </button>
+                </mat-card-actions>
                 <mat-card-content>
                     <div style="text-align: center;" *ngIf="property.primaryImage">
                         <img mat-card-image src="{{property.primaryImage.mediumLink}}" alt="">
@@ -232,8 +233,6 @@
                         </div>
                     </div>
                 </mat-card-content>
-
-
             </mat-card>
 
             <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"

@@ -48,7 +48,7 @@
     </div>
     
     <div *ngIf="language === 'en'">
-        <ckeditor [(ngModel)]="owner.aboutMe.english"></ckeditor>
+        <ckeditor [(ngModel)]="owner.aboutMe.english" name="aboutMe"></ckeditor>
         <h4>Preview</h4>
         <div class="col-lg-4" [innerHTML]="owner.aboutMe.english"></div>
     </div>  

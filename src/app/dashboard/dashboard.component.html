@@ -1,62 +1,26 @@
-  <mat-card-content>
-    <div class="example-container mat-elevation-z8">
-      <mat-table #table [dataSource]="dataSource">
-        <!-- <ng-container matColumnDef="date_posted">
-                  <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'd/M/y'}} </mat-cell>
-                </ng-container> -->
-
-        <ng-container matColumnDef="address">
-          <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
-          <mat-cell class="table-cell" *matCellDef="let element"> {{element.address}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="status">
-          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
-          <mat-cell class="table-cell" *matCellDef="let element"> {{element.propertyStatus}} </mat-cell>
-        </ng-container>        
-
-        <ng-container matColumnDef="yearBuilt">
-          <mat-header-cell *matHeaderCellDef>List date</mat-header-cell>
-          <mat-cell class="table-cell" *matCellDef="let element"> {{element.onMarketSince | date}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="price">
-          <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
-          <mat-cell class="table-cell" *matCellDef="let element"> {{element.askingPrice | currency}} </mat-cell>
-        </ng-container>        
-
-        <!-- <ng-container matColumnDef="category">
-                  <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
-                </ng-container> -->
-        <ng-container matColumnDef="edit">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <a type="button">
-              <mat-icon class="icon" routerLink="/detail/{{element.id}}">edit</mat-icon>
-            </a>
-          </mat-cell>
-        </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-      </mat-table>
+<ngb-tabset [destroyOnHide]="false">
+  <ngb-tab>
+    <ng-template ngbTabTitle><b>房产列表</b></ng-template>
+    <ng-template ngbTabContent>
+      <div class="container pt-3">
+        <app-property-management></app-property-management>
     </div>
-    <p></p>
-    <div fxLayoutAlign="center center">
-      <mat-form-field>
-        <input matInput placeholder="Address" #propertyAddress>
-      </mat-form-field>
-      <button mat-fab color="primary" (click)="add(propertyAddress.value); propertyAddress.value=''">Add</button>
-    </div>
-
-    <div fxLayoutAlign="center center">
-      <button mat-raised-button color="primary" (click)="editOwner()">Site Management</button>
-    </div>    
-  </mat-card-content>
-
-  <mat-card-footer>
-    <div fxLayoutAlign="center center">
-      <app-property-search></app-property-search>
-    </div>
-  </mat-card-footer>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle><b>网站管理</b></ng-template>
+    <ng-template ngbTabContent>
+      <div class="container pt-3">
+        <app-edit-owner></app-edit-owner>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle><b>博客管理</b></ng-template>
+    <ng-template ngbTabContent>
+      <div class="container pt-3">
+        <app-blog-management></app-blog-management>
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

@@ -1,16 +1,12 @@
 import { Description } from './description'
 import { Image } from './image'
 
-export class Blog {
+export class BlogCard {
     id: string
     category: string
     brief: Description
     title: Description
-    content: Description
     date: Date
-    videoLink: string
-    version: Number
-    coverImage: Image
-    viewCount: number
-    images: Image[]
+    coverageImage: Image
+    viewCount: number    
 }

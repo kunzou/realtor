@@ -1,0 +1,26 @@
+<table class="table table-striped table-hover" *ngIf="blogs != null">
+  <thead>
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Title</th>
+    <th scope="col">Category</th>
+    <th scope="col">View Count</th>
+    <th scope="col">Edit</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let blog of blogs; index as i" >
+    <th>{{blog.date | date:'medium'}}</th>
+    <td>
+      {{ blog.title.chinese }}
+    </td>
+    <td>{{ blog.category | translate}}</td>
+    <td>{{ blog.viewCount | number }}</td>
+    <td><a routerLink="/editBlog/{{blog.id}}"><i class="fa fa-edit"></i></a></td>
+  </tr>
+  </tbody>
+</table>
+<div fxLayoutAlign="center center">
+    <!-- <button mat-fab color="primary" (click)="add(propertyAddress.value); propertyAddress.value=''">Add</button> -->
+    <button mat-raised-button class="btn btn-dark" (click)="add()">NEW</button>
+</div>

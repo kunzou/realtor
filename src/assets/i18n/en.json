@@ -161,6 +161,14 @@
       "newsShingle": "News Shingle",
       "newerDriveway": "Newer Driveway",
       "insulatedGarage": "Insulated Garage"    
-    }
+    },
+    "blog": {
+      "category": {
+        "buyHouse": "Buy Property",
+        "sellHouse": "Sell Property",
+        "maintenance": "Maintenance",
+        "vlog": "Vlog"
+      }
+    }    
   }
   

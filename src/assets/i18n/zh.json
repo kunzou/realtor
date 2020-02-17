@@ -161,6 +161,14 @@
       "newsShingle": "较新房顶",
       "newerDriveway": "较新车道",
       "insulatedGarage": "车库保温"      
+    },
+    "blog": {
+      "category": {
+        "buyHouse": "买房",
+        "sellHouse": "卖房",
+        "maintenance": "维护",
+        "vlog": "视频"
+      }
     }
   }
   
