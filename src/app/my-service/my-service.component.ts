@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './my-service.component.html',
   styleUrls: ['./my-service.component.css']
 })
-export class MyServiceComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class MyServiceComponent  {
+  active = 1;
 }
