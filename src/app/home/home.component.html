@@ -1,13 +1,14 @@
-<div class="col-lg-12">
+<section>
     <ngb-carousel *ngIf="slides.length > 0">
         <div *ngFor="let slide of slides">
             <ng-template ngbSlide>
                 <div class="picsum-img-wrapper">
                     <a routerLink="/property/{{slide.id}}">
-                        <img src="{{slide.url}}" alt="Random second slide" width="100%">
+                        <img src="{{slide.url}}" alt="Random second slide"
+                            class="d-flex align-items-center justify-content-center min-vh-100">
                     </a>
                 </div>
-                <div class="carousel-caption" fxLayout="column" fxLayoutAlign="start center" >
+                <div class="carousel-caption" fxLayout="column" fxLayoutAlign="start center">
                     <h2>{{slide.text}}</h2>
                     <h3>{{slide.price | currency}}</h3>
                     <h3 *ngIf="slide.openHouse">Open House on {{slide.openHouse | date:'medium'}}</h3>
@@ -15,7 +16,7 @@
             </ng-template>
         </div>
     </ngb-carousel>
-</div>
+</section>
 
 <div class="popular_property pt-5">
     <div class="container">

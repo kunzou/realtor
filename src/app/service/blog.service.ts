@@ -78,13 +78,13 @@ export class BlogService {
     );
   }
 
-  searchBlogs(term: string): Observable<BlogCard[]> {
-    if(!term.trim()) {
-      return of([]);
-    }
+  // searchBlogs(term: string): Observable<BlogCard[]> {
+  //   if(!term.trim()) {
+  //     return of([]);
+  //   }
 
-    return this.http.get<BlogCard[]>(`${this.blogUrl}/?address=${term}`).pipe(
-      catchError(this.handleError<Blog[]>('searchProperties', []))      
-    );
-  }
+  //   return this.http.get<BlogCard[]>(`${this.blogUrl}/?address=${term}`).pipe(
+  //     catchError(this.handleError<Blog[]>('searchProperties', []))      
+  //   );
+  // }
 }
