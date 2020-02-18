@@ -9,7 +9,8 @@ import { BlogCategory } from '../domain/blog-category';
   styleUrls: ['./blog-list.component.css']
 })
 export class BlogListComponent implements OnInit {
-
+  page :number = 1
+  pageSize :number = 5
   blogList: BlogCard[];
   categories = Object.values(BlogCategory).filter(value => typeof value !== 'number');
   currentCategory;

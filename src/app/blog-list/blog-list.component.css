@@ -572,38 +572,19 @@
   background: #eeeeee;
   margin: 30px 0px; }
 
-.blog-pagination {
-  margin-top: 80px; }
-
-.blog-pagination .page-link {
-  font-size: 14px;
-  position: relative;
-  display: block;
-  padding: 0;
-  text-align: center;
-  margin-left: -1px;
-  line-height: 45px;
-  width: 45px;
-  height: 45px;
-  border-radius: 0 !important;
-  color: #8a8a8a;
-  border: 1px solid #f0e9ff;
-  margin-right: 10px; }
-  .blog-pagination .page-link i,
-  .blog-pagination .page-link span {
-    font-size: 13px; }
-
-.blog-pagination .page-item.active .page-link {
-  background-color: #fbf9ff;
-  border-color: #f0e9ff;
-  color: #888888; }
-
-.blog-pagination .page-item:last-child .page-link {
-  margin-right: 0; }
-
-
-
 
 .blog-info-link {
   font-size: 13px;
+}
+
+
+ngb-pagination ::ng-deep ul > li:not(.active) > a {
+  background-color: #eeeeee !important;
+  border: none !important;
+  
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+  background-color: #dfa974 !important;
+  border: none !important;
 }
