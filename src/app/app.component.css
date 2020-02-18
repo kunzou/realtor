@@ -80,10 +80,6 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 	font-weight: bold;
   }  
 
-  mat-card {
-	background:rgb(224, 224, 224);
-  }
-
   .navi-button {
     color: white
   }

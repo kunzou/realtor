@@ -167,8 +167,15 @@
         "buyHouse": "买房",
         "sellHouse": "卖房",
         "maintenance": "维护",
-        "vlog": "视频"
+        "vlog": "视频",
+        "all": "全部",
+        "hot": "近期热点"
       }
+    },
+    "label": {
+      "all": "全部",
+      "category": "文章分类",
+      "feelingLucky": "随便看看"
     }
   }
   

@@ -167,8 +167,15 @@
         "buyHouse": "Buy Property",
         "sellHouse": "Sell Property",
         "maintenance": "Maintenance",
-        "vlog": "Vlog"
+        "vlog": "Vlog",
+        "all": "All",
+        "hot": "What's Hot"
       }
-    }    
+    },
+    "label": {
+      "all": "All",
+      "category": "Category",
+      "feelingLucky": "I'm Feeling Lucky"
+    }
   }
   

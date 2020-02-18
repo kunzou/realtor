@@ -22,7 +22,7 @@ export class BlogEditComponent implements OnInit {
   private _success = new Subject<string>();
   staticAlertClosed = false;
   successMessage: string;
-  categories = Object.values(BlogCategory).filter(value => typeof value !== 'number');
+  categories = Object.values(BlogCategory)//.filter(value => typeof value !== 'number');
   language: string;
   
   constructor(

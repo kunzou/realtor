@@ -1,6 +1,7 @@
 export enum BlogCategory {
-    'blog.category.buyHouse',
-    'blog.category.sellHouse',
-    'blog.category.maintenance',
-    'blog.category.vlog'
+    HOT = 'blog.category.hot',
+    BUY_HOUSE = 'blog.category.buyHouse',
+    SELL_HOUSE = 'blog.category.sellHouse',
+    MAINTENANCE = 'blog.category.maintenance',
+    VLOG = 'blog.category.vlog',
 }
