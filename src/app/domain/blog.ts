@@ -9,6 +9,7 @@ export class Blog {
     content: Description
     date: Date
     videoLink: string
+    videoCaption: Description
     version: Number
     coverImage: Image
     viewCount: number

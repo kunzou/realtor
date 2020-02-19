@@ -10,20 +10,23 @@
 <div class="pt-3">
     <form *ngIf="blog">
         <div class="form-group">
-            <label for="category">类型</label>
-            <select class="form-control" id="category" [(ngModel)]="blog.category" name="category">
-                <option *ngFor="let category of categories" [value]="category">
-                    {{category | translate}}
-                </option>
-            </select>
+            <div class="col-lg-6">
+                <label for="category">类型</label>
+                <select class="form-control" id="category" [(ngModel)]="blog.category" name="category">
+                    <option *ngFor="let category of categories" [value]="category">
+                        {{category | translate}}
+                    </option>
+                </select>
+            </div>
         </div>
-
         <div class="form-group">
-            <label for="title">视频链接</label>
-            <input type="text" class="form-control" id="title" placeholder="标题" [(ngModel)]="blog.videoLink"
-                name="title">
+            <div class="col-lg-6">
+                <label for="title">视频链接</label>
+                <input type="text" class="form-control" id="title" placeholder="视频链接" [(ngModel)]="blog.videoLink"
+                    name="title">
+            </div>
         </div>
-        <div class="pt-3">
+        <div class="container pt-3">
             <ngb-tabset [destroyOnHide]="false">
                 <ngb-tab>
                     <ng-template ngbTabTitle><b>中文</b></ng-template>
@@ -39,12 +42,13 @@
                                 name="brief.chinese"></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="title">视频描述</label>
+                            <input type="text" class="form-control" id="title" placeholder="视频描述" [(ngModel)]="blog.videoCaption.chinese"
+                                name="videoCaption.chinese">
+                        </div>                        
+                        <div class="form-group">
                             <label for="content">内容</label>
-                            <ckeditor id="content" [(ngModel)]="blog.content.chinese" name="content.chinese"></ckeditor>
-                        </div>
-                        <div>
-                            <label for="content">预览</label>
-                            <div id="content" [innerHTML]="blog.content.chinese"></div>
+                            <ckeditor id="content" [(ngModel)]="blog.content.chinese" name="content.chinese" [config]="myCkeditorConfig" type="inline"></ckeditor>
                         </div>
                     </ng-template>
                 </ngb-tab>
@@ -61,6 +65,11 @@
                             <textarea class="form-control" id="brief" rows="3" [(ngModel)]="blog.brief.english"
                                 name="brief.english"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="title">Video Caption</label>
+                            <input type="text" class="form-control" id="title" placeholder="Video Caption" [(ngModel)]="blog.videoCaption.english"
+                                name="videoCaption.english">
+                        </div>                        
                         <div class="form-group">
                             <label for="content">Content</label>
                             <ckeditor id="content" [(ngModel)]="blog.content.english" name="content.english"></ckeditor>

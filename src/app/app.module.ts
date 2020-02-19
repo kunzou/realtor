@@ -47,7 +47,6 @@ import { ListingCardComponent } from './listing-card/listing-card.component';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
-import { BlogCardComponent } from './blog-card/blog-card.component';
 import { EditOwnerComponent } from './edit-owner/edit-owner.component';
 import { FooterComponent } from './footer/footer.component';
 import { OpenHouseComponent } from './open-house/open-house.component';
@@ -56,6 +55,7 @@ import { PropertyManagementComponent } from './property-management/property-mana
 import { SiteManagementComponent } from './site-management/site-management.component';
 import { BlogManagementComponent } from './blog-management/blog-management.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 // AoT requires an exported function for factories
@@ -79,7 +79,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ListingCardComponent,
     BlogListComponent,
     BlogPageComponent,
-    BlogCardComponent,
     EditOwnerComponent,
     FooterComponent,
     OpenHouseComponent,
@@ -88,6 +87,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SiteManagementComponent,
     BlogManagementComponent,
     BlogEditComponent,
+    BlogComponent,
   ],
   entryComponents: [],
   imports: [

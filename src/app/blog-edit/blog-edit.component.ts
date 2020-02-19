@@ -22,9 +22,9 @@ export class BlogEditComponent implements OnInit {
   private _success = new Subject<string>();
   staticAlertClosed = false;
   successMessage: string;
-  categories = Object.values(BlogCategory)//.filter(value => typeof value !== 'number');
+  categories = Object.values(BlogCategory)
   language: string;
-  
+
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
@@ -58,12 +58,10 @@ export class BlogEditComponent implements OnInit {
 
   delete(): void {
     this.blogService.deleteBlog(this.blog).subscribe();
-    this.blogService.clearCache();
     this.goBack();
   } 
   
   save(): void {
-    this.blogService.clearCache();
     this.blogService.updateBlog(this.blog).subscribe(() => this.showMessage());
 
   }  

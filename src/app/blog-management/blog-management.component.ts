@@ -30,7 +30,6 @@ export class BlogManagementComponent implements OnInit {
   add(): void {
     this.blogService.addBlog({} as Blog)
       .subscribe(blog => {
-        this.blogService.clearCache();
         this.router.navigate(['/editBlog', blog.id]);
       })
   }

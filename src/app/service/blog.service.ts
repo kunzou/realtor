@@ -58,18 +58,21 @@ export class BlogService {
   }
 
   updateBlog (blog: Blog): Observable<any> {
+    this.clearCache();
     return this.http.put(this.blogUrl, blog, this.httpOptions).pipe(
       catchError(this.handleError<any>('updateBlog'))
     );
   }
 
   addBlog(blog: Blog): Observable<Blog> {
+    this.clearCache();
     return this.http.post<Blog>(this.blogUrl, blog, this.httpOptions).pipe(
       catchError(this.handleError<Blog>('addBlog'))
     );
   }
 
   deleteBlog (blog: Blog | number): Observable<Blog> {
+    this.clearCache();
     const id = typeof blog === 'number' ? blog : blog.id;
     const url = `${this.blogUrl}/${id}`;
   

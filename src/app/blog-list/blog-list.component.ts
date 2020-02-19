@@ -12,7 +12,7 @@ export class BlogListComponent implements OnInit {
   page :number = 1
   pageSize :number = 5
   blogList: BlogCard[];
-  categories = Object.values(BlogCategory).filter(value => typeof value !== 'number');
+  categories = Object.values(BlogCategory)//.filter(value => typeof value !== 'number');
   currentCategory;
   displayList: BlogCard[];
   randomPosts: BlogCard[];
@@ -52,7 +52,7 @@ export class BlogListComponent implements OnInit {
   }
 
   getRandomPosts() {
-    this.randomPosts = this.blogList.sort((one, two) => Math.random()>0.5?-1:1).slice(0, 5);
+    this.randomPosts = Array.from(this.blogList).sort((one, two) => Math.random()>0.5?-1:1).slice(0, 5);
   }
 
   getRandomPostsTitle(post: BlogCard) {
