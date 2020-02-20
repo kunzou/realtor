@@ -72,11 +72,7 @@
                         </div>                        
                         <div class="form-group">
                             <label for="content">Content</label>
-                            <ckeditor id="content" [(ngModel)]="blog.content.english" name="content.english"></ckeditor>
-                        </div>
-                        <div>
-                            <label for="content">Preview</label>
-                            <div id="content" [innerHTML]="blog.content.english"></div>
+                            <ckeditor id="content" [(ngModel)]="blog.content.english" name="content.english" type="inline"></ckeditor>
                         </div>
                     </ng-template>
                 </ngb-tab>

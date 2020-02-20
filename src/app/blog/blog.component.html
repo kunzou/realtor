@@ -72,8 +72,7 @@
                            <img src="{{post.coverImage.smallLink}}" alt="post">
                        </div>
                        <div class="media-body">
-                           <a routerLink="/post/{{post.id}}">   
-                           <!-- <a (click)="redirect(post)">    -->
+                           <a (click)="getBlog(post.id)">   
                                <h3>{{post.title.chinese}}</h3>
                            </a>
                            <p>{{post.date | date}}</p>

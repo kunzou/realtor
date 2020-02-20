@@ -11,9 +11,9 @@
                             </div>
                             <div class="blog_details">
                                 <a class="d-inline-block" routerLink="/post/{{blog.id}}">
-                                    <h2>{{blog.title.chinese}}</h2>
+                                    <h2>{{blog.title | description}}</h2>
                                 </a>
-                                <p><span class="blog_brief">{{blog.brief.chinese}}</span></p>
+                                <p><span class="blog_brief">{{blog.brief | description}}</span></p>
                                 <div class="row ml-1 blog-info-link">
                                     <a><i class="fa fa-comments"></i> {{blog.category | translate}}</a>
                                     <a class="pl-3"><i class="fa fa-calendar"></i> {{blog.date | date}}</a>

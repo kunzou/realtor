@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent {
   title = '刘聃，福居温尼伯';
   constructor(
     public translateService: TranslateService,
+    public auth: AuthService,
   ) {
+    auth.handleAuthentication();
     translateService.addLangs(['en', 'zh']);
     translateService.setDefaultLang('zh');
     translateService.use('zh');

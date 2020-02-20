@@ -431,6 +431,7 @@ h3 {
 }
 .blog_right_sidebar .popular_post_widget .post_item .media-body a:hover {
   color: #fff; 
+  cursor: pointer;
 }
 .blog_right_sidebar .popular_post_widget .post_item .media-body p {
   font-size: 14px;

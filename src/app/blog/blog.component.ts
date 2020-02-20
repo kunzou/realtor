@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { BlogService } from '../service/blog.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -27,16 +27,16 @@ export class BlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getBlog();
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getBlog(id);
     this.getBlogs();
   }
 
-  getBlog(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+  getBlog(id: string): void {
     this.blogService.getBlog(id)
       .subscribe(blog => {
         this.blog = blog;
-        if(this.blog.videoLink != null) {
+        if(blog.videoLink != null) {
           this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(blog.videoLink.replace("watch?v=", "embed/"));
         }
 
@@ -58,8 +58,8 @@ export class BlogComponent implements OnInit {
     return this.blogList.filter(blog=>blog.category === category).length
   }  
 
-  // redirect(post: BlogCard) {
-  //   this.router.navigate(['/post', post.id]);
-  // }
+  redirect(post: BlogCard) {
+    this.router.navigate(['/post', post.id]);
+  }
   
 }
