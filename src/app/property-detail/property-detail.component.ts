@@ -32,18 +32,18 @@ export class PropertyDetailComponent implements OnInit {
   selectedFeature:string;
   featureYear:string;
 
-  propertyTypes = Object.values(PropertyType).filter(value => typeof value !== 'number');
-  basementConditions = Object.values(Basement).filter(value => typeof value !== 'number');
-  propertyStatuses = Object.values(PropertyStatus).filter(value => typeof value !== 'number');
-  sources = Object.values(PropertySource).filter(value => typeof value !== 'number');
-  propertyStyles = Object.values(PropertyStyle).filter(value => typeof value !== 'number');
-  usages = Object.values(PropertyUsage).filter(value => typeof value !== 'number');
-  garageTypes = Object.values(Garage).filter(value => typeof value !== 'number');
-  holdTypes = Object.values(HoldType).filter(value => typeof value !== 'number');
-  remainings = Object.values(Remaining).filter(value => typeof value !== 'number');
-  features = Object.values(Feature).filter(value => typeof value !== 'number');
+  propertyTypes = Object.values(PropertyType);
+  basementConditions = Object.values(Basement);
+  propertyStatuses = Object.values(PropertyStatus);
+  sources = Object.values(PropertySource);
+  propertyStyles = Object.values(PropertyStyle);
+  usages = Object.values(PropertyUsage);
+  garageTypes = Object.values(Garage);
+  holdTypes = Object.values(HoldType);
+  remainings = Object.values(Remaining);
+  features = Object.values(Feature);
     
-  @Input() property: Property;
+  property: Property;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
   constructor(
     private route: ActivatedRoute,

@@ -56,6 +56,7 @@ import { SiteManagementComponent } from './site-management/site-management.compo
 import { BlogManagementComponent } from './blog-management/blog-management.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogComponent } from './blog/blog.component';
+import { DescriptionPipe } from './utility/translateUtility'
 
 
 // AoT requires an exported function for factories
@@ -66,6 +67,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    DescriptionPipe,
     PropertiesComponent,
     PropertyDetailComponent,
     MessagesComponent,

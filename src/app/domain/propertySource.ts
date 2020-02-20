@@ -1,4 +1,4 @@
 export enum PropertySource {
-    'fuju',
-    'squareMeters'
+    FUJU = 'fuju',
+    SQUAREMETERS = 'squareMeters'
 }

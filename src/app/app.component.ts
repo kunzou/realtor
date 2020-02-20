@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { User } from './domain/user';
-import { UserService } from './service/user-service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +9,8 @@ import { UserService } from './service/user-service';
 export class AppComponent {
   title = '刘聃，福居温尼伯';
   constructor(
-    private userService: UserService,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+  ) {
     translateService.addLangs(['en', 'zh']);
     translateService.setDefaultLang('zh');
     translateService.use('zh');
@@ -26,7 +24,7 @@ export class AppComponent {
     }
   }
 
-  getDisplayLanguageLabel(): any{
+  getDisplayLanguageLabel(): any {
     return this.translateService.currentLang === 'en'?"中文":"ENGLISH";
   }
 }

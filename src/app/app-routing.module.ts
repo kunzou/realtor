@@ -25,10 +25,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },  
   { path: 'property/:id', component: PropertyComponent },  
   { path: 'blog', component: BlogListComponent },  
+  { path: 'blog/:id', component: BlogListComponent },  
   { path: 'openHouse', component: OpenHouseComponent },  
   { path: 'service', component: MyServiceComponent },  
   { path: 'editBlog/:id', component: BlogEditComponent },  
-  { path: 'blog/:id', component: BlogComponent },  
+  { path: 'post/:id', component: BlogComponent },  
 ];
 
 @NgModule({

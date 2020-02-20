@@ -1,6 +1,6 @@
 export enum Basement {
-    'basement.full',
-    'basement.half',
-    'basement.no',
-    'basement.na'
+    FULL = 'basement.full',
+    HALF = 'basement.half',
+    NO = 'basement.no',
+    NA = 'basement.na'
 }

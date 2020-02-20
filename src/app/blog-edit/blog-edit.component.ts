@@ -17,7 +17,7 @@ import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./blog-edit.component.css']
 })
 export class BlogEditComponent implements OnInit {
-  @Input() blog: Blog;
+  blog: Blog;
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
   private _success = new Subject<string>();
   staticAlertClosed = false;

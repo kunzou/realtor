@@ -1,5 +1,5 @@
 export enum HoldType{
-    'holdType.freehold',
-    'holdType.condo',
-    'holdType.leasehold'
+    FREEHOLD = 'holdType.freehold',
+    CONDO = 'holdType.condo',
+    LEASEHOLD = 'holdType.leasehold'
 }

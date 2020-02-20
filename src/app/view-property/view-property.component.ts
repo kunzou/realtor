@@ -11,7 +11,7 @@ import { Image } from '@ks89/angular-modal-gallery';
   styleUrls: ['./view-property.component.css']
 })
 export class ViewPropertyComponent implements OnInit {
-  @Input() property: Property;
+  property: Property;
   imagesRect: Image[];
   
   constructor(

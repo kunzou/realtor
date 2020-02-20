@@ -10,7 +10,7 @@
                                 <img class="card-img rounded-2" src="{{blog.coverImage.mediumLink}}" alt="">
                             </div>
                             <div class="blog_details">
-                                <a class="d-inline-block" routerLink="/blog/{{blog.id}}">
+                                <a class="d-inline-block" routerLink="/post/{{blog.id}}">
                                     <h2>{{blog.title.chinese}}</h2>
                                 </a>
                                 <p><span class="blog_brief">{{blog.brief.chinese}}</span></p>
@@ -71,7 +71,7 @@
                                     <img src="{{post.coverImage.smallLink}}" alt="post">
                                 </div>
                                 <div class="media-body">
-                                    <a routerLink="/blog/{{post.id}}">
+                                    <a routerLink="/post/{{post.id}}">
                                         <h3>{{post.title.chinese}}</h3>
                                     </a>
                                     <p>{{post.date | date}})</p>

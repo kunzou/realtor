@@ -1,10 +1,10 @@
 export enum PropertyStyle {
-    'propertyStyle.bunglow',
-    'propertyStyle.oneAndHalf',
-    'propertyStyle.raisedBungalow',
-    'propertyStyle.splitTwoLevel',
-    'propertyStyle.splitThreeLevel',
-    'propertyStyle.splitFourLevel',
-    'propertyStyle.twoStory',
-    'propertyStyle.twoAndHalf'
+    BUNGLOW = 'propertyStyle.bunglow',
+    ONEANDHALF = 'propertyStyle.oneAndHalf',
+    RAISEDBUNGALOW = 'propertyStyle.raisedBungalow',
+    SPLITTWOLEVEL = 'propertyStyle.splitTwoLevel',
+    SPLITTHREELEVEL = 'propertyStyle.splitThreeLevel',
+    SPLITFOURLEVEL = 'propertyStyle.splitFourLevel',
+    TWOSTORY = 'propertyStyle.twoStory',
+    TWOANDHALF = 'propertyStyle.twoAndHalf'
 }

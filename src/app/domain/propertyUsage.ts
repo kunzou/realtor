@@ -1,5 +1,5 @@
 export enum PropertyUsage{
-    'usage.residential',
-    'usage.commercial',
-    'usage.mixedUse'
+    RESIDENTIAL = 'usage.residential',
+    COMMERCIAL = 'usage.commercial',
+    MIXEDUSE = 'usage.mixedUse'
 }

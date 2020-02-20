@@ -17,7 +17,7 @@ import { EmailService } from '../service/email.service';
   styleUrls: ['./property.component.css']
 })
 export class PropertyComponent implements OnInit {
-  @Input() property: Property;
+  property: Property;
   me: User;
   imagesRect: Image[];
   safeURL: SafeResourceUrl;

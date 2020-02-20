@@ -1,13 +1,13 @@
 export enum Garage {
-    'garage.singleAttached',
-    'garage.doubleAttached',
-    'garage.tripleAttached',
-    'garage.multipleAttached',
-    'garage.singleDetached',
-    'garage.doubleDetached',
-    'garage.tripleDetached',
-    'garage.multipleDetached',
-    'garage.noGarage',
-    'garage.outdoor',
-    'garage.undergroundParking'
+    SINGLEATTACHED = 'garage.singleAttached',
+    DOUBLEATTACHED = 'garage.doubleAttached',
+    TRIPLEATTACHED = 'garage.tripleAttached',
+    MULTIPLEATTACHED = 'garage.multipleAttached',
+    SINGLEDETACHED = 'garage.singleDetached',
+    DOUBLEDETACHED = 'garage.doubleDetached',
+    TRIPLEDETACHED = 'garage.tripleDetached',
+    MULTIPLEDETACHED = 'garage.multipleDetached',
+    NOGARAGE = 'garage.noGarage',
+    OUTDOOR = 'garage.outdoor',
+    UNDERGROUNDPARKING = 'garage.undergroundParking'
 }
