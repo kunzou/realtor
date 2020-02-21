@@ -16,9 +16,12 @@
       <a mat-list-item routerLink="/about">
         <span class="label">{{ 'home.about' | translate }}</span>
       </a>
-      <a mat-list-item routerLink="/dashboard">
+      <a mat-list-item routerLink="/dashboard" *ngIf="auth.isAuthenticated()">
         <span class="label">{{ 'home.dashboard' | translate }}</span>
       </a>      
+      <a mat-list-item (click)="auth.logout()" *ngIf="auth.isAuthenticated()">
+        <span class="label">Logout</span>
+      </a>    
       <a mat-list-item (click)="switchLanguage()">
         <span class="label">{{getDisplayLanguageLabel()}}</span>
       </a>
