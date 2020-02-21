@@ -14,7 +14,7 @@ export class AuthService {
     clientID: 'weY4XmCtTpoRvjfDO4vshEVNt8q3ZAQz',
     domain: 'kunzou.auth0.com',
     responseType: 'token',
-    redirectUri: 'kunzou.me',
+    redirectUri: 'http://kunzou.me/',
     scope: 'openid'
   });
 
