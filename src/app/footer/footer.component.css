@@ -176,3 +176,11 @@ ul {
 	background: #dfa974;
 	color: #ffffff;
 }
+
+.label {
+    display: inline-block;
+    line-height: 30px;
+    padding-bottom: 10px;
+    width: 85%;
+    color: #dfa974;
+}

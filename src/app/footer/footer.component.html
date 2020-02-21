@@ -4,15 +4,26 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="ft-about">
-              <div fxLayout="row" fxLayoutAlign=" center" class="logo">
-                  <div>
-                    <img src="assets/favicon.png">
-                  </div>
-                  <div>
-                    <h1>{{'home.fuju' | translate}}</h1>
-                  </div>
+              <div class="logo">
+                <img src="assets/favicon.png">
               </div>
-              <p>简介需要吗？</p>
+              <div>
+                <div>
+                  <a routerLink="/openHouse">
+                    <span class="label">{{'home.openHouse' | translate}}</span>
+                  </a>
+                </div>
+                <div>
+                  <a routerLink="/service">
+                    <span class="label">{{'home.service' | translate}}</span>
+                  </a>
+                </div>
+                <div>
+                  <a routerLink="/blog">
+                    <span class="label">{{ 'home.blog' | translate }}</span>
+                  </a>
+                </div>
+              </div>
               <div class="fa-social">
                 <a href="{{me.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
                 <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
