@@ -39,7 +39,7 @@ export class BlogComponent implements OnInit {
         if(blog.videoLink != null) {
           this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(blog.videoLink.replace("watch?v=", "embed/"));
         }
-
+        window.scrollTo(0, 0)
       });
   }  
 
@@ -56,10 +56,5 @@ export class BlogComponent implements OnInit {
 
   getCategoryCount(category: BlogCategory) {
     return this.blogList.filter(blog=>blog.category === category).length
-  }  
-
-  redirect(post: BlogCard) {
-    this.router.navigate(['/post', post.id]);
-  }
-  
+  }    
 }
