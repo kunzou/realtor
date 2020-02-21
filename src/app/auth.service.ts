@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as auth0 from 'auth0-js';
+import { environment } from 'src/environments/environment';
 
 // why do you need defining window as any?
 // check this: https://github.com/aws/aws-amplify/issues/678#issuecomment-389106098
@@ -11,10 +12,10 @@ import * as auth0 from 'auth0-js';
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: 'weY4XmCtTpoRvjfDO4vshEVNt8q3ZAQz',
+    clientID: environment.authClientId,
     domain: 'kunzou.auth0.com',
     responseType: 'token',
-    redirectUri: 'http://kunzou.me/',
+    redirectUri: environment.authRedirectUri,
     scope: 'openid'
   });
 

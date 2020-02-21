@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,5 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent {
-
+  constructor(public auth: AuthService){}
 }

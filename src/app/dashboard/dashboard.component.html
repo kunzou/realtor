@@ -1,26 +1,31 @@
-<ngb-tabset [destroyOnHide]="false">
-  <ngb-tab>
-    <ng-template ngbTabTitle><b>房产列表</b></ng-template>
-    <ng-template ngbTabContent>
-      <div class="container pt-3">
-        <app-property-management></app-property-management>
-    </div>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle><b>网站管理</b></ng-template>
-    <ng-template ngbTabContent>
-      <div class="container pt-3">
-        <app-edit-owner></app-edit-owner>
-      </div>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle><b>博客管理</b></ng-template>
-    <ng-template ngbTabContent>
-      <div class="container pt-3">
-        <app-blog-management></app-blog-management>
-      </div>
-    </ng-template>
-  </ngb-tab>
-</ngb-tabset>
+<div *ngIf="auth.isAuthenticated()">
+  <ngb-tabset [destroyOnHide]="false">
+    <ngb-tab>
+      <ng-template ngbTabTitle><b>房产列表</b></ng-template>
+      <ng-template ngbTabContent>
+        <div class="container pt-3">
+          <app-property-management></app-property-management>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle><b>网站管理</b></ng-template>
+      <ng-template ngbTabContent>
+        <div class="container pt-3">
+          <app-edit-owner></app-edit-owner>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle><b>博客管理</b></ng-template>
+      <ng-template ngbTabContent>
+        <div class="container pt-3">
+          <app-blog-management></app-blog-management>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+<div *ngIf="!auth.isAuthenticated()">
+  <h1>Wrong page dude</h1>
+</div>
