@@ -71,14 +71,14 @@ ul {
 	margin-bottom: 20px;	
 }
 
-.footer-section .footer-text .ft-contact h6 {
-	font-size: 16px;
+.footer-section .footer-text .footer-title {
+	font-size: 22px;
 	color: #dfa974;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 3px;
 	font-family: "Cabin", sans-serif;
-	margin-bottom: 20px;
+	padding-bottom: 30px;
 }
 .footer-section .footer-text .ft-contact ul li {
 	font-size: 16px;
@@ -86,15 +86,7 @@ ul {
 	line-height: 32px;
 	list-style: none;
 }
-.footer-section .footer-text .ft-newslatter h6 {
-	font-size: 14px;
-	color: #dfa974;
-	text-transform: uppercase;
-	font-weight: 700;
-	letter-spacing: 3px;
-	font-family: "Cabin", sans-serif;
-	margin-bottom: 20px;
-}
+
 .footer-section .footer-text .ft-newslatter p {
 	color: #707079;
 	margin-bottom: 20px;
@@ -177,10 +169,15 @@ ul {
 	color: #ffffff;
 }
 
-.label {
+.footer-nav {
     display: inline-block;
     line-height: 30px;
     padding-bottom: 10px;
-    width: 85%;
-    color: #dfa974;
+	font-size: 20px;
+	font-weight: 600;
+	color: #dfa974;
+}
+
+.footer-barcode {
+	width: 40%;
 }

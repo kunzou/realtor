@@ -9,18 +9,28 @@
               </div>
               <div>
                 <div>
+                  <a routerLink="/home">
+                    <span class="footer-nav">{{'home.home' | translate}}</span>
+                  </a>
+                </div>                  
+                <div>
+                  <a routerLink="/properties">
+                    <span class="footer-nav">{{'home.properties' | translate}}</span>
+                  </a>
+                </div>                
+                <div>
                   <a routerLink="/openHouse">
-                    <span class="label">{{'home.openHouse' | translate}}</span>
+                    <span class="footer-nav">{{'home.openHouse' | translate}}</span>
                   </a>
                 </div>
                 <div>
                   <a routerLink="/service">
-                    <span class="label">{{'home.service' | translate}}</span>
+                    <span class="footer-nav">{{'home.service' | translate}}</span>
                   </a>
                 </div>
                 <div>
                   <a routerLink="/blog">
-                    <span class="label">{{ 'home.blog' | translate }}</span>
+                    <span class="footer-nav">{{ 'home.blog' | translate }}</span>
                   </a>
                 </div>
               </div>
@@ -35,18 +45,18 @@
           </div>
           <div class="col-lg-3">
             <div class="ft-contact">
-              <h6>{{'footer.contactUs' | translate}}</h6>
+              <span class="footer-title">{{'footer.contactUs' | translate}}</span>
               <ul>
                 <li><i class="fa fa-phone-square"></i> {{me.phoneNumber}}</li>
                 <li><i class="fa fa-envelope"></i> {{me.email}}</li>
                 <li>地址需要吗？</li>
-                <li><img src="{{me.barcode.link}}" style="width: 40%;"></li>
+                <li><img src="{{me.barcode.link}}" class="footer-barcode"></li>
               </ul>
             </div>
           </div>
           <div class="col-lg-4 offset-lg-1">
             <div class="ft-newslatter">
-              <h6>{{'footer.askMe' | translate}}</h6>
+              <span class="footer-title">{{'footer.askMe' | translate}}</span>
               <form action="#" class="contact-form">
                 <div class="row">
                     <div class="col-lg-6">
@@ -71,7 +81,7 @@
               <a
               *ngIf="!auth.isAuthenticated()"
               (click)="auth.login()">
-              <span class="label">Login</span>
+              Login
             </a>
             </p>
           </div>        

@@ -1,10 +1,4 @@
-mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-    height: 100%;
-  }
-  
-  mat-sidenav {
-    width: 250px;
-  }
+
   
   a {
     text-decoration: none;
@@ -16,13 +10,13 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   a:active {
     color: lightgray;
   }
-  
+/*   
   .navigation-items {
     list-style: none;
     padding: 0;
     margin: 0;
     cursor: pointer;
-  }
+  } */
   
   .icon {
     display: inline-block;
@@ -34,28 +28,23 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     width: 15%;
   }
   
-  .label {
+  /* .label {
     display: inline-block;
     line-height: 30px;
     margin: 0;
     width: 85%;
     color: #dfa974;
-  }
+  } */
 
   .card {
     min-width: 80%;
   }
 
-  
-  .example-selected-value {
-    margin: 15px 0;
-  }
-  
-  .mat-button-toggle-checked {
+  /* .mat-button-toggle-checked {
     color: white;
-  }
+  } */
   
-   mat-button-toggle-group {
+   /* mat-button-toggle-group {
     height: 25px;
     border-radius: 4px;
     padding:0px !important;
@@ -82,10 +71,9 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 
   .navi-button {
     color: white
-  }
+  } */
 
 
-/* line 5, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
@@ -93,7 +81,6 @@ body {
 }
 
 
-  /* line 16, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 a,
 .button {
   -webkit-transition: 0.3s;
@@ -102,19 +89,16 @@ a,
   transition: 0.3s;
 }
 
-/* line 20, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 a:focus,
 .button:focus, button:focus {
   text-decoration: none;
   outline: none;
 }
 
-/* line 25, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 a:focus {
   text-decoration: none;
 }
 
-/* line 28, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 a:focus,
 a:hover,
 .portfolio-cat a:hover,
@@ -122,20 +106,17 @@ a:hover,
   text-decoration: none;
 }
 
-/* line 34, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 a,
 button {
   color: #1F1F1F;
   outline: medium none;
 }
 
-/* line 39, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 h1, h2, h3, h4, h5 {
   font-family: "Poppins", sans-serif;
   color: #001D38;
 }
 
-/* line 43, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 h1 a,
 h2 a,
 h3 a,
@@ -144,19 +125,16 @@ h5 a,
 h6 a {
   color: inherit;
 }
-
-/* line 52, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
+/* 
 mat-toolbar > ul {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 56, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 mat-toolbar > li {
   list-style: none;
 }
 
-/* line 59, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 mat-toolbar > p {
   font-size: 16px;
   font-weight: 300;
@@ -164,9 +142,8 @@ mat-toolbar > p {
   color: #4D4D4D;
   margin-bottom: 13px;
   font-family: "Poppins", sans-serif;
-}
+} */
 
-/* line 68, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 label {
   color: #7e7e7e;
   cursor: pointer;
@@ -174,56 +151,80 @@ label {
   font-weight: 400;
 }
 
-/* line 74, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 *::-moz-selection {
   background: #444;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 79, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 ::-moz-selection {
   background: #444;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 84, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 ::selection {
   background: #444;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 89, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 *::-webkit-input-placeholder {
   color: #cccccc;
   font-size: 14px;
   opacity: 1;
 }
 
-/* line 94, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 *:-ms-input-placeholder {
   color: #cccccc;
   font-size: 14px;
   opacity: 1;
 }
 
-/* line 99, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 *::-ms-input-placeholder {
   color: #cccccc;
   font-size: 14px;
   opacity: 1;
 }
 
-/* line 104, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 *::placeholder {
   color: #cccccc;
   font-size: 14px;
   opacity: 1;
 }
 
-/* line 110, ../../Arafath/CL/CL October/217. Real Estate/HTML/scss/theme-default.scss */
 h3 {
   font-size: 24px;
+}
+
+
+
+
+
+
+.navbar-brand {
+	font-size: 28px;
+	font-weight: bold;  
+}
+
+.navbar a {
+  color: #dfa974;
+}
+
+.nav-link {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;  
+  display: inline-block;
+  font-size: 20px;
+}
+
+
+/* .navbar {
+  background: #222736;
+} */
+
+.content-body {
+  background: rgba(16, 20, 31, 0.856);
 }

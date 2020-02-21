@@ -16,4 +16,5 @@ agm-map {
 
 mat-button-toggle-group {
   margin-left: 12px;
+  max-width: 100%;
 }

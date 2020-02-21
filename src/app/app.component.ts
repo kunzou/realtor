@@ -10,6 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = '刘聃，福居温尼伯';
+  activePage: string;
   constructor(
     public translateService: TranslateService,
     public auth: AuthService,
