@@ -73,21 +73,13 @@
               <span class="label">{{ 'home.about' | translate }}</span>
             </a>
           </li>   
-          <li>
-            <a
-              *ngIf="!auth.isAuthenticated()"
-              (click)="auth.login()">
-              <span class="label">Login</span>
-            </a>
-          </li>             
-          <li>
-            <a *ngIf="auth.isAuthenticated()" routerLink="/dashboard">
+          <li *ngIf="auth.isAuthenticated()">
+            <a routerLink="/dashboard">
               <span class="label">{{ 'home.dashboard' | translate }}</span>
             </a>
           </li> 
-          <li>
-            <a
-              *ngIf="auth.isAuthenticated()"
+          <li *ngIf="auth.isAuthenticated()">
+            <a 
               (click)="auth.logout()">
               <span class="label">LogOut</span>
             </a>

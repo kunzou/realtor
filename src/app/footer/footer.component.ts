@@ -3,6 +3,7 @@ import { User } from '../domain/user';
 import { UserService } from '../service/user-service';
 import { EmailDetail } from '../domain/emailDetail';
 import { EmailService } from '../service/email.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +15,8 @@ export class FooterComponent implements OnInit {
   emailDetail: EmailDetail = new EmailDetail;
   constructor(
     private userService: UserService,
-    private emailService: EmailService
+    private emailService: EmailService,
+    public auth: AuthService
   ) { }
 
   ngOnInit() {

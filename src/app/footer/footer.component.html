@@ -56,7 +56,12 @@
         <div class="co-text">
             <p>
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved.
+              <script>document.write(new Date().getFullYear());</script> All rights reserved. 
+              <a
+              *ngIf="!auth.isAuthenticated()"
+              (click)="auth.login()">
+              <span class="label">Login</span>
+            </a>
             </p>
           </div>        
       </div>
