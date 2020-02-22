@@ -10,14 +10,7 @@
   a:active {
     color: lightgray;
   }
-/*   
-  .navigation-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-  } */
-  
+
   .icon {
     display: inline-block;
     height: 30px;
@@ -27,51 +20,6 @@
     vertical-align: middle;
     width: 15%;
   }
-  
-  /* .label {
-    display: inline-block;
-    line-height: 30px;
-    margin: 0;
-    width: 85%;
-    color: #dfa974;
-  } */
-
-  .card {
-    min-width: 80%;
-  }
-
-  /* .mat-button-toggle-checked {
-    color: white;
-  } */
-  
-   /* mat-button-toggle-group {
-    height: 25px;
-    border-radius: 4px;
-    padding:0px !important;
-  }
-
-  mat-sidenav-content {
-    background: #222736;
-  }
-
-  mat-toolbar {
-    background: rgba(16, 20, 31, 0.2);
-  }
-
-  mat-toolbar .logo img {
-	height: 70%; 
-	width: 70%;
-  }
-
-  mat-toolbar .logo h1 {
-	color: #dfa974;
-	font-size: 30px;
-	font-weight: bold;
-  }  
-
-  .navi-button {
-    color: white
-  } */
 
 
 body {
@@ -125,24 +73,7 @@ h5 a,
 h6 a {
   color: inherit;
 }
-/* 
-mat-toolbar > ul {
-  margin: 0px;
-  padding: 0px;
-}
 
-mat-toolbar > li {
-  list-style: none;
-}
-
-mat-toolbar > p {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 28px;
-  color: #4D4D4D;
-  margin-bottom: 13px;
-  font-family: "Poppins", sans-serif;
-} */
 
 label {
   color: #7e7e7e;
@@ -225,6 +156,20 @@ h3 {
   background: #222736;
 } */
 
-.content-body {
-  background: rgba(16, 20, 31, 0.856);
+.navbar-color {
+	background-color:transparent !important;
+	border-color:transparent;
+	background-image:none;
+	box-shadow:none;	  
+}
+
+.background {
+  background-image: url(../assets/background.jpg) ;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;  
+  
+}
+
+mat-card {
+  background: rgba(255, 255, 255, 0.849);
 }

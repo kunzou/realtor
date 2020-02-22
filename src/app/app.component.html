@@ -1,53 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-<!-- <nav class="navbar navbar-expand-lg navbar-light "> -->
-  <a class="navbar-brand" >
-    <img src="assets/favicon.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="">
-    {{'home.fuju' | translate}}
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarToggler">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item" [class.active]="router.url==='/home'">
-        <a class="nav-link" routerLink="/home">{{ 'home.home' | translate }}</a>
-      </li>
-      <li class="nav-item" [class.active]="router.url==='/properties'">
-        <a class="nav-link" routerLink="/properties">{{ 'home.properties' | translate }}</a>
-      </li>
-      <li class="nav-item" [class.active]="router.url==='/openHouse'">
-        <a class="nav-link" routerLink="/openHouse" (click)="setActive('openHouse')">{{'home.openHouse' | translate}}</a>
-      </li>
-      <li class="nav-item" [class.active]="router.url.startsWith('/blog')">
-        <a class="nav-link" routerLink="/blog">{{'home.blog' | translate}}</a>
-      </li>
-      <li class="nav-item" [class.active]="router.url==='/service'">
-        <a class="nav-link" routerLink="/service">{{'home.service' | translate}}</a>
-      </li>
-      <li class="nav-item" [class.active]="router.url==='/about'">
-        <a class="nav-link" routerLink="/about">{{ 'home.about' | translate }}</a>
-      </li>      
-      <li class="nav-item" [class.active]="router.url==='/dashboard'" *ngIf="auth.isAuthenticated()">
-        <a class="nav-link" routerLink="/dashboard">{{ 'home.dashboard' | translate }}</a>
-      </li>    
-      <li class="nav-item" *ngIf="auth.isAuthenticated()">
-        <a class="nav-link" (click)="auth.logout()">Logout</a>
-      </li>    
-      <li class="nav-item">
-        <a class="nav-link" (click)="switchLanguage()">{{getDisplayLanguageLabel()}}</a>
-      </li>                                        
-    </ul>
-  
-  </div>
-</nav>
-<div class="content-body">
-  <main>
-    <div class="container pt-3 pb-3">
-      <mat-card>
-        <router-outlet></router-outlet>
-      </mat-card>
+<div class="background">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-color">
+    <a class="navbar-brand">
+      <img src="assets/favicon.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="">
+      {{'home.fuju' | translate}}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto mt-1 mt-lg-0">
+        <li class="nav-item" [class.active]="router.url==='/home'">
+          <a class="nav-link" routerLink="/home">{{ 'home.home' | translate }}</a>
+        </li>
+        <li class="nav-item" [class.active]="router.url==='/properties'">
+          <a class="nav-link" routerLink="/properties">{{ 'home.properties' | translate }}</a>
+        </li>
+        <li class="nav-item" [class.active]="router.url==='/openHouse'">
+          <a class="nav-link" routerLink="/openHouse"
+            (click)="setActive('openHouse')">{{'home.openHouse' | translate}}</a>
+        </li>
+        <li class="nav-item" [class.active]="router.url.startsWith('/blog')">
+          <a class="nav-link" routerLink="/blog">{{'home.blog' | translate}}</a>
+        </li>
+        <li class="nav-item" [class.active]="router.url==='/service'">
+          <a class="nav-link" routerLink="/service">{{'home.service' | translate}}</a>
+        </li>
+        <li class="nav-item" [class.active]="router.url==='/about'">
+          <a class="nav-link" routerLink="/about">{{ 'home.about' | translate }}</a>
+        </li>
+        <li class="nav-item" [class.active]="router.url==='/dashboard'" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link" routerLink="/dashboard">{{ 'home.dashboard' | translate }}</a>
+        </li>
+        <li class="nav-item" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link" (click)="auth.logout()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="switchLanguage()">{{getDisplayLanguageLabel()}}</a>
+        </li>
+      </ul>
     </div>
-  </main>
+  </nav>
+  <div class="content-body">
+    <main>
+      <div class="container pt-3 pb-3">
+        <mat-card>
+          <router-outlet></router-outlet>
+        </mat-card>
+      </div>
+    </main>
+  </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>

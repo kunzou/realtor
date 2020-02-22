@@ -29,15 +29,6 @@ a:focus,
   text-decoration: none;
 } */
 
-
-a:focus,
-a:hover,
-.portfolio-cat a:hover,
-.footer -menu li a:hover {
-  
-}
-
-
 a,
 button {
   color: #1F1F1F;

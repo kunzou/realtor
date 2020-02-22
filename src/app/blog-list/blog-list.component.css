@@ -1,6 +1,7 @@
 
 .blog_brief {
-  color: #909092 !important;
+  /* color: #909092 !important; */
+  color: #525252 !important;
   margin-bottom: 30px;
 }
 
@@ -9,7 +10,8 @@
 ============================================================================================ */
 
 .blog_area a {
-  color: #909092 !important;
+  /* color: #909092 !important; */
+  color: #525252 !important;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;

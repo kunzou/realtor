@@ -4,6 +4,7 @@ import { UserService } from '../service/user-service';
 import { EmailDetail } from '../domain/emailDetail';
 import { EmailService } from '../service/email.service';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -16,6 +17,7 @@ export class FooterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private emailService: EmailService,
+    private router: Router,
     public auth: AuthService
   ) { }
 

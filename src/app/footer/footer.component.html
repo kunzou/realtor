@@ -10,27 +10,27 @@
               <div>
                 <div>
                   <a routerLink="/home">
-                    <span class="footer-nav">{{'home.home' | translate}}</span>
+                    <span class="footer-nav" [class.active]="router.url==='/home'">{{'home.home' | translate}}</span>
                   </a>
                 </div>                  
                 <div>
                   <a routerLink="/properties">
-                    <span class="footer-nav">{{'home.properties' | translate}}</span>
+                    <span class="footer-nav" [class.active]="router.url==='/properties'">{{'home.properties' | translate}}</span>
                   </a>
                 </div>                
                 <div>
                   <a routerLink="/openHouse">
-                    <span class="footer-nav">{{'home.openHouse' | translate}}</span>
-                  </a>
-                </div>
-                <div>
-                  <a routerLink="/service">
-                    <span class="footer-nav">{{'home.service' | translate}}</span>
+                    <span class="footer-nav" [class.active]="router.url==='/openHouse'">{{'home.openHouse' | translate}}</span>
                   </a>
                 </div>
                 <div>
                   <a routerLink="/blog">
-                    <span class="footer-nav">{{ 'home.blog' | translate }}</span>
+                    <span class="footer-nav" [class.active]="router.url.startsWith('/blog')">{{ 'home.blog' | translate }}</span>
+                  </a>
+                </div>                
+                <div>
+                  <a routerLink="/service">
+                    <span class="footer-nav" [class.active]="router.url==='/service'">{{'home.service' | translate}}</span>
                   </a>
                 </div>
               </div>
