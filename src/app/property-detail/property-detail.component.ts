@@ -70,7 +70,6 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.propertyService.clearSaleCache();
     this.propertyService.updateProperty(this.property).subscribe(() => this.goBack());
   }
 
@@ -139,7 +138,6 @@ export class PropertyDetailComponent implements OnInit {
 
   delete(): void {
     this.propertyService.deleteProperty(this.property).subscribe();
-    this.propertyService.clearSaleCache();
     this.goBack();
   }
   

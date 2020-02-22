@@ -35,11 +35,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { PropertyDetailComponent } from './property-detail/property-detail.component';
-import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
-import { ViewPropertyComponent } from './view-property/view-property.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/property.component';
@@ -70,11 +68,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DescriptionPipe,
     PropertiesComponent,
     PropertyDetailComponent,
-    MessagesComponent,
     DashboardComponent,
     PropertySearchComponent,
     PropertyCardComponent,
-    ViewPropertyComponent,
     AboutComponent,
     HomeComponent,
     PropertyComponent,

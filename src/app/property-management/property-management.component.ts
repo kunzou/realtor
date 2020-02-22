@@ -40,7 +40,6 @@ export class PropertyManagementComponent implements OnInit {
       .subscribe(property => {
         this.dataSource = new PostDataSource(this.propertyService);
       })
-      this.propertyService.clearSaleCache();
   }  
 
   editOwner(): void {
