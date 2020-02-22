@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private emailService: EmailService,
-    private router: Router,
+    public router: Router,
     public auth: AuthService
   ) { }
 

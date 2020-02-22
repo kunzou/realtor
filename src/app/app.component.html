@@ -18,8 +18,7 @@
           <a class="nav-link" routerLink="/properties">{{ 'home.properties' | translate }}</a>
         </li>
         <li class="nav-item" [class.active]="router.url==='/openHouse'">
-          <a class="nav-link" routerLink="/openHouse"
-            (click)="setActive('openHouse')">{{'home.openHouse' | translate}}</a>
+          <a class="nav-link" routerLink="/openHouse">{{'home.openHouse' | translate}}</a>
         </li>
         <li class="nav-item" [class.active]="router.url.startsWith('/blog')">
           <a class="nav-link" routerLink="/blog">{{'home.blog' | translate}}</a>
