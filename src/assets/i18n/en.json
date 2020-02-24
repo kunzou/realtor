@@ -15,6 +15,9 @@
     "properties": {
       "property-list": "Properties list"
     },
+    "about": {
+      "recentDeals": "My Recent Deals"
+    },
     "property": {
         "type": "Type",
         "year": "Year",

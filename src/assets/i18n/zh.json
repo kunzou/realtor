@@ -15,6 +15,9 @@
     "properties": {
       "property-list": "最近房源"
     },
+    "about": {
+      "recentDeals": "我的近期业绩"
+    },
     "property": {
         "type": "房型",
         "year": "建筑年份",
