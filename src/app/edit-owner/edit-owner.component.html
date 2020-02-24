@@ -48,7 +48,7 @@
     </div>
     
     <div *ngIf="language === 'en'">
-        <ckeditor [(ngModel)]="owner.aboutMe.english" name="aboutMe"></ckeditor>
+        <ckeditor [(ngModel)]="owner.aboutMe.english" name="aboutMe"  type="inline"></ckeditor>
         <h4>Preview</h4>
         <div class="col-lg-4" [innerHTML]="owner.aboutMe.english"></div>
     </div>  
@@ -57,15 +57,11 @@
         <h3>About Page Description</h3>
     </div>
     <div *ngIf="language === 'zh'">
-        <ckeditor [(ngModel)]="owner.aboutPageDescription.chinese"></ckeditor>
-        <h4>预览</h4>
-        <div class="col-lg-8" [innerHTML]="owner.aboutPageDescription.chinese"></div>
+        <ckeditor [(ngModel)]="owner.aboutPageDescription.chinese" name="aboutPageDescription" type="inline"></ckeditor>
     </div>
     
     <div *ngIf="language === 'en'">
-        <ckeditor [(ngModel)]="owner.aboutPageDescription.english"></ckeditor>
-        <h4>Preview</h4>
-        <div class="col-lg-8" [innerHTML]="owner.aboutPageDescription.english"></div>
+        <ckeditor [(ngModel)]="owner.aboutPageDescription.english" name="aboutPageDescription" type="inline"></ckeditor>
     </div>        
     
     <div class="image-management-section">

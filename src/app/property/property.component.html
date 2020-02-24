@@ -41,11 +41,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="property-text" *ngIf="translateService.currentLang === 'zh'">
-                            <div [innerHTML]="property.description.chinese"></div>
-                        </div>
-                        <div class="property-text" *ngIf="translateService.currentLang === 'en'">
-                            <div [innerHTML]="property.description.english"></div>
+                        <div class="property-text">
+                            <div [innerHTML]="property.description | description"></div>
                         </div>
 
                         <div class="pd-details-tab">

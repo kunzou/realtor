@@ -36,11 +36,8 @@
                 </div>
 
             </div>
-            <div class="col-lg-8" *ngIf="translateService.currentLang === 'zh'">
-                <div [innerHTML]="owner.aboutPageDescription.chinese"></div>
-            </div>
-            <div class="col-lg-8" *ngIf="translateService.currentLang === 'en'">
-                <div [innerHTML]="owner.aboutPageDescription.english"></div>
+            <div class="col-lg-8">
+                <div [innerHTML]="owner.aboutPageDescription | description"></div>
             </div>            
         </div>
     </div>
