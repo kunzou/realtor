@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { EmailDetail } from '../domain/emailDetail';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,7 @@ export class EmailService {
     private http: HttpClient
   ) { }
 
-  sendEmail(emailDetail) {
-    this.http.post<EmailDetail>(this.SERVER_URL, emailDetail).subscribe(
-      res => {
-        alert('Email Sent successfully');        
-      });    
+  sendEmail(emailDetail): Observable<any> {
+    return this.http.post<EmailDetail>(this.SERVER_URL, emailDetail, {observe: 'response'});
   }
 }

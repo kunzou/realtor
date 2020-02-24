@@ -9,6 +9,9 @@ import { User } from '../domain/user';
 import { TranslateService } from '@ngx-translate/core';
 import { EmailDetail } from '../domain/emailDetail';
 import { EmailService } from '../service/email.service';
+import { Description } from '../domain/description';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 
 @Component({
@@ -22,6 +25,10 @@ export class PropertyComponent implements OnInit {
   imagesRect: Image[];
   safeURL: SafeResourceUrl;
   emailDetail: EmailDetail = new EmailDetail();
+  emailResponse: Description;
+  emailResponseAlertType: any;
+  private _success = new Subject<Description>();
+
 
   constructor(
     private propertyService: PropertyService,
@@ -35,6 +42,10 @@ export class PropertyComponent implements OnInit {
   ngOnInit() {
     this.getProperty();
     this.getOwner();
+    this._success.subscribe((message) => this.emailResponse = message);
+    this._success.pipe(
+      debounceTime(5000)
+    ).subscribe(() => this.emailResponse = null);       
   }
 
   getProperty(): void {
@@ -60,6 +71,14 @@ export class PropertyComponent implements OnInit {
 
   sendEmail(): void {
     this.emailDetail.address = this.property.address;
-    this.emailService.sendEmail(this.emailDetail);
+    this.emailService.sendEmail(this.emailDetail).subscribe(response => {
+      this.emailResponseAlertType = response.status === 200?"success":"danger";
+      this.emailResponse = response.body;
+      this.showMessage();
+    });
   }
+
+  showMessage() {
+    this._success.next(this.emailResponse);
+  }  
 }

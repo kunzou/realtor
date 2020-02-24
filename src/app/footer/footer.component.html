@@ -57,6 +57,9 @@
           <div class="col-lg-4 offset-lg-1">
             <div class="ft-newslatter">
               <span class="footer-title">{{'footer.askMe' | translate}}</span>
+              <div *ngIf="emailResponse">
+                <ngb-alert [type]="emailResponseAlertType" [dismissible]="false">{{ emailResponse | description }}</ngb-alert>
+              </div>              
               <form action="#" class="contact-form">
                 <div class="row">
                     <div class="col-lg-6">
