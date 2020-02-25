@@ -178,7 +178,10 @@
     "label": {
       "all": "All",
       "category": "Category",
-      "feelingLucky": "I'm Feeling Lucky"
+      "feelingLucky": "I'm Feeling Lucky",
+      "subscribe": "Subscribe",
+      "subscribeProperty": "Subscribe Properties",
+      "subscribeBlog": "Subscribe Blogs"      
     }
   }
   

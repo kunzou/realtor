@@ -295,35 +295,12 @@ h3 {
 }
 
 .blog-sidebar .newsletter_widget .form-control {
-  height: 50px;
-  border-color: #f0e9ff;
-  font-size: 13px;
+
   color: #999999;
-  padding-left: 20px;
-  border-radius: 0; 
 }
   .blog-sidebar .newsletter_widget .form-control::placeholder {
     color: #999999; 
   }
-  .blog-sidebar .newsletter_widget .form-control:focus {
-    border-color: #f0e9ff;
-    outline: 0;
-    box-shadow: none; 
-  }
-
-.blog-sidebar .newsletter_widget .input-group button {
-  background: #fff;
-  border-left: 0;
-  border: 1px solid #f0e9ff;
-  padding: 4px 15px;
-  border-left: 0; 
-}
-
-.blog-sidebar .newsletter_widget .input-group button i,
-.blog-sidebar .newsletter_widget .input-group button span {
-  font-size: 14px;
-  color: #999999; 
-}
 
 .blog-sidebar .blog-widget .cat-list li {
   border-bottom: 1px solid #f0e9ff;
@@ -416,3 +393,5 @@ a:hover {
   -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
+
+

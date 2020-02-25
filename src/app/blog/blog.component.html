@@ -1,78 +1,75 @@
 <div class="container">
-<!--================Blog Area =================-->
-   <section class="blog_area single-post-area section-padding" *ngIf="blog != null">
-    <div class="container">
-       <div class="row">
-          <div class="col-lg-8 posts-list">
-             <div class="single-post">
-                <div class="blog_details">
-                   <h2>
-                      {{blog.title | description}}
-                   </h2>
-                   <div class="row ml-1 blog-info-link">
-                     <a><i class="fa fa-comments"></i> {{blog.category | translate}}</a>
-                     <a class="pl-3"><i class="fa fa-calendar"></i> {{blog.date | date}}</a>
-                  </div>
-                  <div *ngIf="blog.videoLink" class="iframe-container">
-                     <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe>
-                 </div>
-                 <div class="video-caption">
-                    <p>{{blog.videoCaption | description}}</p>
-                 </div>
-                  <div class="blog_details" [innerHTML]="blog.content | description"></div>
+    <section class="blog_area single-post-area section-padding" *ngIf="blog != null">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+                        <div class="blog_details">
+                            <h2>
+                                {{blog.title | description}}
+                            </h2>
+                            <div class="row ml-1 blog-info-link">
+                                <a><i class="fa fa-comments"></i> {{blog.category | translate}}</a>
+                                <a class="pl-3"><i class="fa fa-calendar"></i> {{blog.date | date}}</a>
+                            </div>
+                            <div *ngIf="blog.videoLink" class="iframe-container">
+                                <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-caption">
+                                <p>{{blog.videoCaption | description}}</p>
+                            </div>
+                            <div class="blog_details" [innerHTML]="blog.content | description"></div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="blog-sidebar" *ngIf="blogList!=null">
-               <aside class="sidebar-widget blog-widget" >
-                   <h4 class="widget_title">{{'label.category' | translate}}</h4>
-                   <ul class="list cat-list">
-                       <li>
-                           <a routerLink="/blog" class="d-flex">
-                               <p>{{'label.all' | translate}}</p>
-                               <p>({{blogList.length}})</p>
-                           </a>
-                       </li>                                                                
-                       <li *ngFor="let category of categories">
-                           <a routerLink="/blog/{{category}}" class="d-flex">
-                               <p class="{{category == currentCategory?'current-category':'dumy'}}">{{category | translate}}</p>
-                               <p>({{getCategoryCount(category)}})</p>
-                           </a>
-                       </li>
-                   </ul>
-               </aside>
-
-               <aside class="sidebar-widget blog-random">
-                   <h3 class="widget_title">{{'label.feelingLucky' | translate}}</h3>
-                   <div class="media post-item" *ngFor="let post of randomPosts">
-                       <div class="feeling-lucky-cover">
-                           <img src="{{post.coverImage.smallLink}}" alt="post">
-                       </div>
-                       <div class="media-body">
-                           <a (click)="getBlog(post.id)">   
-                               <h3>{{post.title.chinese}}</h3>
-                           </a>
-                           <p>{{post.date | date}}</p>
-                       </div>
-                   </div>
-               </aside>
-               <!-- <aside class="sidebar-widget newsletter_widget">
-                   <h4 class="widget_title">Newsletter</h4>
-
-                   <form action="#">
-                       <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                               onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                       </div>
-                       <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Subscribe</button>
-                   </form>
-               </aside> -->
+                <div class="col-lg-4">
+                    <div class="blog-sidebar" *ngIf="blogList!=null">
+                        <aside class="sidebar-widget blog-widget" >
+                            <h4 class="widget_title">{{'label.category' | translate}}</h4>
+                            <ul class="list cat-list">
+                                <li>
+                                    <a routerLink="/blog" class="d-flex">
+                                        <p>{{'label.all' | translate}}</p>
+                                        <p>({{blogList.length}})</p>
+                                    </a>
+                                </li>                                                                
+                                <li *ngFor="let category of categories">
+                                    <a routerLink="/blog/{{category}}" class="d-flex">
+                                        <p class="{{category == currentCategory?'current-category':'dumy'}}">{{category | translate}}</p>
+                                        <p>({{getCategoryCount(category)}})</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+                        
+                        <aside class="sidebar-widget blog-random">
+                            <h3 class="widget_title">{{'label.feelingLucky' | translate}}</h3>
+                            <div class="media post-item" *ngFor="let post of randomPosts">
+                                <div class="feeling-lucky-cover">
+                                    <img src="{{post.coverImage.smallLink}}" alt="post">
+                                </div>
+                                <div class="media-body">
+                                    <a (click)="getBlog(post.id)">   
+                                        <h3>{{post.title.chinese}}</h3>
+                                    </a>
+                                    <p>{{post.date | date}}</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="sidebar-widget newsletter_widget">
+                            <div class="row">
+                                <mat-checkbox class="pl-3">{{'label.subscribeBlog' | translate}}</mat-checkbox>
+                                <mat-checkbox class="pl-3">{{'label.subscribeProperty' | translate}}</mat-checkbox>                           
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                            </div>
+                            <button mat-raised-button class="btn btn-dark" (click)="sendEmail()">{{'label.subscribe' | translate}}</button>
+                        </aside>
+                    </div>
+                </div>
             </div>
-          </div>
-       </div>
-    </div>
- </section>
- <!--================ Blog Area end =================-->
+        </div>
+    </section>
 </div>

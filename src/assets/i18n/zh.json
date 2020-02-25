@@ -178,7 +178,10 @@
     "label": {
       "all": "全部",
       "category": "文章分类",
-      "feelingLucky": "随便看看"
+      "feelingLucky": "随便看看",
+      "subscribe": "订阅",
+      "subscribeProperty": "订阅房产信息",
+      "subscribeBlog": "订阅博客"
     }
   }
   
