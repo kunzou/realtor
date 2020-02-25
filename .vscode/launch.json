@@ -6,17 +6,10 @@
     "configurations": [
         {
             "type": "chrome",
-            "request": "attach",
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "webRoot": "/home/kun/projects/angular/realtor"
-        },
-        {
-            "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:4200",
-            "webRoot": "/home/kun/projects/angular/realtor"
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
