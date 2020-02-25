@@ -24,8 +24,8 @@
              </div>
           </div>
           <div class="col-lg-4">
-            <div class="blog_right_sidebar" *ngIf="blogList!=null">
-               <aside class="single_sidebar_widget post_category_widget" >
+            <div class="blog-sidebar" *ngIf="blogList!=null">
+               <aside class="sidebar-widget blog-widget" >
                    <h4 class="widget_title">{{'label.category' | translate}}</h4>
                    <ul class="list cat-list">
                        <li>
@@ -36,17 +36,17 @@
                        </li>                                                                
                        <li *ngFor="let category of categories">
                            <a routerLink="/blog/{{category}}" class="d-flex">
-                               <p class="{{category == currentCategory?'current_category':'dumy'}}">{{category | translate}}</p>
+                               <p class="{{category == currentCategory?'current-category':'dumy'}}">{{category | translate}}</p>
                                <p>({{getCategoryCount(category)}})</p>
                            </a>
                        </li>
                    </ul>
                </aside>
 
-               <aside class="single_sidebar_widget popular_post_widget">
+               <aside class="sidebar-widget blog-random">
                    <h3 class="widget_title">{{'label.feelingLucky' | translate}}</h3>
-                   <div class="media post_item" *ngFor="let post of randomPosts">
-                       <div class="feeling_lucky_cover">
+                   <div class="media post-item" *ngFor="let post of randomPosts">
+                       <div class="feeling-lucky-cover">
                            <img src="{{post.coverImage.smallLink}}" alt="post">
                        </div>
                        <div class="media-body">
@@ -57,7 +57,7 @@
                        </div>
                    </div>
                </aside>
-               <!-- <aside class="single_sidebar_widget newsletter_widget">
+               <!-- <aside class="sidebar-widget newsletter_widget">
                    <h4 class="widget_title">Newsletter</h4>
 
                    <form action="#">

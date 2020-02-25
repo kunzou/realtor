@@ -1,18 +1,17 @@
- .map {
+ /* .map {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     margin-bottom: 30px;
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  }
+  } */
 
 agm-map {
     height: 300px;
  }
-
 
  .custom-day {
     text-align: center;

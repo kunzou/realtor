@@ -1,19 +1,7 @@
 
  agm-map {
-   
     height: 400px;
-    
  }
-
-  /* .spad {
-    padding-top: 110px;
-    padding-bottom: 110px;
-  } */
-
-
-/* ---------------------
-Single Property Page
- ------------------------*/
 
 .single-property .sp-image {
 	position: relative;
@@ -33,13 +21,6 @@ Single Property Page
 	color: #fff;
 }
 
-.single-property .sp-badge.new {
-	background: #ff000a;
-}
-
-.single-property .sp-badge.offer {
-	background: #ffba00;
-}
 
 .pi-metas img {
 	padding-right: 10px;
@@ -101,23 +82,6 @@ Single Property Page
 	background: #f5f8fa;
 }
 
-.offer-btn {
-	display: inline-block;
-	text-align: center;
-	min-width: 260px;
-	padding: 15px 44px;
-	font-size: 18px;
-	font-weight: 700;
-	text-transform: none;
-	color: #322429;
-	border: 2px solid #475069;
-	background: #fff;
-}
-
-.offer-btn:hover {
-	color: #322429;
-}
-
 .property-text {
 	width: 100%;
 	object-fit: cover;   	
@@ -129,19 +93,6 @@ Single Property Page
 
 .property-text p {
 	margin-bottom: 35px;
-}
-
-.property-feature .pf-box {
-	margin-bottom: 30px;
-}
-
-.property-feature .pf-box h6 {
-	margin-bottom: 5px;
-}
-
-.property-feature .pf-box p {
-	font-size: 16px;
-	margin-bottom: 0;
 }
 
 .iframe-container {
@@ -159,35 +110,6 @@ Single Property Page
    position: absolute;
    top: 0;
    width: 100%;
-}
-
-.loan-calculator {
-	padding: 53px 37px 44px;
-	background: #f5f8fa;
-}
-
-.loan-calculator h4 {
-	margin-bottom: 35px;
-}
-
-.loan-calculator input {
-	width: 100%;
-	height: 56px;
-	padding: 0 23px;
-	color: #3a3a3a;
-	font-size: 14px;
-	border: none;
-	margin-bottom: 28px;
-}
-
-.loan-calculator .loan-cal-result {
-	text-align: center;
-	font-size: 18px;
-	font-weight: 700;
-	padding: 20px 15px;
-	margin-bottom: 28px;
-	line-height: 1;
-	background: #fff;
 }
 
 .agent-widget {
@@ -289,39 +211,39 @@ Single Property Page
 	color: #19191a;
 }
 
-.pd-details-tab {
+.property-features-tab {
 	margin-bottom: 55px;
 }
 
-.pd-details-tab .property-more-table {
+.property-features-tab .property-features-table {
 	padding-left: 30px;
 	border: 1px solid #ebebeb;
 	border-top: none;
 	padding-bottom: 6px;
 }
-.pd-details-tab .property-more-table table tbody tr {
+.property-features-tab .property-features-table table tbody tr {
 	border-bottom: 1px solid #ebebeb;
 }
-.pd-details-tab .property-more-table table tbody tr:last-child {
+.property-features-tab .property-features-table table tbody tr:last-child {
 	border-bottom: none;
 }
-.pd-details-tab .property-more-table table tbody tr td {
+.property-features-tab .property-features-table table tbody tr td {
 	font-size: 16px;
 	color: #707079;
 	padding: 8px 0;
 }
-.pd-details-tab .property-more-table table tbody tr td.pt-name {
+.property-features-tab .property-features-table table tbody tr td.pt-name {
 	width: 36%;
 }
-.pd-details-tab .property-more-table table tbody tr td.p-value {
+.property-features-tab .property-features-table table tbody tr td.p-value {
 	color: #19191a;
 }
-.pd-details-tab .property-more-table .left-table {
+.property-features-tab .property-features-table .left-table {
 	width: 40%;
 	float: left;
 	margin-right: 25px;
 }
-.pd-details-tab .property-more-table .right-table {
+.property-features-tab .property-features-table .right-table {
 	width: 49%;
 }
 
@@ -379,19 +301,19 @@ Single Property Page
 /* Medium Device: 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1119px) {
-	.pd-details-tab .property-more-table .left-table {
+	.property-features-tab .property-features-table .left-table {
 		margin-right: 28px;
 	}
-	.pd-details-tab .property-more-table .right-table {
+	.property-features-tab .property-features-table .right-table {
 		width: 48%;
 	}
-	.pd-details-tab .property-more-table table tbody tr td.p-value {
+	.property-features-tab .property-features-table table tbody tr td.p-value {
 		padding-left: 20px;
 	}
 }
 
 @media only screen and (max-width: 991px) {
-	.pd-details-tab .property-more-table table tbody tr td.p-value {
+	.property-features-tab .property-features-table table tbody tr td.p-value {
 		padding-left: 20px;
 	}
 }
@@ -399,7 +321,7 @@ Single Property Page
 /* Tablet Device: 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.pd-details-tab .property-more-table .right-table {
+	.property-features-tab .property-features-table .right-table {
 		width: 48%;
 	}
 }
@@ -407,13 +329,13 @@ Single Property Page
 /* Wide Mobile: 480px */
 
 @media only screen and (max-width: 767px) {
-	.pd-details-tab .property-more-table .left-table {
+	.property-features-tab .property-features-table .left-table {
 		width: 100%;
 	}
-	.pd-details-tab .property-more-table .right-table {
+	.property-features-tab .property-features-table .right-table {
 		width: 100%;
 	}
-	.pd-details-tab .property-more-table table tbody tr:last-child {
+	.property-features-tab .property-features-table table tbody tr:last-child {
 		border-bottom: 1px solid #ebebeb;
 	}
 }
