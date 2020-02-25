@@ -1,4 +1,4 @@
-<div class="popular_property">
+<div class="property-list">
     <div class="container">
         <p>
             <span>{{ 'home.propertySource' | translate }}:</span>
@@ -10,7 +10,7 @@
           </p>        
     </div>
     <div class="container">
-        <div class="single_property">
+        <div class="map">
             <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
                 <agm-marker *ngFor="let property of selectedProperties" [latitude]="property.location.lat"
                     [longitude]="property.location.lng">

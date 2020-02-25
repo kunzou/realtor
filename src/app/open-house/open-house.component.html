@@ -24,8 +24,6 @@
     <div class="row">
 
       <div class="col-lg-4">
-        <p>Example of the range selection</p>
-
         <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t" >
         </ngb-datepicker>
         
@@ -43,7 +41,7 @@
         </ng-template>
       </div>
       <div class="col-lg-8">
-        <div class="popular_property">
+        <div class="property-list">
           <div class="container">
             <div class="row">
                 <div class="col-md-6" *ngFor="let property of selectedProperties">

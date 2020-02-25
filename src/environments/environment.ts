@@ -4,9 +4,11 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080',
+  // baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://10.103.119.63:8080',
   authClientId: 'ZWXIN07Gn5UTbFYoJYPynaJBk6IsBrJC',
-  authRedirectUri: 'http://localhost:4200'
+  // authRedirectUri: 'http://localhost:4200'
+  authRedirectUri: 'http://10.103.119.63:4200'
 };
 
 /*

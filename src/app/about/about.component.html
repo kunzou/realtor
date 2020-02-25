@@ -9,7 +9,7 @@
             <h2><strong>{{'about.recentDeals' | translate}}</strong></h2>
         </div>
         
-        <div class="map-widget">
+        <div class="map">
             <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
                 
                 <agm-marker *ngFor="let property of properties" [latitude]="property.location.lat"
