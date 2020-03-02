@@ -38,9 +38,6 @@ export class BlogEditComponent implements OnInit {
     setTimeout(() => this.staticAlertClosed = true, 20000);
 
     this._success.subscribe((message) => this.successMessage = message);
-    this._success.pipe(
-      debounceTime(5000)
-    ).subscribe(() => this.successMessage = null);    
     this.language = 'zh';
   }
 

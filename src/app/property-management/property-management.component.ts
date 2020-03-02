@@ -36,7 +36,7 @@ export class PropertyManagementComponent implements OnInit {
     if (!address) {
       return;
     }
-    this.propertyService.addProperty({ address: address } as Property)
+    this.propertyService.addProperty({ address: address, propertyStatus: null } as Property)
       .subscribe(property => {
         this.dataSource = new PostDataSource(this.propertyService);
       })

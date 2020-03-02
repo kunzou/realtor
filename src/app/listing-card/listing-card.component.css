@@ -9,3 +9,10 @@
     height: 40%;
     object-fit: cover;
 } */
+
+
+.property-card-brief {
+    text-align: center;
+    padding-top: 10px;
+    color: #001D38;
+}

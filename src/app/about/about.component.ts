@@ -14,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AboutComponent implements OnInit {
   properties: Property[];
   owner: User;
+  active: number;
   // sold = './assets/sold.png';
   constructor(
     private propertyService: PropertyService,
@@ -22,6 +23,7 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.active = 1;
     this.getPropertyes();
     this.getOwner();
   }

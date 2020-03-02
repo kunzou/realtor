@@ -16,7 +16,10 @@
       "property-list": "Properties list"
     },
     "about": {
-      "recentDeals": "My Recent Deals"
+      "description": "About Me",
+      "recentDeals": "My Recent Deals",
+      "sale": "Selling Properties",
+      "purchase": "Buying Properties"
     },
     "property": {
         "type": "Type",
@@ -60,11 +63,7 @@
     },    
     "openHouse": {
       "title": "OPEN HOUSE"
-    },
-    "service": {
-      "sale": "I am Selling a Property",
-      "purchase": "I am Buying a Property"
-    },    
+    }, 
     "propertyType": {
       "house": "House",
       "townhouse": "Townhouse",

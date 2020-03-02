@@ -27,28 +27,27 @@
                     </div>
                 </div>
             </div>
+            <div class="property-card-brief pb-0">
+                <p>{{property.brief | description}}</p>
+            </div>
         </div>
     </div>
     <div class="footer-card card-footer">
-        <ul>
-            <li>
-                <div class="single_info_doc">
-                    <img src="assets/square.svg" alt="">
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="mark_pro">
+                    <img src="assets/square.svg" alt="" class="pr-1"> 
                     <span>{{property.area}}</span>
                 </div>
-            </li>
-            <li>
-                <div class="single_info_doc">
-                    <img src="assets/bed.svg" alt="">
+                <div class="mark_pro">
+                    <img src="assets/bed.svg" alt="" class="pr-1">
                     <span>{{property.numberOfRooms}}</span>
                 </div>
-            </li>
-            <li>
-                <div class="single_info_doc">
-                    <img src="assets/bath.svg" alt="">
+                <div class="mark_pro">
+                    <img src="assets/bath.svg" alt="" class="pr-1">
                     <span>{{property.numberOfWashrooms}}</span>
-                </div>
-            </li>
-        </ul>
+                </div>                
+            </div>
+        </div> 
     </div>
 </div>

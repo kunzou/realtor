@@ -15,8 +15,8 @@ export class User {
     officePhoneNumber: string;
     faxNumber: string;
     aboutMe: Description = new Description();
-    aboutCompany: Description = new Description();
-    aboutPageDescription: Description = new Description();
+    purchaseService: Description = new Description();
+    saleService: Description = new Description();
     owner: boolean;
     facebook: string;
     instagram: string;

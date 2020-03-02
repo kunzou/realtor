@@ -42,27 +42,27 @@
         <h3>About Me</h3>
     </div>
     <div *ngIf="language === 'zh'">
-        <ckeditor [(ngModel)]="owner.aboutMe.chinese"></ckeditor>
-        <h4>预览</h4>
-        <div class="col-lg-4" [innerHTML]="owner.aboutMe.chinese"></div>
+        <p>关于我</p>
+        <ckeditor [(ngModel)]="owner.aboutMe.chinese" type="inline"></ckeditor>
+
+        <p>买方服务</p>
+        <ckeditor [(ngModel)]="owner.purchaseService.chinese" type="inline"></ckeditor>
+
+        <p>卖方服务</p>
+        <ckeditor [(ngModel)]="owner.saleService.chinese" type="inline"></ckeditor>
+                        
     </div>
     
     <div *ngIf="language === 'en'">
-        <ckeditor [(ngModel)]="owner.aboutMe.english" name="aboutMe"  type="inline"></ckeditor>
-        <h4>Preview</h4>
-        <div class="col-lg-4" [innerHTML]="owner.aboutMe.english"></div>
-    </div>  
-    
-    <div>
-        <h3>About Page Description</h3>
+        <p>关于我</p>
+        <ckeditor [(ngModel)]="owner.aboutMe.english" type="inline"></ckeditor>
+
+        <p>买方服务</p>
+        <ckeditor [(ngModel)]="owner.purchaseService.english" type="inline"></ckeditor>
+
+        <p>卖方服务</p>
+        <ckeditor [(ngModel)]="owner.saleService.english" type="inline"></ckeditor>
     </div>
-    <div *ngIf="language === 'zh'">
-        <ckeditor [(ngModel)]="owner.aboutPageDescription.chinese" name="aboutPageDescription" type="inline"></ckeditor>
-    </div>
-    
-    <div *ngIf="language === 'en'">
-        <ckeditor [(ngModel)]="owner.aboutPageDescription.english" name="aboutPageDescription" type="inline"></ckeditor>
-    </div>        
     
     <div class="image-management-section">
         <div class="container">

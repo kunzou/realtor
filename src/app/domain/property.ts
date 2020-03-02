@@ -14,6 +14,7 @@ export class Property {
     yearBuilt: number;
     // description: Description = new Description();
     description: {english: string; chinese: string;};
+    brief: {english: string; chinese: string;};
     descriptionEnglish: string;
     numberOfRooms: number;
     numberOfWashrooms: number;
@@ -23,6 +24,7 @@ export class Property {
     onMarketSince: Date;
     dealDate: Date;
     hide: boolean;
+    displayedOnHomePage: boolean;
     location: {lat: number; lng: number;};
     aboutPageComment: string;
     youtubeLink: string;

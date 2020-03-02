@@ -1,9 +1,14 @@
 <div *ngIf="property">
     <div class="p-3">
-        <div>
-            <mat-checkbox color="primary" [(ngModel)]="property.hide">Hide from list</mat-checkbox>
+        <div class="row">
+            <div class="pr-3">
+                <mat-checkbox color="primary" [(ngModel)]="property.hide">Hide from list</mat-checkbox>
+            </div>
+            <div>
+                <mat-checkbox color="primary" [(ngModel)]="property.displayedOnHomePage">Display on Homepage</mat-checkbox>
+            </div>
         </div>
-
+        
         <mat-form-field>
             <mat-label>House Type</mat-label>
             <mat-select [(ngModel)]="property.propertyType" name="propertyType">
@@ -12,7 +17,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-
+        
         <mat-form-field>
             <mat-label>Status</mat-label>
             <mat-select [(ngModel)]="property.propertyStatus" name="propertyStatus">
@@ -21,7 +26,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-
+        
         <mat-form-field>
             <mat-label>Source</mat-label>
             <mat-select [(ngModel)]="property.source" name="source">
@@ -48,7 +53,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-
+        
         <mat-form-field>
             <mat-label>Garage</mat-label>
             <mat-select [(ngModel)]="property.garage" name="garage">
@@ -57,7 +62,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>          
-
+        
         <mat-form-field>
             <mat-label>性质</mat-label>
             <mat-select [(ngModel)]="property.holdType" name="holdType">
@@ -70,42 +75,42 @@
         <mat-form-field>
             <input matInput placeholder="Garage Size" [(ngModel)]="property.garageSize" name="garageSize">
         </mat-form-field>        
-
+        
         <mat-form-field>
             <input matInput placeholder="Property Address" [(ngModel)]="property.address" name="address">
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Built in" [(ngModel)]="property.yearBuilt" name="yearBuilt">
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Size" [(ngModel)]="property.area" name="area">
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Number of Rooms" [(ngModel)]="property.numberOfRooms" name="numberOfRooms">
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Number of Washroom" [(ngModel)]="property.numberOfWashrooms"
-                name="numberOfWashRooms">
+            name="numberOfWashRooms">
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Ask price" [(ngModel)]="property.askingPrice" name="askingPrice">
             <span matPrefix>$&nbsp;</span>
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Sold price" [(ngModel)]="property.finalPrice" name="finalPrice">
             <span matPrefix>$&nbsp;</span>
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="Neighborhood" [(ngModel)]="property.neighborhood" name="neighborhood">
         </mat-form-field>
-
+        
         <mat-form-field>
             <mat-label>Basement</mat-label>
             <mat-select [(ngModel)]="property.basementCondition" name="basementCondition">
@@ -116,34 +121,27 @@
         </mat-form-field>    
         
         <mat-form-field>
-            <mat-label>Upgrades</mat-label>
-            <mat-select multiple [(ngModel)]="property.upgrades">
-              <mat-option *ngFor="let upgrade of upgrades" [value]="upgrade">{{upgrade | translate}}</mat-option>
-            </mat-select>
-        </mat-form-field>       
-
-        <mat-form-field>
             <mat-label>留下的东西</mat-label>
             <mat-select multiple [(ngModel)]="property.remaining">
-              <mat-option *ngFor="let remaining of remainings" [value]="remaining">{{remaining | translate}}</mat-option>
+                <mat-option *ngFor="let remaining of remainings" [value]="remaining">{{remaining | translate}}</mat-option>
             </mat-select>
         </mat-form-field>               
-
+        
         <br>
         <mat-form-field>
             <input matInput [matDatepicker]="picker1" placeholder="On Market Since" [(ngModel)]="property.onMarketSince">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
-
+        
         <input type="datetime-local" [ngModel]="property.openHouseDate | date:'yyyy-MM-ddTHH:mm'" 
         (ngModelChange)="property.openHouseDate = $event" />    
-
+        
         <mat-form-field>
             <input matInput placeholder="Comments on Map" [(ngModel)]="property.aboutPageComment"
-                name="aboutPageComment">
+            name="aboutPageComment">
         </mat-form-field>
-
+        
         <mat-form-field>
             <input matInput placeholder="YouTube link" [(ngModel)]="property.youtubeLink" name="youtubeLink">
         </mat-form-field>
@@ -164,7 +162,7 @@
         </mat-form-field>
         
         <button mat-raised-button color="primary" (click)="addFeature()">Add</button>
-
+        
         <br>
         <tr *ngFor="let feature of property.features">
             {{feature.year}} {{feature.description | translate}}
@@ -172,7 +170,7 @@
                 <mat-icon>delete_forever</mat-icon>
             </button>
         </tr>
-
+        
         <section class="language-section">
             <label class="language-section-margin">Language</label>
             <mat-radio-group [(ngModel)]="language">
@@ -180,21 +178,30 @@
                 <mat-radio-button class="language-section-margin" value="en">English</mat-radio-button>
             </mat-radio-group>
         </section>
-
+        
         <div *ngIf="language === 'zh'">
             <mat-form-field>
                 <input matInput placeholder="Tag" [(ngModel)]="property.tag.chinese" name="tag">
             </mat-form-field>
-    
-            <ckeditor [(ngModel)]="property.description.chinese"></ckeditor>
+            <div class="form-group">
+                <label for="content">梗概</label>
+                <textarea class="form-control" id="brief" rows="3" [(ngModel)]="property.brief.chinese"
+                name="brief.chinese"></textarea>
+            </div>            
+            <ckeditor [(ngModel)]="property.description.chinese" type="inline"></ckeditor>
         </div>
         <div *ngIf="language === 'en'">
             <mat-form-field>
                 <input matInput placeholder="Tag" [(ngModel)]="property.tag.english" name="tag">
-            </mat-form-field>            
-            <ckeditor [(ngModel)]="property.description.english"></ckeditor>
+            </mat-form-field>    
+            <div class="form-group">
+                <label for="content">brief</label>
+                <textarea class="form-control" id="brief" rows="3" [(ngModel)]="property.brief.english"
+                name="brief.english"></textarea>
+            </div>                       
+            <ckeditor [(ngModel)]="property.description.english" type="inline"></ckeditor>
         </div>
-
+        
         <div style="text-align:center; margin-top: 10px; ">
             <mat-card style="margin-top:10px; ">
                 <mat-card-content>
@@ -234,12 +241,12 @@
                     </div>
                 </mat-card-content>
             </mat-card>
-
+            
             <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
-                style="display:none;" />
+            style="display:none;" />
         </div>
-
-
+        
+        
         <mat-card-actions>
             <button mat-raised-button color="primary" (click)="save()">Save</button>
             <button mat-raised-button color="secondary" (click)="goBack()">Go back</button>

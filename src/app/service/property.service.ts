@@ -16,6 +16,7 @@ export class PropertyService {
   };
   cachedSaleProperties: Observable<Property[]>;
   openHouseCards: Observable<PropertyCard[]>;
+  homePageCards: Observable<PropertyCard[]>;
   constructor(
     private http: HttpClient
   ) { }
@@ -25,6 +26,14 @@ export class PropertyService {
       .pipe(
         catchError(this.handleError<Property[]>('getProperties', []))
       )
+  }
+
+  getHomePageProperties(): Observable<PropertyCard[]> {
+    const url = `${this.propertyUrl}/homePage`;
+    if(this.homePageCards == null) {
+      this.homePageCards = this.http.get<Property[]>(url);
+    }
+    return this.homePageCards;
   }
 
   getSaleProperties(): Observable<Property[]> {
@@ -45,6 +54,10 @@ export class PropertyService {
 
   clearOpenHouseCache() {
     this.openHouseCards = null;
+  }
+
+  clearHomePageCardsCache() {
+    this.homePageCards = null;
   }
 
   getSoldPurchasedProperties(): Observable<Property[]> {
@@ -89,6 +102,7 @@ export class PropertyService {
   updateProperty (property: Property): Observable<any> {
     this.clearOpenHouseCache();
     this.clearSaleCache();
+    this.clearHomePageCardsCache();
     return this.http.put(this.propertyUrl, property, this.httpOptions).pipe(
       catchError(this.handleError<any>('updateProperty'))
     );
@@ -97,6 +111,7 @@ export class PropertyService {
   addProperty(property: Property): Observable<Property> {
     this.clearOpenHouseCache();
     this.clearSaleCache();    
+    this.clearHomePageCardsCache();
     return this.http.post<Property>(this.propertyUrl, property, this.httpOptions).pipe(
       catchError(this.handleError<Property>('addProperty'))
     );
@@ -105,6 +120,7 @@ export class PropertyService {
   deleteProperty (property: Property | number): Observable<Property> {
     this.clearOpenHouseCache();
     this.clearSaleCache();    
+    this.clearHomePageCardsCache();
     const id = typeof property === 'number' ? property : property.id;
     const url = `${this.propertyUrl}/${id}`;
   
