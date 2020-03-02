@@ -1,11 +1,11 @@
 {
     "home": {
         "home": "首页",
-        "properties": "房产列表",
+        "properties": "在售房源",
         "dashboard": "后台",
-        "about": "关于我",
+        "about": "关于聃哥",
         "blog": "聃哥说房",
-        "openHouse": "周末开放",
+        "openHouse": "房屋开放",
         "service": "聃哥服务",
         "propertySource": "房源",
         "fuju": "福居温尼伯",
@@ -49,11 +49,11 @@
           "message": "您的信息"
         },
         "sendMessage": "发送邮件",
-        "yourMessage": "您的问题"
+        "yourMessage": "聃哥您好，我想预约周六下午4点看房行吗?"
     },
     "footer": {
       "contactUs": "联系我们",
-      "askMe": "请教聃哥",
+      "askMe": "联系聃哥",
       "yourName": "您的名字",
       "contactMethod": "联系方式",
       "yourQuestion": "您的问题"
@@ -172,7 +172,8 @@
         "maintenance": "维护",
         "vlog": "视频",
         "all": "全部",
-        "hot": "近期热点"
+        "hot": "近期热点",
+        "news": "楼市咨询"
       }
     },
     "label": {

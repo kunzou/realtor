@@ -20,3 +20,9 @@ agm-map {
    font-weight: 500;
    z-index: 1;
  }
+
+ @media (max-width: 767px) {
+   .carousel-img {
+      height: 500px;
+    }
+ }

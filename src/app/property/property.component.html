@@ -169,6 +169,29 @@
                             </agm-marker>
                         </agm-map>
                     </div>
+                    <div class="col-lg-12 pt-3">
+                        <h5>{{'property.sendEmailTitle' | translate}}</h5>
+                        <div *ngIf="emailResponse">
+                            <ngb-alert [type]="emailResponseAlertType" [dismissible]="false">{{ emailResponse | description }}</ngb-alert>
+                        </div>
+                        <form action="#" class="contact-form">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="{{'property.email.from' | translate}}" [(ngModel)]="emailDetail.from" name="from">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="{{'property.email.number' | translate}}" [(ngModel)]="emailDetail.phoneNumber" name="phoneNumber">
+                                </div>
+                                <div class="col-lg-12">
+                                    <input type="text" placeholder="{{'property.email.email' | translate}}" [(ngModel)]="emailDetail.email" name="email">
+                                </div>                                        
+                                <div class="col-lg-12">
+                                    <textarea [(ngModel)]="emailDetail.message" name="message"></textarea>
+                                    <button mat-raised-button class="btn btn-dark" (click)="sendEmail()">{{'property.sendMessage' | translate}}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>                    
                     <div class="agent-widget" *ngIf="me">
                         <div class="contact-service">
                             <img src="img/single-property/small.png" alt="">
@@ -177,7 +200,6 @@
                                     <td><h5>{{me.displayName.chinese}}</h5></td>
                                 </tr>
                                 <tr>
-
                                     <td><i class="fa fa-phone-square"></i><span>  {{me.phoneNumber}}</span></td>
                                 </tr>
                                 <tr>
@@ -186,30 +208,7 @@
                                 <tr>
                                     <td><img src="{{me.barcode.link}}" style="width: 40%;"></td>
                                 </tr>                                
-                            </table>
-                            <div class="col-lg-12">
-                                <h5>{{'property.sendEmailTitle' | translate}}</h5>
-                                <div *ngIf="emailResponse">
-                                    <ngb-alert [type]="emailResponseAlertType" [dismissible]="false">{{ emailResponse | description }}</ngb-alert>
-                                </div>
-                                <form action="#" class="contact-form">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <input type="text" placeholder="{{'property.email.from' | translate}}" [(ngModel)]="emailDetail.from" name="from">
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <input type="text" placeholder="{{'property.email.number' | translate}}" [(ngModel)]="emailDetail.phoneNumber" name="phoneNumber">
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <input type="text" placeholder="{{'property.email.email' | translate}}" [(ngModel)]="emailDetail.email" name="email">
-                                        </div>                                        
-                                        <div class="col-lg-12">
-                                            <textarea placeholder="{{'property.yourMessage' | translate}}" [(ngModel)]="emailDetail.message" name="message"></textarea>
-                                            <button mat-raised-button class="btn btn-dark" (click)="sendEmail()">{{'property.sendMessage' | translate}}</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>  
+                            </table>  
                         </div>
                     </div>
                 </div>

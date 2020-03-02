@@ -49,7 +49,7 @@
           "message": "Your Message"
         },
         "sendMessage": "Send Message",
-        "yourMessage": "Your Message"
+        "yourMessage": "Hi Dan, can I see this house on Saturday at 4?"
     },
     "footer": {
       "contactUs": "Contact Us",
@@ -172,7 +172,8 @@
         "maintenance": "Maintenance",
         "vlog": "Vlog",
         "all": "All",
-        "hot": "What's Hot"
+        "hot": "What's Hot",
+        "news": "Estate News"
       }
     },
     "label": {

@@ -1,15 +1,5 @@
 <div class="property-list">
     <div class="container">
-        <p>
-            <span>{{ 'home.propertySource' | translate }}:</span>
-            <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" [(ngModel)]="currentSource">
-              <mat-button-toggle value="fuju" (change)="setSource()">{{ 'home.fuju' | translate }}</mat-button-toggle>
-              <mat-button-toggle value="squareMeters" (change)="setSource()">{{ 'home.squareMeters' | translate }}</mat-button-toggle>
-              <mat-button-toggle value="all" (change)="setSource()">{{ 'home.showAll' | translate }}</mat-button-toggle>
-            </mat-button-toggle-group>
-          </p>        
-    </div>
-    <div class="container">
         <div class="map">
             <agm-map [latitude]="49.810088" [longitude]="-97.183745" [zoom]="11" [zoomControl]="false">
                 <agm-marker *ngFor="let property of selectedProperties" [latitude]="property.location.lat"

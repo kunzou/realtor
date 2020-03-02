@@ -6,7 +6,7 @@ import { Image } from '@ks89/angular-modal-gallery';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { UserService } from '../service/user-service';
 import { User } from '../domain/user';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { EmailDetail } from '../domain/emailDetail';
 import { EmailService } from '../service/email.service';
 import { Description } from '../domain/description';
@@ -28,8 +28,7 @@ export class PropertyComponent implements OnInit {
   emailResponse: Description;
   emailResponseAlertType: any;
   private _success = new Subject<Description>();
-
-
+  
   constructor(
     private propertyService: PropertyService,
     private userService: UserService,
@@ -43,9 +42,10 @@ export class PropertyComponent implements OnInit {
     this.getProperty();
     this.getOwner();
     this._success.subscribe((message) => this.emailResponse = message);
-    this._success.pipe(
-      debounceTime(5000)
-    ).subscribe(() => this.emailResponse = null);       
+    this.translateService.get('property.yourMessage').subscribe((text:string) => this.emailDetail.message = text);
+    this.translateService.onLangChange.subscribe((event: TranslationChangeEvent)=> {
+      this.translateService.get('property.yourMessage').subscribe((text:string) => this.emailDetail.message = text);
+    })
   }
 
   getProperty(): void {
