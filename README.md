@@ -1,3 +1,5 @@
+This is my first Angular project and it is till on going. Tests are missing and there are quite a lot of commented out code snippets. 
+
 # Realtor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
