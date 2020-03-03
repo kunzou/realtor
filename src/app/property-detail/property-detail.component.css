@@ -41,3 +41,7 @@
   /* font-weight: 500; */
   z-index: 1;  
 }
+
+.gallery-image {
+  max-width: none !important;
+}
