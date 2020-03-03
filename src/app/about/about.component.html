@@ -15,45 +15,6 @@
             <div class="col-lg-12">
                 <div [innerHTML]="owner.purchaseService | description"></div>    
             </div>                
-            <!-- <div class="container"> -->
-                <!-- <p><img alt="20190119094241825776793.png" src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1565317764614-44BO3PA9ZW05XQNB5OAK/ke17ZwdGBToddI8pDm48kH__ZmeUhspVXkEKAwAFPLdZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFFkHcrVNxvKdoRrMK-pvRRMYBcujL2wGVhiqz24OS6baEcAfnVBrEqrgp1UxUHGkY/20190119094241825776793.png?format=500w" /></p>
-
-                <p>&nbsp;</p>
-                
-                <ul>
-                    <li>
-                    <h3>近10年从业经验，数百成功案例。</h3>
-                    </li>
-                    <li>
-                    <h3>提供详尽购房流程介绍，精准分析市场。</h3>
-                    </li>
-                    <li>
-                    <h3>多年积累的丰富的行业内外的人脉以及知识知识会在为您在谈判过程中提供强有力的支持，为您争取最大利益。</h3>
-                    </li>
-                    <li>
-                    <h3>协助提供专业验房，贷款，搬家以及律师服务。</h3>
-                    </li>
-                    <li>
-                    <h3>协助购房后续事宜：&nbsp;水电气开户，信箱钥匙，房屋后续使用以及维护知识。</h3>
-                    </li>
-                </ul>
-                
-                <p>&nbsp;</p>
-                
-                <p><a href="https://www.fujuwinnipeg.com/letstalkabouthouse" target="_blank">点击参看房屋维修视频系列</a></p>
-                
-                <h2>&nbsp;</h2>
-                
-                <h3>&ldquo;一时经纪，一世朋友&rdquo;</h3>
-                
-                <h3>无论交房后无论您在什么时候遇到什么问题，我都会在第一时间协助您解决。</h3>
-                
-                <p>&nbsp;</p>
-                
-                <h2><em>刘聃</em></h2>
-                
-                <h2>2019年12月于温尼伯</h2> -->
-            <!-- </div> -->
         </ng-template>
     </li>
     <li [ngbNavItem]="3">
@@ -62,34 +23,6 @@
             <div class="col-lg-12">
                 <div [innerHTML]="owner.saleService | description"></div>    
             </div>                 
-            <!-- <div class="container">
-                <p><img alt="Sold-in-One-Week.jpg" src="https://images.squarespace-cdn.com/content/v1/5d425c3accfbe50001c13b16/1565318198331-FGV9SN5VTRW2NFP7XFF5/ke17ZwdGBToddI8pDm48kMaVAccIHCAlT3ehWo7kkTtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI5LGX5yPPWxlKpI322UDuSoYYhw1mEbiv7EaGpG6cJ6IKMshLAGzx4R3EDFOm1kBS/Sold-in-One-Week.jpg?format=1000w" /></p>
-
-                <ul>
-                    <li>
-                    <h3>提供专业以及精准的上市前市场分析，制定最优市场推广方案。</h3>
-                    </li>
-                    <li>
-                    <h3>提供专业照相，视频制作，无人机&nbsp;360度无死角展示。</h3>
-                    </li>
-                    <li>
-                    <h3>提供大范围线上及线下媒体推广：网站，朋友圈展示，电视推广，海报。</h3>
-                    </li>
-                    <li>
-                    <h3>提供定期周末高频率OPEN HOUSE，确保最大曝光度。</h3>
-                    </li>
-                    <li>
-                    <h3>提供专业STAGING建议。</h3>
-                    </li>
-                    <li>
-                    <h3>提供专业产权交割服务：协助办理律师签字，申报税务，水电气过户等</h3>
-                    </li>
-                </ul>
-                
-                <p><a href="https://www.instagram.com/weshoothouses/" target="_blank">点击查看已售房源图片案例</a></p>
-                
-                <p><a href="https://www.youtube.com/channel/UCffGM-AZfGWDo40QCi6Pwqw" target="_blank">点击查看已售房源视频案例</a></p>
-                            </div> -->
         </ng-template>
     </li>
     <li [ngbNavItem]="4">
@@ -102,7 +35,6 @@
                             <agm-marker *ngFor="let property of properties" [latitude]="property.location.lat"
                             [longitude]="property.location.lng" [iconUrl]="getIcon(property)">
                                 <agm-info-window>
-                                    <!-- <p>{{property.address}}</p> -->
                                     <app-property-card [property]="property"></app-property-card>
                                 </agm-info-window>
                             </agm-marker>
