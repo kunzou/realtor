@@ -12,10 +12,12 @@ import { OpenHouseComponent } from './open-house/open-house.component';
 import { MyServiceComponent } from './my-service/my-service.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogComponent } from './blog/blog.component';
+import { CallbackComponent } from './callback/callback.component';
 
 const routes: Routes = [
   { path: 'properties', component: PropertiesComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'callback', component: CallbackComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'detail/:id', component: PropertyDetailComponent },  
   { path: 'about', component: AboutComponent },  

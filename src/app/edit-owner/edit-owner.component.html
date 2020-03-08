@@ -1,4 +1,4 @@
-<div *ngIf="owner">
+<div *ngIf="auth.isAuthenticated() && owner">
     <mat-form-field>
         <input matInput placeholder="Display Name English" [(ngModel)]="owner.displayName.english" name="displayName">
     </mat-form-field>

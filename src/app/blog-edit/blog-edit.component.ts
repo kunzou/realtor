@@ -10,6 +10,7 @@ import { debounceTime, map, catchError } from 'rxjs/operators';
 import { BlogCategory } from '../domain/blog-category';
 import { UploadService } from '../service/upload.service';
 import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-blog-edit',
@@ -29,7 +30,8 @@ export class BlogEditComponent implements OnInit {
     private blogService: BlogService,
     private route: ActivatedRoute,
     private location: Location,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    public auth: AuthService
   ) { 
     this.getBlog();
   }

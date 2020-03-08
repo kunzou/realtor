@@ -56,6 +56,7 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogComponent } from './blog/blog.component';
 import { DescriptionPipe } from './utility/translateUtility'
 import {AuthService} from './auth.service';
+import { CallbackComponent } from './callback/callback.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -86,6 +87,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BlogManagementComponent,
     BlogEditComponent,
     BlogComponent,
+    CallbackComponent,
   ],
   entryComponents: [],
   imports: [

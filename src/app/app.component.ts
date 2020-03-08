@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
     public auth: AuthService,
     public router: Router
   ) {
-    auth.handleAuthentication();
     translateService.addLangs(['en', 'zh']);
     translateService.setDefaultLang('zh');
     translateService.use('zh');

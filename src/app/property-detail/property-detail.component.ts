@@ -20,6 +20,7 @@ import { HoldType } from '../domain/holdType';
 import { Remaining } from '../domain/remaining';
 import { Feature } from '../domain/feature';
 import { Highlight } from '../domain/highlight';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-property-detail',
@@ -49,7 +50,8 @@ export class PropertyDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private propertyService: PropertyService,
     private location: Location,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    public auth: AuthService
   ) { }
 
   ngOnInit() {

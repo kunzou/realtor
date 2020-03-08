@@ -6,6 +6,7 @@ import { UploadService } from '../service/upload.service';
 import { map, catchError } from 'rxjs/operators';
 import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-edit-owner',
@@ -20,6 +21,7 @@ export class EditOwnerComponent implements OnInit {
     private userService: UserService,
     private location: Location,
     private uploadService: UploadService,
+    public auth: AuthService
   ) { }
 
   ngOnInit() {
@@ -117,7 +119,6 @@ export class EditOwnerComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
 }
 
 enum ImageType {
