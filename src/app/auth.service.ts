@@ -74,7 +74,7 @@ export class AuthService {
     // Application settings for Allowed Logout URLs
     sessionStorage.clear();
     this.auth0.logout({
-      returnTo: 'http://localhost:4200',
+      returnTo: environment.logtoutRri,
       clientID: environment.auth.clientID
     });
   }
