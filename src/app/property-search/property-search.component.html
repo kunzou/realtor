@@ -1,9 +1,7 @@
-<mat-form-field>
-    <input #searchBox id="search-box" matInput placeholder="Property Search" (input)="search(searchBox.value)"
-        name="finalPrice">
-    <ul class="search-result">
-        <li *ngFor="let property of properties$ | async">
-            <a routerLink="/detail/{{property.id}}">{{property.address}}</a>
-        </li>
-    </ul>
-</mat-form-field>
+<input #searchBox id="search-box" class="form-control form-control-lg" placeholder="Property Search"
+    (input)="search(searchBox.value)" name="finalPrice">
+<ul class="search-result">
+    <li *ngFor="let property of properties$ | async">
+        <a routerLink="/detail/{{property.id}}">{{property.address}}</a>
+    </li>
+</ul>
