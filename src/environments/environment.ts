@@ -4,11 +4,16 @@
 
 export const environment = {
   production: false,
-  // baseUrl: 'http://localhost:8080',
-  baseUrl: 'http://10.103.119.63:8080',
-  authClientId: 'ZWXIN07Gn5UTbFYoJYPynaJBk6IsBrJC',
-  // authRedirectUri: 'http://localhost:4200'
-  authRedirectUri: 'http://10.103.119.63:4200'
+  baseUrl: 'http://localhost:8080',
+  authRedirectUri: 'http://localhost:4200/dashboard',
+  logtoutRri: 'http://localhost:4200',
+  auth: {
+    clientID: 'ZWXIN07Gn5UTbFYoJYPynaJBk6IsBrJC',
+    domain: 'kunzou.auth0.com',
+    audience: 'https://kunzou.auth0.com/api/v2/',
+    redirect: 'http://localhost:4200/callback',
+    scope: 'openid'
+  }  
 };
 
 /*
