@@ -67,14 +67,14 @@
                         <aside class="sidebar-widget blog-random">
                             <h3 class="widget_title">{{'label.feelingLucky' | translate}}</h3>
                             <div class="media post-item" *ngFor="let post of randomPosts">
-                                <div class="feeling-lucky-cover">
+                                <div class="feeling-lucky-cover" *ngIf="post.coverImage.smallLink">
                                     <img src="{{post.coverImage.smallLink}}" alt="post">
                                 </div>
                                 <div class="media-body">
                                     <a routerLink="/post/{{post.id}}">
                                         <h3>{{post.title.chinese}}</h3>
                                     </a>
-                                    <p>{{post.date | date}})</p>
+                                    <p>{{post.date | date}}</p>
                                 </div>
                             </div>
                         </aside>

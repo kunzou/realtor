@@ -130,11 +130,12 @@ export class PropertyService {
   }
 
   searchProperties(term: string): Observable<Property[]> {
+    const url = `${this.propertyUrl}/search`;
     if(!term.trim()) {
       return of([]);
     }
 
-    return this.http.get<Property[]>(`${this.propertyUrl}/?address=${term}`).pipe(
+    return this.http.get<Property[]>(`${url}/?address=${term}`).pipe(
       catchError(this.handleError<Property[]>('searchProperties', []))      
     );
   }
