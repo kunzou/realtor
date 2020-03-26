@@ -32,5 +32,9 @@ export enum Feature {
     NEWSHINGLE = 'feature.newShingle',
     NEWSSHINGLE = 'feature.newsShingle',
     NEWERDRIVEWAY = 'feature.newerDriveway',
-    INSULATEDGARAGE = 'feature.insulatedGarage'
+    INSULATEDGARAGE = 'feature.insulatedGarage',
+    BALCONY = 'feature.balcony',
+    QUARTZ_COUNTER_TOPS = 'feature.quartzCounterTops',
+    GRANITE_COUNTER_TOPS = 'feature.graniteCounterTops',
+    VINYL_PLANK = 'feature.vinylPlank'
 }
