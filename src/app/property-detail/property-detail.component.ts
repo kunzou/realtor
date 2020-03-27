@@ -32,6 +32,11 @@ export class PropertyDetailComponent implements OnInit {
   language: string;
   selectedFeature:string;
   featureYear:string;
+  otherFeatureChinese: string;
+  otherFeatureEnglish: string;
+  otherFeatureYear: string;
+  otherRemainingChinese: string;
+  otherRemainingEnglish: string;
 
   propertyTypes = Object.values(PropertyType);
   basementConditions = Object.values(Basement);
@@ -78,6 +83,14 @@ export class PropertyDetailComponent implements OnInit {
   addFeature(): void {
     this.property.features.push(new Highlight(this.featureYear, this.selectedFeature));
   }
+
+  addOtherFeature(): void {
+    this.property.otherFeatures.push({chinese: this.otherFeatureChinese, english: this.otherFeatureEnglish, year: this.otherFeatureYear});
+  }
+
+  addOtherRemaining(): void {
+    this.property.otherRemaining.push({chinese: this.otherRemainingChinese, english: this.otherRemainingEnglish});
+  } 
 
   uploadFile(file, isPrimary): void {
     const formData = new FormData();
@@ -150,4 +163,12 @@ export class PropertyDetailComponent implements OnInit {
   deleteFeature(hightlight: Highlight): void {
     this.property.features = this.property.features.filter(item => item !== hightlight)
   }
+
+  deleteOtherFeature(otherFeature): void {
+    this.property.otherFeatures = this.property.otherFeatures.filter(item => item !== otherFeature)
+  }  
+
+  deleteOtherRemaining(otherRemaining): void {
+    this.property.otherRemaining = this.property.otherRemaining.filter(item => item !== otherRemaining)
+  }  
 }

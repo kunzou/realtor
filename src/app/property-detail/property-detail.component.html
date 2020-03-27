@@ -118,13 +118,6 @@
                     {{basementCondition | translate}}
                 </mat-option>
             </mat-select>
-        </mat-form-field>    
-        
-        <mat-form-field>
-            <mat-label>留下的东西</mat-label>
-            <mat-select multiple [(ngModel)]="property.remaining">
-                <mat-option *ngFor="let remaining of remainings" [value]="remaining">{{remaining | translate}}</mat-option>
-            </mat-select>
         </mat-form-field>               
         
         <br>
@@ -133,7 +126,7 @@
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
-        
+
         <input type="datetime-local" [ngModel]="property.openHouseDate | date:'yyyy-MM-ddTHH:mm'" 
         (ngModelChange)="property.openHouseDate = $event" />    
         
@@ -145,6 +138,32 @@
         <mat-form-field>
             <input matInput placeholder="YouTube link" [(ngModel)]="property.youtubeLink" name="youtubeLink">
         </mat-form-field>
+
+        <br>
+        <mat-form-field>
+            <mat-label>留下的东西</mat-label>
+            <mat-select multiple [(ngModel)]="property.remaining">
+                <mat-option *ngFor="let remaining of remainings" [value]="remaining">{{remaining | translate}}</mat-option>
+            </mat-select>
+        </mat-form-field>       
+        <br>
+        <p>输入留下的东西</p>        
+        <mat-form-field>
+            <mat-label>中文</mat-label>
+            <input matInput [(ngModel)]="otherRemainingChinese" name="otherRemainingChinese">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>English</mat-label>
+            <input matInput [(ngModel)]="otherRemainingEnglish" name="otherRemainingEnglish">
+        </mat-form-field>        
+        <button mat-raised-button color="primary" (click)="addOtherRemaining()">Add</button>      
+        <br>          
+        <tr *ngFor="let remaining of property.otherRemaining">
+            {{remaining.chinese}} {{remaining.english}} 
+            <button mat-button color="warn" (click)="deleteOtherRemaining(remaining)">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        </tr>        
         <br>
         <p>Feature:</p>
         <mat-form-field>
@@ -155,14 +174,27 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        
         <mat-form-field>
             <mat-label>Year</mat-label>
-            <input matInput placeholder="Feature Year" [(ngModel)]="featureYear" name="featureYear">
+            <input matInput [(ngModel)]="featureYear" name="featureYear">
         </mat-form-field>
-        
         <button mat-raised-button color="primary" (click)="addFeature()">Add</button>
-        
+
+        <br>
+        <p>Other Features</p>        
+        <mat-form-field>
+            <mat-label>中文</mat-label>
+            <input matInput [(ngModel)]="otherFeatureChinese" name="otherFeatureChinese">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>English</mat-label>
+            <input matInput [(ngModel)]="otherFeatureEnglish" name="otherFeatureEnglish">
+        </mat-form-field>        
+        <mat-form-field>
+            <mat-label>Year</mat-label>
+            <input matInput [(ngModel)]="otherFeatureYear" name="otherFeatureYear">
+        </mat-form-field>  
+        <button mat-raised-button color="primary" (click)="addOtherFeature()">Add</button>      
         <br>
         <tr *ngFor="let feature of property.features">
             {{feature.year}} {{feature.description | translate}}
@@ -170,6 +202,12 @@
                 <mat-icon>delete_forever</mat-icon>
             </button>
         </tr>
+        <tr *ngFor="let otherFeature of property.otherFeatures">
+            {{otherFeature.year}} {{otherFeature.chinese}} {{otherFeature.english}}
+            <button mat-button color="warn" (click)="deleteOtherFeature(otherFeature)">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        </tr>        
         
         <section class="language-section">
             <label class="language-section-margin">Language</label>

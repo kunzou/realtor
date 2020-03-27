@@ -61,13 +61,17 @@
                                                             {{feature.description | translate}}<span
                                                                 *ngIf="feature.year">({{feature.year}})</span>,
                                                         </div>
+                                                        <div *ngFor="let otherFeature of property.otherFeatures" class="list-multiple">
+                                                            <span *ngIf="translateService.currentLang === 'zh'">{{otherFeature.chinese}}</span>
+                                                            <span *ngIf="translateService.currentLang === 'en'">{{otherFeature.english}}</span>
+                                                            <span *ngIf="otherFeature.year">({{otherFeature.year}})</span>,
+                                                        </div>                                                        
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-
                                 <table *ngIf="property.remaining.length > 0">
                                     <tbody>
                                         <tr>
@@ -81,14 +85,16 @@
                                                             class="list-multiple">
                                                             {{item | translate}},
                                                         </div>
+                                                        <div *ngFor="let otherRemaining of property.otherRemaining" class="list-multiple">
+                                                            <span *ngIf="translateService.currentLang === 'zh'">{{otherRemaining.chinese}}</span>
+                                                            <span *ngIf="translateService.currentLang === 'en'">{{otherRemaining.english}}</span>
+                                                        </div>                                                         
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-
-
                                 <table class="left-table">
                                     <tbody>
                                         <tr>

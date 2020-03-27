@@ -43,6 +43,8 @@ export class Property {
     usage: string;
     holdType: string;
     remaining: string[] = [];
+    otherRemaining: {chinese: string; english: string}[] = [];
     features: Highlight[] = [];
+    otherFeatures: {chinese: string; english: string; year: string}[] = [];
     openHouseDate: Date;
 }
