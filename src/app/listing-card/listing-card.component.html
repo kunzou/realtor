@@ -1,10 +1,7 @@
 <div class="card property-single">
     <div class="property_thumb embed-responsive embed-responsive-4by3" *ngIf="property.primaryImage">
-        <div class="property_tag" *ngIf="translateService.currentLang === 'zh' && property.tag.chinese != null && property.tag.chinese != ''">
-            {{property.tag.chinese}}
-        </div>
-        <div class="property_tag" *ngIf="translateService.currentLang === 'en' && property.tag.english != null && property.tag.english != ''">
-            {{property.tag.english}}
+        <div class="property_tag" *ngIf="property.tag.chinese != null && property.tag.chinese != ''" >
+            {{property.tag | description}}
         </div>        
         <div class="property_price">
             {{property.askingPrice | currency}}

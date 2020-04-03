@@ -226,6 +226,7 @@
                 <textarea class="form-control" id="brief" rows="3" [(ngModel)]="property.brief.chinese"
                 name="brief.chinese"></textarea>
             </div>            
+            <label>描述</label>
             <ckeditor [(ngModel)]="property.description.chinese" type="inline"></ckeditor>
         </div>
         <div *ngIf="language === 'en'">
@@ -236,7 +237,8 @@
                 <label for="content">brief</label>
                 <textarea class="form-control" id="brief" rows="3" [(ngModel)]="property.brief.english"
                 name="brief.english"></textarea>
-            </div>                       
+            </div>  
+            <label>Description</label>                     
             <ckeditor [(ngModel)]="property.description.english" type="inline"></ckeditor>
         </div>
         

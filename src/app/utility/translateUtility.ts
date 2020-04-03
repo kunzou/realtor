@@ -10,6 +10,9 @@ export class DescriptionPipe implements PipeTransform {
     ) { }
 
     transform(description: Description): string {
+        if(description == null) {
+            return '';
+        }
         return this.translateService.currentLang === 'zh' ? description.chinese : description.english;
     }
 }
