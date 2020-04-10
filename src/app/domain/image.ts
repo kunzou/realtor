@@ -3,4 +3,5 @@ export class Image {
     smallLink: string;
     mediumLink: string;
     largeLink: string;
+    hugeLink: string;
 }

@@ -1,10 +1,10 @@
 <section>
-    <ngb-carousel *ngIf="slides.length > 0">
+    <ngb-carousel *ngIf="slides != null">
         <div *ngFor="let slide of slides">
             <ng-template ngbSlide>
                 <div class="picsum-img-wrapper">
                     <a routerLink="/property/{{slide.id}}">
-                        <img src="{{slide.url}}" alt="Random second slide"
+                        <img src="{{slide.image}}" alt=""
                             class="d-flex align-items-center justify-content-center carousel-img" >
                     </a>
                 </div>

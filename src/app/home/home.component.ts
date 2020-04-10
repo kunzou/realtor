@@ -3,6 +3,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Property } from '../domain/property';
 import { PropertyService } from '../service/property.service';
 import { PropertyCard } from '../domain/property-card';
+import { Slide } from '../domain/slide';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { PropertyCard } from '../domain/property-card';
 })
 export class HomeComponent implements OnInit {
   properties: Property[];
-  slides = [];
+  slides: Slide[];
   homePropertCards: PropertyCard[];
   constructor(
     private propertyService: PropertyService,
@@ -25,23 +26,26 @@ export class HomeComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getProperties();
     this.getHomePropertCards();
+    this.getHomeSlides();
   }
 
   getProperties(): void {
     this.propertyService.getSaleProperties().subscribe(properties => {
       this.properties = properties;
-      properties.forEach(item => {
-        item.additionalImages.map(image => this.slides.push({url:image.link, text:item.address, id:item.id, price:item.askingPrice, openHouse: item.openHouseDate}))
-      })
-      this.slides = this.slides.sort((one, two) => Math.random()>0.5?-1:1)
     });
   }
 
   getHomePropertCards(): void {
     this.propertyService.getHomePageProperties().subscribe(properties => {
       this.homePropertCards = properties;
+    });
+  }
+
+  getHomeSlides(): void {
+    this.propertyService.getHomePageSlides().subscribe(slides => {
+      this.slides = slides;
+      this.slides = this.slides.sort((one, two) => Math.random()>0.5?-1:1);
     });    
   }
 }

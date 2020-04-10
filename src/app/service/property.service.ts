@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment'
 import { PropertyCard } from '../domain/property-card';
+import { Slide } from '../domain/slide';
 
 @Injectable({
   providedIn: "root"
@@ -85,6 +86,13 @@ export class PropertyService {
       catchError(this.handleError<Property>(`getProperties id=${id}`))
     );
   }
+
+  getHomePageSlides(): Observable<Slide[]> {
+    const url = `${this.propertyUrl}/homePageSlides`;
+    return this.http.get<Slide[]>(url).pipe(
+      catchError(this.handleError<Slide[]>(`homePageSlides`))
+    );
+  }  
 
   /**
    * Handle Http operation that failed.
