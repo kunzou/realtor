@@ -29,10 +29,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.getOwner();
-    this._success.subscribe((message) => this.emailResponse = message);
-    this._success.pipe(
-      debounceTime(5000)
-    ).subscribe(() => this.emailResponse = null);        
+    this._success.subscribe((message) => this.emailResponse = message);       
   }
 
   getOwner(): void {
