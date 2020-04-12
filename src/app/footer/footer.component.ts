@@ -19,6 +19,7 @@ export class FooterComponent implements OnInit {
   emailDetail: EmailDetail = new EmailDetail;
   emailResponse: Description;
   emailResponseAlertType: any;
+  // responseType: string;
   private _success = new Subject<Description>();  
   constructor(
     private userService: UserService,
@@ -41,11 +42,18 @@ export class FooterComponent implements OnInit {
 
   sendEmail(): void {
     this.emailDetail.address = '';
-    this.emailService.sendEmail(this.emailDetail).subscribe(response => {
-      this.emailResponseAlertType = response.status === 200?"success":"danger";
-      this.emailResponse = response.body;
-      this.showMessage();
-    });
+    this.emailService.sendEmail(this.emailDetail).subscribe(
+      (response) => {
+        this.emailResponseAlertType = "success";
+        this.emailResponse = response.body;
+        this.showMessage();
+      },
+      (error) => {
+        this.emailResponseAlertType = "danger";
+        this.emailResponse = error.error;
+        this.showMessage();
+      }    
+    );
   }  
 
   showMessage() {

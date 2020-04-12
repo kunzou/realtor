@@ -71,11 +71,18 @@ export class PropertyComponent implements OnInit {
 
   sendEmail(): void {
     this.emailDetail.address = this.property.address;
-    this.emailService.sendEmail(this.emailDetail).subscribe(response => {
-      this.emailResponseAlertType = response.status === 200?"success":"danger";
-      this.emailResponse = response.body;
-      this.showMessage();
-    });
+    this.emailService.sendEmail(this.emailDetail).subscribe(
+      (response) => {
+        this.emailResponseAlertType = "success";
+        this.emailResponse = response.body;
+        this.showMessage();
+      },
+      (error) => {
+        this.emailResponseAlertType = "danger";
+        this.emailResponse = error.error;
+        this.showMessage();
+      }
+    );
   }
 
   showMessage() {
