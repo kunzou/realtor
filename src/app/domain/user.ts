@@ -5,21 +5,23 @@ export class User {
     id: string;
     firstName: string;
     lastName: string;
-    displayName: Description = new Description();
+    displayName: Description;
     email: string;
     homePage: string;
-    portrait: Image = new Image();
-    barcode: Image = new Image();
-    signature: Image = new Image();
+    portrait: Image;
+    barcode: Image;
+    signature: Image;
     phoneNumber: string;
     officePhoneNumber: string;
     faxNumber: string;
-    aboutMe: Description = new Description();
-    purchaseService: Description = new Description();
-    saleService: Description = new Description();
+    aboutMe: Description;
+    purchaseService: Description;
+    saleService: Description;
     owner: boolean;
     facebook: string;
     instagram: string;
     youtube: string;    
     version: number;  
+    visitHistories: {visitDateTime: Date}[];
+    totalVisits: number
 }
