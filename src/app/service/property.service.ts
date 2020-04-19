@@ -18,6 +18,7 @@ export class PropertyService {
   cachedSaleProperties: Observable<Property[]>;
   openHouseCards: Observable<PropertyCard[]>;
   homePageCards: Observable<PropertyCard[]>;
+  homeSlides: Observable<Slide[]>;
   constructor(
     private http: HttpClient
   ) { }
@@ -61,6 +62,10 @@ export class PropertyService {
     this.homePageCards = null;
   }
 
+  clearHomeSlides() {
+    this.homeSlides = null;
+  }
+
   getSoldPurchasedProperties(): Observable<Property[]> {
     const url = `${this.propertyUrl}/soldPurchased`;
     return this.http.get<Property[]>(url)
@@ -88,11 +93,23 @@ export class PropertyService {
   }
 
   getHomePageSlides(): Observable<Slide[]> {
-    const url = `${this.propertyUrl}/homePageSlides`;
-    return this.http.get<Slide[]>(url).pipe(
-      catchError(this.handleError<Slide[]>(`homePageSlides`))
-    );
+    if(!this.homeSlides) {
+      const url = `${this.propertyUrl}/homePageSlides`;
+      this.homeSlides = this.http.get<Slide[]>(url).pipe(
+        catchError(this.handleError<Slide[]>(`homePageSlides`))
+      );
+    }
+
+
+    return this.homeSlides;
   }  
+
+  clearCache() {
+    this.clearOpenHouseCache();
+    this.clearSaleCache();
+    this.clearHomePageCardsCache();
+    this.clearHomeSlides();
+  }
 
   /**
    * Handle Http operation that failed.
@@ -108,27 +125,21 @@ export class PropertyService {
   }
 
   updateProperty (property: Property): Observable<any> {
-    this.clearOpenHouseCache();
-    this.clearSaleCache();
-    this.clearHomePageCardsCache();
+    this.clearCache();
     return this.http.put(this.propertyUrl, property, this.httpOptions).pipe(
       catchError(this.handleError<any>('updateProperty'))
     );
   }
 
   addProperty(property: Property): Observable<Property> {
-    this.clearOpenHouseCache();
-    this.clearSaleCache();    
-    this.clearHomePageCardsCache();
+    this.clearCache();
     return this.http.post<Property>(this.propertyUrl, property, this.httpOptions).pipe(
       catchError(this.handleError<Property>('addProperty'))
     );
   }
 
   deleteProperty (property: Property | number): Observable<Property> {
-    this.clearOpenHouseCache();
-    this.clearSaleCache();    
-    this.clearHomePageCardsCache();
+    this.clearCache();
     const id = typeof property === 'number' ? property : property.id;
     const url = `${this.propertyUrl}/${id}`;
   
