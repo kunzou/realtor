@@ -22,6 +22,5 @@ export class User {
     instagram: string;
     youtube: string;    
     version: number;  
-    visitHistories: {visitDateTime: Date}[];
     totalVisits: number
 }

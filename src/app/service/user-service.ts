@@ -31,6 +31,13 @@ export class UserService {
     return this.me;
   }
 
+  getVisitHistory(): Observable<any> {
+    const url = `${this.userUrl}/visitHistory`;
+    return this.http.get<any>(url).pipe(
+      catchError(this.handleError<any>(`visitHistory`))
+    );    
+  }
+
   clearCache() {
     this.me = null;
   }  

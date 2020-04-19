@@ -19,14 +19,19 @@ export class VisitHistoryComponent implements OnInit {
 
   ngOnInit() {
     this.getOwner();
+    this.getVisitHistory();
   }
 
   getOwner(): void {
-    this.userService.getOwner()
-      .subscribe(user => {
-        this.visitHistories = user.visitHistories;
+    this.userService.getOwner().subscribe(user => {
         this.totalVisits = user.totalVisits;
       });
   }     
+
+  getVisitHistory(): void {
+    this.userService.getVisitHistory().subscribe(visitHistories => {
+        this.visitHistories = visitHistories;
+      });    
+  }
 
 }

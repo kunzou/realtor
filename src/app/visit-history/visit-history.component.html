@@ -16,7 +16,7 @@
     </tbody>
 </table>
 
-<div class="d-flex justify-content-between p-2">
+<div class="d-flex justify-content-between p-2" *ngIf="visitHistories != null"> 
     <ngb-pagination
     [(page)]="page"
     [pageSize]="pageSize"
