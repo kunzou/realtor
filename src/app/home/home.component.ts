@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit {
   getHomeSlides(): void {
     this.propertyService.getHomePageSlides().subscribe(slides => {
       this.slides = slides;
-      this.slides = this.slides.sort((one, two) => Math.random()>0.5?-1:1);
     });    
   }
 }

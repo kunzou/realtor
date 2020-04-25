@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://localhost:8080/api',
   authRedirectUri: 'http://localhost:4200/dashboard',
   logtoutRri: 'http://localhost:4200',
   auth: {
